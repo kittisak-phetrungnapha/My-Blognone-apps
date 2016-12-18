@@ -20,7 +20,7 @@ class NewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProt
     }
     
     func didRequestNewsDetail(news: News) {
-        wireFrame?.pushToNewsDetailInterface()
+        wireFrame?.pushToNewsDetailInterface(news: news)
     }
     
     // MARK: - NewsListInteractorOutputProtocol

@@ -23,7 +23,7 @@ protocol NewsListWireFrameProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
-    func pushToNewsDetailInterface()
+    func pushToNewsDetailInterface(news: News)
 }
 
 protocol NewsListPresenterProtocol: class {

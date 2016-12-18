@@ -32,7 +32,7 @@ class MockWireframe: NewsListWireFrameProtocol {
         
     }
     
-    func pushToNewsDetailInterface() {
+    func pushToNewsDetailInterface(news: News) {
         
     }
     

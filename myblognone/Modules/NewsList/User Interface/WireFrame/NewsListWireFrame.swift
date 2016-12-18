@@ -39,7 +39,7 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
         }
     }
     
-    func pushToNewsDetailInterface() {
+    func pushToNewsDetailInterface(news: News) {
         
     }
     

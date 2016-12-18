@@ -24,9 +24,9 @@
 		EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */; };
 		EE5D15FA1E0656DC004F5605 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15F91E0656DC004F5605 /* News.swift */; };
 		EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16001E0667F9004F5605 /* Localizable.strings */; };
-		EE5D16041E069329004F5605 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D16031E069329004F5605 /* NewsTests.swift */; };
 		EE5D16081E069EC8004F5605 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16071E069EC8004F5605 /* NewsList.storyboard */; };
 		EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */; };
+		EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA46F1E06ED8C00511637 /* NewsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +63,9 @@
 		EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myblognoneTests.swift; sourceTree = "<group>"; };
 		EE5D15F91E0656DC004F5605 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		EE5D16001E0667F9004F5605 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		EE5D16031E069329004F5605 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 		EE5D16071E069EC8004F5605 /* NewsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
 		EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManagerTests.swift; sourceTree = "<group>"; };
+		EE6CA46F1E06ED8C00511637 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,7 +323,7 @@
 		EE5D16021E069329004F5605 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				EE5D16031E069329004F5605 /* NewsTests.swift */,
+				EE6CA46E1E06ED8C00511637 /* Models */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -343,6 +343,14 @@
 				EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		EE6CA46E1E06ED8C00511637 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE6CA46F1E06ED8C00511637 /* NewsTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,7 +539,7 @@
 			files = (
 				EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */,
 				EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */,
-				EE5D16041E069329004F5605 /* NewsTests.swift in Sources */,
+				EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */,
 				EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */,
 				EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,

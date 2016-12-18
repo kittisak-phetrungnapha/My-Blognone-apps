@@ -59,42 +59,42 @@ class NewsListInteractorTests: XCTestCase {
         })
     }
     
-    class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
-        weak var view: NewsListViewProtocol?
-        var interactor: NewsListInteractorInputProtocol?
-        var wireFrame: NewsListWireFrameProtocol?
-        
-        func didRequestNewsFeedData() {
-            
-        }
-        
-        func didRequestNewsDetail(news: News) {
-            
-        }
-        
-        func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
-            
-        }
+}
+
+class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
+    weak var view: NewsListViewProtocol?
+    var interactor: NewsListInteractorInputProtocol?
+    var wireFrame: NewsListWireFrameProtocol?
+    
+    func didRequestNewsFeedData() {
         
     }
     
-    class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
+    func didRequestNewsDetail(news: News) {
         
-        private var wantSuccess: Bool
+    }
+    
+    func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
         
-        init(wantSuccess: Bool) {
-            self.wantSuccess = wantSuccess
+    }
+    
+}
+
+class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
+    
+    private var wantSuccess: Bool
+    
+    init(wantSuccess: Bool) {
+        self.wantSuccess = wantSuccess
+    }
+    
+    func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
+        if wantSuccess {
+            completion(.success([News]()))
         }
-        
-        func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
-            if wantSuccess {
-                completion(.success([News]()))
-            }
-            else {
-                completion(.error("Dummy error get news feed data."))
-            }
+        else {
+            completion(.error("Dummy error get news feed data."))
         }
-        
     }
     
 }
