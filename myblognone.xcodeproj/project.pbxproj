@@ -23,6 +23,8 @@
 		EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */; };
 		EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */; };
 		EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */; };
+		EE5D15FA1E0656DC004F5605 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15F91E0656DC004F5605 /* News.swift */; };
+		EE5D15FD1E065871004F5605 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15FC1E065871004F5605 /* NewsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewTests.swift; sourceTree = "<group>"; };
 		EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListWireFrameTests.swift; sourceTree = "<group>"; };
 		EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myblognoneTests.swift; sourceTree = "<group>"; };
+		EE5D15F91E0656DC004F5605 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		EE5D15FC1E065871004F5605 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		EE05683E1E0639A7008FABA6 /* myblognone */ = {
 			isa = PBXGroup;
 			children = (
+				EE5D15F71E065674004F5605 /* Common */,
 				EE5D15AE1E063C6E004F5605 /* Modules */,
 				EE05683F1E0639A7008FABA6 /* AppDelegate.swift */,
 				EE0568431E0639A7008FABA6 /* Main.storyboard */,
@@ -235,6 +240,7 @@
 		EE5D15C81E063C7B004F5605 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EE5D15FB1E065852004F5605 /* Common */,
 				EE5D15C91E063C7B004F5605 /* NewsList */,
 			);
 			name = Modules;
@@ -282,6 +288,30 @@
 				EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */,
 			);
 			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		EE5D15F71E065674004F5605 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D15F81E06568A004F5605 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EE5D15F81E06568A004F5605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D15F91E0656DC004F5605 /* News.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE5D15FB1E065852004F5605 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D15FC1E065871004F5605 /* NewsTests.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +484,7 @@
 			files = (
 				EE5D15C31E063C6E004F5605 /* NewsListInteractor.swift in Sources */,
 				EE5D15C71E063C6E004F5605 /* NewsListWireFrame.swift in Sources */,
+				EE5D15FA1E0656DC004F5605 /* News.swift in Sources */,
 				EE5D15C61E063C6E004F5605 /* NewsListView.swift in Sources */,
 				EE5D15C51E063C6E004F5605 /* NewsListPresenter.swift in Sources */,
 				EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */,
@@ -468,6 +499,7 @@
 			files = (
 				EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */,
 				EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */,
+				EE5D15FD1E065871004F5605 /* NewsTests.swift in Sources */,
 				EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
