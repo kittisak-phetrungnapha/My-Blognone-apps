@@ -7,3 +7,4 @@
 */
 
 "unknown_error_text" = "Wroops, something went wrong. Please try again later.";
+"parse_xml_data_error_text" = "Wroop, parse data fail. Please try again later.";

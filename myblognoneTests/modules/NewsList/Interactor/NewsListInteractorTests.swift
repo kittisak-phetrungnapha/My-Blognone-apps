@@ -31,6 +31,7 @@ class AddInteractorTests: XCTestCase {
             XCTAssertNil(error, "Something went horribly wrong.")
             XCTAssertNil(errorMsg, "Error message should be nil.")
             XCTAssertNotNil(newsFeedList, "News feed list shoud not be nil.")
+            XCTAssertEqual(newsFeedList?.count, 15, "News feed list should contain 15 elements.")
         })
     }
     

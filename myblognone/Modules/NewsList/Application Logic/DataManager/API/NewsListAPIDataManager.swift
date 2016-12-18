@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AEXML
 
 class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     
@@ -45,10 +46,35 @@ class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
                 return
             }
             
-            DispatchQueue.main.async {
+            // Parse xml data
+            do {
+                let xmlDoc = try AEXMLDocument(xml: data)
+                guard let items = xmlDoc.root["channel"]["item"].all else {
+                    DispatchQueue.main.async {
+                        completion(.error(NSLocalizedString("parse_xml_data_error_text", comment: "")))
+                    }
+                    return
+                }
+                
                 var newsFeedList = [News]()
-                newsFeedList.append(News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil))
-                completion(.success(newsFeedList))
+                for item in items {
+                    let title = item.attributes["title"]
+                    let link = item.attributes["link"]
+                    let detail = item.attributes["description"]
+                    let pubDate = item.attributes["pubDate"]
+                    let creator = item.attributes["dc:creator"]
+                    
+                    let news = News(title: title, link: link, detail: detail, pubDate: pubDate, creator: creator)
+                    newsFeedList.append(news)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(.success(newsFeedList))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.error(error.localizedDescription))
+                }
             }
             
             }.resume()

@@ -5,6 +5,7 @@ target 'myblognone' do
 
   pod 'Crashlytics'
   pod 'Fabric'
+  pod 'AEXML'
 
   #target 'myblognoneTests' do
    # inherit! :search_paths
