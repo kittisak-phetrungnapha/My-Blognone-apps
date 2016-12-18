@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  myblognone
+
+  Created by Kittisak Phetrungnapha on 12/18/2559 BE.
+  Copyright © 2559 Kittisak Phetrungnapha. All rights reserved.
+*/
+
+"unknown_error_text" = "Wroops, something went wrong. Please try again later.";

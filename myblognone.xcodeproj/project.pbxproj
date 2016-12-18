@@ -25,6 +25,7 @@
 		EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */; };
 		EE5D15FA1E0656DC004F5605 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15F91E0656DC004F5605 /* News.swift */; };
 		EE5D15FD1E065871004F5605 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15FC1E065871004F5605 /* NewsTests.swift */; };
+		EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16001E0667F9004F5605 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myblognoneTests.swift; sourceTree = "<group>"; };
 		EE5D15F91E0656DC004F5605 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		EE5D15FC1E065871004F5605 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
+		EE5D16001E0667F9004F5605 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 		EE5D15F71E065674004F5605 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE5D15FF1E06679B004F5605 /* Localizable */,
 				EE5D15F81E06568A004F5605 /* Models */,
 			);
 			path = Common;
@@ -312,6 +315,14 @@
 				EE5D15FC1E065871004F5605 /* NewsTests.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EE5D15FF1E06679B004F5605 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D16001E0667F9004F5605 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */,
+				EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */,
 				EE0568471E0639A7008FABA6 /* Assets.xcassets in Resources */,
 				EE0568451E0639A7008FABA6 /* Main.storyboard in Resources */,
 			);

@@ -7,19 +7,32 @@
 //
 
 import XCTest
+@testable import myblognone
 
 class AddInteractorTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
+    func testGetNewsFeed() {
+        let asyncExpectation = expectation(description: "getNewsFeedTask")
+        let apiDataManager = NewsListAPIDataManager()
+        
+        var newsFeedList: [News]?
+        var errorMsg: String?
+        apiDataManager.getNewsFeed(with: { newsFeedResult in
+            switch newsFeedResult {
+            case .success(let newsList):
+                newsFeedList = newsList
+            case .error(let msg):
+                errorMsg = msg
+            }
+            asyncExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+            XCTAssertNil(errorMsg, "Error message should be nil.")
+            XCTAssertNotNil(newsFeedList, "News feed list shoud not be nil.")
+        })
+    }
     
 //    class MockPresenter: NewsListInteractorInputProtocol {
 //
