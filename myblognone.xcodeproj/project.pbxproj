@@ -297,6 +297,7 @@
 				EE05683A1E0639A7008FABA6 /* Resources */,
 				FC3CE0C3BCAE1DDD4803501C /* [CP] Embed Pods Frameworks */,
 				A4A7E46123693E1117E3F11C /* [CP] Copy Pods Resources */,
+				EE5D15F61E064A3B004F5605 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -415,6 +416,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myblognone/Pods-myblognone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EE5D15F61E064A3B004F5605 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 7cbc82b3dccc5a7a412bab8e1f541301250c1233 7b4698399aa390b22e5e87aff280f2b7f23ca76b8afa472cb05620f09e168bfd";
 		};
 		FC3CE0C3BCAE1DDD4803501C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -586,6 +600,7 @@
 			baseConfigurationReference = 7F55F3AE76E5D32384D11473 /* Pods-myblognone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = myblognone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
