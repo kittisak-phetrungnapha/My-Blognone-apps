@@ -20,18 +20,18 @@ class AddPresenterTest: XCTestCase {
         super.tearDown()
     }
 
-    class MockInteractor: NewsListInteractorInputProtocol {
-
-    }
-
-    class MockWireframe: NewsListWireFrameProtocol {
-
-    }
-
-    class MockViewController: NewsListViewProtocol {
-
-        func setupInitialState() {
-
-        }
-    }
+//    class MockInteractor: NewsListInteractorInputProtocol {
+//
+//    }
+//
+//    class MockWireframe: NewsListWireFrameProtocol {
+//
+//    }
+//
+//    class MockViewController: NewsListViewProtocol {
+//
+//        func setupInitialState() {
+//
+//        }
+//    }
 }
