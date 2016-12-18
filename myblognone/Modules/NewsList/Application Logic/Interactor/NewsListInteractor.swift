@@ -9,9 +9,21 @@
 import Foundation
 
 class NewsListInteractor: NewsListInteractorInputProtocol {
-
+    
+    enum NewsFeedResult {
+        case success([News])
+        case error(String)
+    }
+    
     weak var presenter: NewsListInteractorOutputProtocol?
-    var APIDataManager: NewsListAPIDataManagerInputProtocol?
-
-    init() {}
+    var apiDataManager: NewsListAPIDataManagerInputProtocol?
+    
+    // MARK: - NewsListInteractorInputProtocol
+    
+    func performGetNewsFeedTask() {
+        apiDataManager?.getNewsFeed(with: { newsFeedResult in
+            self.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
+        })
+    }
+    
 }

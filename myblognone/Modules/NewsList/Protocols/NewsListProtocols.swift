@@ -13,13 +13,17 @@ protocol NewsListViewProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
+    func updateNewsTableView(newsList: [News])
+    func showErrorMessage(message: String)
 }
 
 protocol NewsListWireFrameProtocol: class {
-    static func presentNewsListModule(fromView view: AnyObject)
+    static func setNewsListInterface(to window: AnyObject)
+    
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
+    func pushToNewsDetailInterface()
 }
 
 protocol NewsListPresenterProtocol: class {
@@ -29,30 +33,29 @@ protocol NewsListPresenterProtocol: class {
     /**
     * Add here your methods for communication VIEW -> PRESENTER
     */
+    func didRequestNewsFeedData()
+    func didRequestNewsDetail(news: News)
 }
 
 protocol NewsListInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
+    func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult)
 }
 
 protocol NewsListInteractorInputProtocol: class {
     var presenter: NewsListInteractorOutputProtocol? { get set }
-    var APIDataManager: NewsListAPIDataManagerInputProtocol? { get set }
+    var apiDataManager: NewsListAPIDataManagerInputProtocol? { get set }
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
-}
-
-protocol NewsListDataManagerInputProtocol: class {
-    /**
-    * Add here your methods for communication INTERACTOR -> DATAMANAGER
-    */
+    func performGetNewsFeedTask()
 }
 
 protocol NewsListAPIDataManagerInputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
+    func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void)
 }

@@ -9,7 +9,7 @@
 import XCTest
 @testable import myblognone
 
-class AddInteractorTests: XCTestCase {
+class NewsListInteractorTests: XCTestCase {
     
     func testGetNewsFeed() {
         let asyncExpectation = expectation(description: "getNewsFeedTask")
@@ -35,7 +35,13 @@ class AddInteractorTests: XCTestCase {
         })
     }
     
-//    class MockPresenter: NewsListInteractorInputProtocol {
-//
-//    }
+}
+
+class MockPresenter: NewsListInteractorInputProtocol {
+    var presenter: NewsListInteractorOutputProtocol?
+    var apiDataManager: NewsListAPIDataManagerInputProtocol?
+    
+    func performGetNewsFeedTask() {
+        
+    }
 }

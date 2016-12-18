@@ -6,5 +6,9 @@
   Copyright © 2559 Kittisak Phetrungnapha. All rights reserved.
 */
 
+// Common
+"app_name_text" = "My Blognone";
+
+// error message
 "unknown_error_text" = "Wroops, something went wrong. Please try again later.";
 "parse_xml_data_error_text" = "Wroop, parse data fail. Please try again later.";

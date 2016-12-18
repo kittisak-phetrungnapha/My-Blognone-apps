@@ -13,12 +13,9 @@ class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     
     private let NEWS_FEED_API = "https://www.blognone.com/atom.xml"
     
-    enum NewsFeedResult {
-        case success([News])
-        case error(String)
-    }
+    // MARK: - NewsListAPIDataManagerInputProtocol
     
-    func getNewsFeed(with completion: @escaping (NewsFeedResult) -> Void) {
+    func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
         var request = URLRequest(url: URL(string: NEWS_FEED_API)!)
         request.httpMethod = "GET"
         request.timeoutInterval = 10

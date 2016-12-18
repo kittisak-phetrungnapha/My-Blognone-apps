@@ -13,5 +13,25 @@ class NewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProt
     var interactor: NewsListInteractorInputProtocol?
     var wireFrame: NewsListWireFrameProtocol?
     
-    init() {}
+    // MARK: - NewsListPresenterProtocol
+    
+    func didRequestNewsFeedData() {
+        interactor?.performGetNewsFeedTask()
+    }
+    
+    func didRequestNewsDetail(news: News) {
+        wireFrame?.pushToNewsDetailInterface()
+    }
+    
+    // MARK: - NewsListInteractorOutputProtocol
+    
+    func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
+        switch newsFeedResult {
+        case .success(let newsFeedList):
+            view?.updateNewsTableView(newsList: newsFeedList)
+        case .error(let msg):
+            view?.showErrorMessage(message: msg)
+        }
+    }
+    
 }

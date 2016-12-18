@@ -7,17 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 class NewsListWireFrame: NewsListWireFrameProtocol {
     
-    class func presentNewsListModule(fromView view: AnyObject) {
+    static let NewsListViewControllerIdentifier = "NewsListViewController"
+    
+    // MARK: - NewsListWireFrameProtocol
+    
+    class func setNewsListInterface(to window: AnyObject) {
+        let storyboard = UIStoryboard(name: "NewsList", bundle: Bundle.main)
         
         // Generating module components
-        var view: NewsListViewProtocol = NewsListViewController()
-        var presenter: NewsListPresenterProtocol & NewsListInteractorOutputProtocol = NewsListPresenter()
-        var interactor: NewsListInteractorInputProtocol = NewsListInteractor()
-        var APIDataManager: NewsListAPIDataManagerInputProtocol = NewsListAPIDataManager()
-        var wireFrame: NewsListWireFrameProtocol = NewsListWireFrame()
+        let view = storyboard.instantiateViewController(withIdentifier: NewsListViewControllerIdentifier) as! NewsListViewController
+        let presenter: NewsListPresenterProtocol & NewsListInteractorOutputProtocol = NewsListPresenter()
+        let interactor: NewsListInteractorInputProtocol = NewsListInteractor()
+        let apiDataManager: NewsListAPIDataManagerInputProtocol = NewsListAPIDataManager()
+        let wireFrame: NewsListWireFrameProtocol = NewsListWireFrame()
         
         // Connecting
         view.presenter = presenter
@@ -25,9 +31,16 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
         presenter.wireFrame = wireFrame
         presenter.interactor = interactor
         interactor.presenter = presenter
-        interactor.APIDataManager = APIDataManager
+        interactor.apiDataManager = apiDataManager
         
-        //TODO: - Present interface(present, push)
+        // set to root navigation controller
+        if let window = window as? UIWindow, let nav = window.rootViewController as? UINavigationController {
+            nav.viewControllers = [view]
+        }
+    }
+    
+    func pushToNewsDetailInterface() {
+        
     }
     
 }

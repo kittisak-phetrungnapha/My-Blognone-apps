@@ -7,31 +7,51 @@
 //
 
 import XCTest
+@testable import myblognone
 
-class AddPresenterTest: XCTestCase {
+class NewsListPresenterTest: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    
+}
+
+class MockInteractor: NewsListInteractorInputProtocol {
+ 
+    var presenter: NewsListInteractorOutputProtocol?
+    var apiDataManager: NewsListAPIDataManagerInputProtocol?
+    
+    func performGetNewsFeedTask() {
+        
     }
+    
+}
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+class MockWireframe: NewsListWireFrameProtocol {
+    
+    static func presentNewsListModule(fromView view: AnyObject) {
+        
     }
+    
+    func pushToNewsDetailInterface() {
+        
+    }
+    
+}
 
-//    class MockInteractor: NewsListInteractorInputProtocol {
-//
-//    }
-//
-//    class MockWireframe: NewsListWireFrameProtocol {
-//
-//    }
-//
-//    class MockViewController: NewsListViewProtocol {
-//
-//        func setupInitialState() {
-//
-//        }
-//    }
+class MockViewController: NewsListViewProtocol {
+    
+    var presenter: NewsListPresenterProtocol?
+    
+    func setupInitialState() {
+        
+    }
+    
+    func updateNewsTableView(newsList: [News]) {
+        
+    }
+    
+    func showErrorMessage(message: String) {
+        
+    }
+    
 }
