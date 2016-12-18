@@ -28,7 +28,7 @@ class MockInteractor: NewsListInteractorInputProtocol {
 
 class MockWireframe: NewsListWireFrameProtocol {
     
-    static func presentNewsListModule(fromView view: AnyObject) {
+    static func setNewsListInterface(to window: AnyObject) {
         
     }
     

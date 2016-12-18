@@ -26,6 +26,7 @@
 		EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16001E0667F9004F5605 /* Localizable.strings */; };
 		EE5D16041E069329004F5605 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D16031E069329004F5605 /* NewsTests.swift */; };
 		EE5D16081E069EC8004F5605 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16071E069EC8004F5605 /* NewsList.storyboard */; };
+		EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		EE5D16001E0667F9004F5605 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EE5D16031E069329004F5605 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 		EE5D16071E069EC8004F5605 /* NewsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
+		EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 		EE5D15C91E063C7B004F5605 /* NewsList */ = {
 			isa = PBXGroup;
 			children = (
+				EE5D16091E06D120004F5605 /* DataManager */,
 				EE5D15CA1E063C7B004F5605 /* Interactor */,
 				EE5D15CC1E063C7B004F5605 /* Presenter */,
 				EE5D15CE1E063C7B004F5605 /* View */,
@@ -323,6 +326,23 @@
 				EE5D16031E069329004F5605 /* NewsTests.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EE5D16091E06D120004F5605 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D160A1E06D12F004F5605 /* API */,
+			);
+			name = DataManager;
+			path = myblognoneTests/Modules/NewsList/DataManager;
+			sourceTree = SOURCE_ROOT;
+		};
+		EE5D160A1E06D12F004F5605 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +532,7 @@
 				EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */,
 				EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */,
 				EE5D16041E069329004F5605 /* NewsTests.swift in Sources */,
+				EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */,
 				EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
