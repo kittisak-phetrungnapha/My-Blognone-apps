@@ -9,23 +9,25 @@
 import XCTest
 @testable import myblognone
 
-class NewsListInteractorTests: XCTestCase, NewsListInteractorOutputProtocol {
+class NewsListInteractorTests: XCTestCase {
     
     private var interactor: NewsListInteractor!
-    private var newsFeedResult: NewsListInteractor.NewsFeedResult?
+    private var mockPresenter: MockNewsListPresenter!
     
     override func setUp() {
         super.setUp()
         
         interactor = NewsListInteractor()
-        interactor.presenter = self
+        mockPresenter = MockNewsListPresenter()
+        interactor.presenter = mockPresenter
+        
         let mockApiDataManager = MockNewsListAPIDataManager()
         interactor.apiDataManager = mockApiDataManager
     }
     
     override func tearDown() {
         interactor = nil
-        newsFeedResult = nil
+        mockPresenter = nil
         
         super.tearDown()
     }
@@ -33,8 +35,26 @@ class NewsListInteractorTests: XCTestCase, NewsListInteractorOutputProtocol {
     func testPerformNewsFeedTask() {
         interactor.apiDataManager?.getNewsFeed(with: { newsFeedResult in
             self.interactor.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
-            XCTAssertNotNil(self.newsFeedResult, "NewsFeedResult should not be nil.")
+            XCTAssertNotNil(self.mockPresenter.newsFeedResult, "NewsFeedResult should not be nil.")
         })
+    }
+    
+}
+
+class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
+    
+    var view: NewsListViewProtocol?
+    var interactor: NewsListInteractorInputProtocol?
+    var wireFrame: NewsListWireFrameProtocol?
+    
+    var newsFeedResult: NewsListInteractor.NewsFeedResult?
+    
+    func didRequestNewsFeedData() {
+        
+    }
+    
+    func didRequestNewsDetail(news: News) {
+        
     }
     
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
