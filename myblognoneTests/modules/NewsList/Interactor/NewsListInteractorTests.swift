@@ -9,92 +9,45 @@
 import XCTest
 @testable import myblognone
 
-class NewsListInteractorTests: XCTestCase {
+class NewsListInteractorTests: XCTestCase, NewsListInteractorOutputProtocol {
     
     private var interactor: NewsListInteractor!
+    private var newsFeedResult: NewsListInteractor.NewsFeedResult?
     
     override func setUp() {
         super.setUp()
         
         interactor = NewsListInteractor()
-        let mockPresenter = MockNewsListPresenter()
-        interactor.presenter = mockPresenter
+        interactor.presenter = self
+        let mockApiDataManager = MockNewsListAPIDataManager()
+        interactor.apiDataManager = mockApiDataManager
     }
     
     override func tearDown() {
         interactor = nil
+        newsFeedResult = nil
         
         super.tearDown()
     }
     
-    func testPerformNewsFeedTaskSuccess() {
-        let mockApiDataManager = MockNewsListAPIDataManager(wantSuccess: true)
-        interactor.apiDataManager = mockApiDataManager
-        
+    func testPerformNewsFeedTask() {
         interactor.apiDataManager?.getNewsFeed(with: { newsFeedResult in
             self.interactor.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
-            
-            switch newsFeedResult {
-            case .success(_):
-                XCTAssertTrue(true)
-            case .error(_):
-                XCTAssertTrue(false, "NewsFeedResult should be true case.")
-            }
+            XCTAssertNotNil(self.newsFeedResult, "NewsFeedResult should not be nil.")
         })
-    }
-    
-    func testPerformNewsFeedTaskFail() {
-        let mockApiDataManager = MockNewsListAPIDataManager(wantSuccess: false)
-        interactor.apiDataManager = mockApiDataManager
-        
-        interactor.apiDataManager?.getNewsFeed(with: { newsFeedResult in
-            self.interactor.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
-            
-            switch newsFeedResult {
-            case .success(_):
-                XCTAssertFalse(true, "NewsFeedResult should be false case.")
-            case .error(_):
-                XCTAssertFalse(false)
-            }
-        })
-    }
-    
-}
-
-class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
-    weak var view: NewsListViewProtocol?
-    var interactor: NewsListInteractorInputProtocol?
-    var wireFrame: NewsListWireFrameProtocol?
-    
-    func didRequestNewsFeedData() {
-        
-    }
-    
-    func didRequestNewsDetail(news: News) {
-        
     }
     
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
-        
+        self.newsFeedResult = newsFeedResult
     }
     
 }
 
 class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     
-    private var wantSuccess: Bool
-    
-    init(wantSuccess: Bool) {
-        self.wantSuccess = wantSuccess
-    }
-    
     func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
-        if wantSuccess {
-            completion(.success([News]()))
-        }
-        else {
-            completion(.error("Dummy error get news feed data."))
-        }
+        // It doesn't matter return success or failure case.
+        completion(.success([News]()))
     }
     
 }
