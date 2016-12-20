@@ -52,7 +52,7 @@ class NewsListInteractorTests: XCTestCase {
     
 }
 
-class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
+private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
     
     var view: NewsListViewProtocol?
     var interactor: NewsListInteractorInputProtocol?
@@ -79,7 +79,7 @@ class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutput
     
 }
 
-class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
+private class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     
     func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
         // It doesn't matter return success or failure case.

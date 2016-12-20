@@ -13,6 +13,7 @@ class NewsListViewController: UIViewController, NewsListViewProtocol, UITableVie
     var presenter: NewsListPresenterProtocol?
     
     @IBOutlet weak var newsTableView: UITableView!
+    private var newsList: [News]?
     
     // MARK: - View controller's life cycle
     
@@ -27,7 +28,8 @@ class NewsListViewController: UIViewController, NewsListViewProtocol, UITableVie
     // MARK: - NewsListViewProtocol
     
     func updateNewsTableView(newsList: [News]) {
-        print("news count: \(newsList.count)")
+        self.newsList = newsList
+        newsTableView.reloadData()
     }
     
     func showErrorMessage(message: String) {
@@ -37,7 +39,7 @@ class NewsListViewController: UIViewController, NewsListViewProtocol, UITableVie
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return newsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +49,8 @@ class NewsListViewController: UIViewController, NewsListViewProtocol, UITableVie
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didRequestNewsDetail(news: News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil))
+        guard let news = newsList?[indexPath.row] else { return }
+        presenter?.didRequestNewsDetail(news: news)
     }
     
 }

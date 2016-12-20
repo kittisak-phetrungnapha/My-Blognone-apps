@@ -7,9 +7,96 @@
 //
 
 import XCTest
+@testable import myblognone
 
 class NewsListViewTests: XCTestCase {
     
+    private var view: NewsListViewController!
+    private var mockPresenter: MockNewsListPresenter!
     
+    override func setUp() {
+        super.setUp()
+        
+        view = UIStoryboard(name: "NewsList", bundle: Bundle.main).instantiateViewController(withIdentifier: NewsListWireFrame.NewsListViewControllerIdentifier) as! NewsListViewController
+        mockPresenter = MockNewsListPresenter()
+        view.presenter = mockPresenter
+        let _ = view.view
+    }
+    
+    func testTitleForView() {
+        XCTAssertEqual(view.title, NSLocalizedString("app_name_text", comment: ""), "Title should be \(NSLocalizedString("app_name_text", comment: "")).")
+    }
+    
+    func testNewsTableViewIsNotNil() {
+        XCTAssertNotNil(view.newsTableView, "NewsTableView should not be nil.")
+    }
+    
+    func testTableFooterViewForNewsTableView() {
+        XCTAssertEqual(view.newsTableView.tableFooterView?.frame, CGRect(x: 0, y: 0, width: 375, height: 0), "TableFooterView's frame for newsTableView shoul be zero (except width).")
+    }
+    
+    func testViewDidLoadRequestNewsFeedData() {
+        XCTAssertTrue(mockPresenter.isRequestedNewsFeedData, "didRequestNewsFeedData should be called.")
+    }
+    
+    func testUpdateNewsTableView() {
+        // Given
+        var newsList = [News]()
+        newsList.append(News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil))
+        
+        // When
+        view.updateNewsTableView(newsList: newsList)
+        
+        // Then
+        XCTAssertEqual(view.newsTableView.numberOfRows(inSection: 0), 1, "Number of cells in newsTableView should be 1.")
+    }
+    
+    func testNumberOfRowsInSectionForNewsTableViewInCaseOfNilDataSource() {
+        XCTAssertEqual(view.newsTableView.numberOfRows(inSection: 0), 0, "Number of rows should be 0.")
+    }
+    
+    func testDidSelectNewsTableView() {
+        // Given
+        var newsList = [News]()
+        newsList.append(News(title: "title", link: nil, detail: nil, pubDate: nil, creator: nil))
+        newsList.append(News(title: "title2", link: nil, detail: nil, pubDate: nil, creator: nil))
+        
+        // When
+        view.updateNewsTableView(newsList: newsList)
+        view.tableView(view.newsTableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        
+        // Then
+        XCTAssertEqual(mockPresenter.news?.title, "title", "News title should be \"title\".")
+    }
+    
+    override func tearDown() {
+        view = nil
+        mockPresenter = nil
+        
+        super.tearDown()
+    }
 
+}
+
+private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProtocol {
+    
+    var view: NewsListViewProtocol?
+    var interactor: NewsListInteractorInputProtocol?
+    var wireFrame: NewsListWireFrameProtocol?
+    
+    var isRequestedNewsFeedData = false
+    var news: News?
+    
+    func didRequestNewsFeedData() {
+        isRequestedNewsFeedData = true
+    }
+    
+    func didRequestNewsDetail(news: News) {
+        self.news = news
+    }
+    
+    func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
+        
+    }
+    
 }

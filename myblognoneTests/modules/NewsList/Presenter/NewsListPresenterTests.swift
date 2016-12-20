@@ -68,7 +68,7 @@ class NewsListPresenterTest: XCTestCase {
     
 }
 
-class MockInteractor: NewsListInteractorInputProtocol {
+private class MockInteractor: NewsListInteractorInputProtocol {
     
     var presenter: NewsListInteractorOutputProtocol?
     var apiDataManager: NewsListAPIDataManagerInputProtocol?
@@ -81,7 +81,7 @@ class MockInteractor: NewsListInteractorInputProtocol {
     
 }
 
-class MockWireframe: NewsListWireFrameProtocol {
+private class MockWireframe: NewsListWireFrameProtocol {
     
     var news: News?
     
@@ -95,7 +95,7 @@ class MockWireframe: NewsListWireFrameProtocol {
     
 }
 
-class MockViewController: NewsListViewProtocol {
+private class MockViewController: NewsListViewProtocol {
     
     var presenter: NewsListPresenterProtocol?
     var newsList: [News]?
