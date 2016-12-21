@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class NewsListViewController: UIViewController, NewsListViewProtocol, UITableViewDataSource, UITableViewDelegate {
+class NewsListViewController: UIViewController {
     var presenter: NewsListPresenterProtocol?
     
     @IBOutlet weak var newsTableView: UITableView!
-    private var newsList: [News]?
+    fileprivate var newsList: [News]?
     
     // MARK: - View controller's life cycle
     
@@ -22,31 +22,52 @@ class NewsListViewController: UIViewController, NewsListViewProtocol, UITableVie
         
         title = NSLocalizedString("app_name_text", comment: "")
         newsTableView.tableFooterView = UIView(frame: .zero)
+        newsTableView.register(UINib(nibName: NewsListTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: NewsListTableViewCell.identifier)
+        
+        ProgressView.shared.show()
         presenter?.didRequestNewsFeedData()
     }
     
-    // MARK: - NewsListViewProtocol
+}
+
+// MARK: - NewsListViewProtocol
+
+extension NewsListViewController: NewsListViewProtocol {
     
     func updateNewsTableView(newsList: [News]) {
+        ProgressView.shared.hide()
         self.newsList = newsList
         newsTableView.reloadData()
     }
     
     func showErrorMessage(message: String) {
-        print("error: \(message)")
+        ProgressView.shared.hide()
+        MyAlertView.shared.showWithTitle(title: message, message: nil)
     }
     
-    // MARK: - UITableViewDataSource
+}
+
+// MARK: - UITableViewDataSource
+
+extension NewsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTableViewCell.identifier) as? NewsListTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
     
-    // MARK: - UITableViewDelegate
+}
+
+// MARK: - UITableViewDelegate
+
+extension NewsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let news = newsList?[indexPath.row] else { return }

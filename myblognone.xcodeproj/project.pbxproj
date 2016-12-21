@@ -11,6 +11,11 @@
 		EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05683F1E0639A7008FABA6 /* AppDelegate.swift */; };
 		EE0568471E0639A7008FABA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0568461E0639A7008FABA6 /* Assets.xcassets */; };
 		EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */; };
+		EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1E81E0ABBBB004C690A /* ProgressView.swift */; };
+		EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */; };
+		EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1ED1E0AC461004C690A /* MyAlertView.swift */; };
+		EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EF1E0ACEC1004C690A /* NewsListTableViewCell.swift */; };
+		EE36F1F21E0ACEC1004C690A /* NewsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */; };
 		EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */; };
 		EE5D15C31E063C6E004F5605 /* NewsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */; };
 		EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B91E063C6E004F5605 /* NewsListProtocols.swift */; };
@@ -50,6 +55,11 @@
 		EE05684B1E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE0568501E0639A7008FABA6 /* myblognoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myblognoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0568561E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE36F1E81E0ABBBB004C690A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
+		EE36F1ED1E0AC461004C690A /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
+		EE36F1EF1E0ACEC1004C690A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
+		EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsListTableViewCell.xib; sourceTree = "<group>"; };
 		EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManager.swift; sourceTree = "<group>"; };
 		EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractor.swift; sourceTree = "<group>"; };
 		EE5D15B91E063C6E004F5605 /* NewsListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListProtocols.swift; sourceTree = "<group>"; };
@@ -148,6 +158,23 @@
 			path = myblognoneTests;
 			sourceTree = "<group>";
 		};
+		EE36F1E71E0ABB60004C690A /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				EE36F1E81E0ABBBB004C690A /* ProgressView.swift */,
+				EE36F1ED1E0AC461004C690A /* MyAlertView.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		EE36F1EA1E0ABE05004C690A /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
 		EE5D15AE1E063C6E004F5605 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +257,8 @@
 			children = (
 				EE5D15BE1E063C6E004F5605 /* NewsListView.swift */,
 				EE5D16071E069EC8004F5605 /* NewsList.storyboard */,
+				EE36F1EF1E0ACEC1004C690A /* NewsListTableViewCell.swift */,
+				EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +327,7 @@
 		EE5D15F71E065674004F5605 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE36F1E71E0ABB60004C690A /* Adapters */,
 				EE5D15FF1E06679B004F5605 /* Localizable */,
 				EE5D15F81E06568A004F5605 /* Models */,
 			);
@@ -323,6 +353,7 @@
 		EE5D16021E069329004F5605 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE36F1EA1E0ABE05004C690A /* Adapters */,
 				EE6CA46E1E06ED8C00511637 /* Models */,
 			);
 			path = Common;
@@ -440,6 +471,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE36F1F21E0ACEC1004C690A /* NewsListTableViewCell.xib in Resources */,
 				EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */,
 				EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */,
 				EE0568471E0639A7008FABA6 /* Assets.xcassets in Resources */,
@@ -529,7 +561,10 @@
 				EE5D15C51E063C6E004F5605 /* NewsListPresenter.swift in Sources */,
 				EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */,
 				EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */,
+				EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */,
+				EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */,
 				EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */,
+				EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +577,7 @@
 				EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */,
 				EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */,
 				EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */,
+				EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
 			);

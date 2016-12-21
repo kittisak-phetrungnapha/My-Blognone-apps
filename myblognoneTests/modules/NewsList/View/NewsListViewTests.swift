@@ -35,6 +35,20 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(view.newsTableView.tableFooterView?.frame, CGRect(x: 0, y: 0, width: 375, height: 0), "TableFooterView's frame for newsTableView shoul be zero (except width).")
     }
     
+    func testProgressViewIsShownBeforeRequestPresenter() {
+        XCTAssertTrue(ProgressView.shared.isShown(), "ProgressView should be shown.")
+    }
+    
+    func testProgressViewIsHiddenAfterReceiveDataFromPresentorSuccessful() {
+        view.updateNewsTableView(newsList: [News]())
+        XCTAssertFalse(ProgressView.shared.isShown(), "ProgressView should be hidden.")
+    }
+    
+    func testProgressViewIsHiddenAfterReceiveDataFromPresentorFail() {
+        view.showErrorMessage(message: "")
+        XCTAssertFalse(ProgressView.shared.isShown(), "ProgressView should be hidden.")
+    }
+    
     func testViewDidLoadRequestNewsFeedData() {
         XCTAssertTrue(mockPresenter.isRequestedNewsFeedData, "didRequestNewsFeedData should be called.")
     }
@@ -49,6 +63,14 @@ class NewsListViewTests: XCTestCase {
         
         // Then
         XCTAssertEqual(view.newsTableView.numberOfRows(inSection: 0), 1, "Number of cells in newsTableView should be 1.")
+    }
+    
+    func testRegisterReuseIdentifierForNewsTableView() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        
+        let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0))
+        XCTAssertTrue(cell is NewsListTableViewCell, "Cell should be \"NewsListTableViewCell\".")
     }
     
     func testNumberOfRowsInSectionForNewsTableViewInCaseOfNilDataSource() {
