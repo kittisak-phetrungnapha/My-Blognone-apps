@@ -11,11 +11,10 @@ import UIKit
 class NewsListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     
     static let identifier = "NewsListTableViewCell"
-    static let cellHeight: CGFloat = 124
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +22,7 @@ class NewsListTableViewCell: UITableViewCell {
     
     func setup(with news: News) {
         titleLabel.text = news.title
-        detailLabel.text = news.detail
+        creatorLabel.text = news.creator
         dateTimeLabel.text = news.pubDate
     }
     

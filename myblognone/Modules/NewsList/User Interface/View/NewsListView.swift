@@ -23,6 +23,8 @@ class NewsListViewController: UIViewController {
         title = NSLocalizedString("app_name_text", comment: "")
         newsTableView.tableFooterView = UIView(frame: .zero)
         newsTableView.register(UINib(nibName: NewsListTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: NewsListTableViewCell.identifier)
+        newsTableView.estimatedRowHeight = 100
+        newsTableView.rowHeight = UITableViewAutomaticDimension
         
         ProgressView.shared.show()
         presenter?.didRequestNewsFeedData()
@@ -78,10 +80,6 @@ extension NewsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let news = newsList?[indexPath.row] else { return }
         presenter?.didRequestNewsDetail(news: news)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return NewsListTableViewCell.cellHeight
     }
     
 }

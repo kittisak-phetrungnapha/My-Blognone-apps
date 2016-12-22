@@ -35,6 +35,10 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(view.newsTableView.tableFooterView?.frame, CGRect(x: 0, y: 0, width: 375, height: 0), "TableFooterView's frame for newsTableView shoul be zero (except width).")
     }
     
+    func testEstimatedRowHeightIsSet() {
+        XCTAssertNotEqual(view.newsTableView.estimatedRowHeight, 0, "EstimatedRowHeight should be set.")
+    }
+    
     func testProgressViewIsShownBeforeRequestPresenter() {
         XCTAssertTrue(ProgressView.shared.isShown(), "ProgressView should be shown.")
     }
@@ -91,21 +95,13 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(mockPresenter.news?.title, "title", "News title should be \"title\".")
     }
     
-    func testHeightOfNewsListCell() {
-        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
-        view.updateNewsTableView(newsList: [news])
-        
-        let cellHeight = view.tableView(view.newsTableView, heightForRowAt: IndexPath(item: 0, section: 0))
-        XCTAssertEqual(cellHeight, NewsListTableViewCell.cellHeight, "Height of cell should be equal \(NewsListTableViewCell.cellHeight)")
-    }
-    
     func testAllOfElementsInNewsListTableViewCellAreLoaded() {
         let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
         view.updateNewsTableView(newsList: [news])
         let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! NewsListTableViewCell
         
         XCTAssertNotNil(cell.titleLabel, "Title label should not be nil.")
-        XCTAssertNotNil(cell.detailLabel, "Detail label should not be nil.")
+        XCTAssertNotNil(cell.creatorLabel, "Creator label should not be nil.")
         XCTAssertNotNil(cell.dateTimeLabel, "DateTime label should not be nil.")
     }
     
@@ -115,7 +111,7 @@ class NewsListViewTests: XCTestCase {
         let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! NewsListTableViewCell
         
         XCTAssertEqual(cell.titleLabel.text, news.title, "Title label should be set.")
-        XCTAssertEqual(cell.detailLabel.text, news.detail, "Detail label should be set.")
+        XCTAssertEqual(cell.creatorLabel.text, news.creator, "Creator label should be set.")
         XCTAssertEqual(cell.dateTimeLabel.text, news.pubDate, "DateTime label should be set.")
     }
     
