@@ -26,4 +26,40 @@ class MyDateExtensionTests: XCTestCase {
         XCTAssertEqual(thenString, givenString, "DateTime string should be the same.")
     }
     
+    func testGetNewDateTimeStringWithValidInputs() {
+        // given
+        let inputString = "Thu, 22 Dec 2016 14:34:02 +0000"
+        let inputFormat = "EEE, dd MMM yyyy HH:mm:ss VVVV"
+        let outputFormat = "dd MMM yyyy, HH:mm"
+        let expectOutput = "22 Dec 2016, 14:34"
+        
+        // when
+        let outputString = Date.getNewDateTimeString(inputStr: inputString, inputFormat: inputFormat, outputFormat: outputFormat)
+        
+        // then
+        XCTAssertEqual(outputString, expectOutput, "Output string should be the same.")
+    }
+    
+    func testGetNewDateTimeStringWithInValidInputs() {
+        var inputString = ""
+        var inputFormat = "EEE, dd MMM yyyy HH:mm:ss VVVV"
+        let outputFormat = "dd MMM yyyy, HH:mm"
+        
+        // when
+        var outputString = Date.getNewDateTimeString(inputStr: inputString, inputFormat: inputFormat, outputFormat: outputFormat)
+        
+        // then
+        XCTAssertNil(outputString, "Output string should be nil.")
+        
+        // given
+        inputString = "Thu, 22 Dec 2016 14:34:02 +0000"
+        inputFormat = ""
+        
+        // when
+        outputString = Date.getNewDateTimeString(inputStr: inputString, inputFormat: inputFormat, outputFormat: outputFormat)
+        
+        // then
+        XCTAssertNil(outputString, "Output string should be nil.")
+    }
+    
 }
