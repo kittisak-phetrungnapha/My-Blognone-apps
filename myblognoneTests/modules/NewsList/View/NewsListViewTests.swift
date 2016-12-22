@@ -150,6 +150,12 @@ class NewsListViewTests: XCTestCase {
         XCTAssertFalse(view.refreshControl.isRefreshing, "RefreshControl should be ended.")
     }
     
+    func testLastUpdatedIsSetAfterReceivedDataFromPresenterSuccess() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        XCTAssertNotNil(view.refreshControl.attributedTitle, "Refresh date time should be set.")
+    }
+    
     override func tearDown() {
         view = nil
         mockPresenter = nil

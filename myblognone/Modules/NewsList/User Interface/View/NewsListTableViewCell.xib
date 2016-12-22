@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="news title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9n-gI-R4W">
-                        <rect key="frame" x="16" y="16" width="288" height="26"/>
+                        <rect key="frame" x="16" y="16" width="288" height="25"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="news datetime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-Y1-fxG">
-                        <rect key="frame" x="16" y="87" width="288" height="20.5"/>
+                        <rect key="frame" x="16" y="86" width="288" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="AHB-hI-E8c"/>
                         </constraints>
@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="creator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-yz-VrD">
-                        <rect key="frame" x="16" y="58" width="288" height="21"/>
+                        <rect key="frame" x="16" y="57" width="288" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="k0t-vD-mvK"/>
                         </constraints>

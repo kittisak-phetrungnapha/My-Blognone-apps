@@ -44,6 +44,12 @@ class NewsListViewController: UIViewController {
         presenter?.didRequestNewsFeedData()
     }
     
+    fileprivate func updatedLastUpdatedTime() {
+        let title = String(format: NSLocalizedString("last_update_time_text", comment: ""), Date().getStringWith(format: "MMM d, HH:mm"))
+        let attributedTitle = NSAttributedString(string: title)
+        self.refreshControl.attributedTitle = attributedTitle;
+    }
+    
 }
 
 // MARK: - NewsListViewProtocol
@@ -51,6 +57,7 @@ class NewsListViewController: UIViewController {
 extension NewsListViewController: NewsListViewProtocol {
     
     func updateNewsTableView(newsList: [News]) {
+        updatedLastUpdatedTime()
         refreshControl.endRefreshing()
         ProgressView.shared.hide()
         
