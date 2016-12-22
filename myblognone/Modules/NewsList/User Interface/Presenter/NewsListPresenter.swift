@@ -28,7 +28,10 @@ class NewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProt
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
         switch newsFeedResult {
         case .success(let newsFeedList):
-            view?.updateNewsTableView(newsList: newsFeedList)
+            let newsFeedListForDisplay = newsFeedList.map {
+                return $0.formatDataForDisplay()
+            }
+            view?.updateNewsTableView(newsList: newsFeedListForDisplay)
         case .error(let msg):
             view?.showErrorMessage(message: msg)
         }

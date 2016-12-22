@@ -24,4 +24,10 @@ struct News {
         self.creator = creator ?? ""
     }
     
+    func formatDataForDisplay() -> News {
+        var newsOutput = self
+        newsOutput.pubDate = Date.getNewDateTimeString(inputStr: pubDate, inputFormat: "EEE, dd MMM yyyy HH:mm:ss VVVV", outputFormat: "dd MMM yyyy, HH:mm")
+        return newsOutput
+    }
+    
 }

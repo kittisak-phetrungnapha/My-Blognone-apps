@@ -21,4 +21,16 @@ class NewsTests: XCTestCase {
         XCTAssertEqual(news.creator, "", "Create should be equal empty.")
     }
     
+    func testFormatDataForDisplay() {
+        // given
+        let news = News(title: nil, link: nil, detail: nil, pubDate: "Thu, 22 Dec 2016 14:34:02 +0000", creator: nil)
+        let expectPubDate = "22 Dec 2016, 14:34"
+        
+        // when
+        let outputNews = news.formatDataForDisplay()
+        
+        // then
+        XCTAssertEqual(outputNews.pubDate, expectPubDate, "PubDate should be the same.")
+    }
+    
 }
