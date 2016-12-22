@@ -24,7 +24,7 @@ class NewsTests: XCTestCase {
     func testFormatDataForDisplay() {
         // given
         let news = News(title: nil, link: nil, detail: nil, pubDate: "Thu, 22 Dec 2016 14:34:02 +0000", creator: nil)
-        let expectPubDate = "22 Dec 2016, 14:34"
+        let expectPubDate = "22 Dec 2016, 21:34" // GMT +7
         
         // when
         let outputNews = news.formatDataForDisplay()

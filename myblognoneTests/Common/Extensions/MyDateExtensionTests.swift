@@ -31,7 +31,7 @@ class MyDateExtensionTests: XCTestCase {
         let inputString = "Thu, 22 Dec 2016 14:34:02 +0000"
         let inputFormat = "EEE, dd MMM yyyy HH:mm:ss VVVV"
         let outputFormat = "dd MMM yyyy, HH:mm"
-        let expectOutput = "22 Dec 2016, 14:34"
+        let expectOutput = "22 Dec 2016, 21:34" // GMT +7
         
         // when
         let outputString = Date.getNewDateTimeString(inputStr: inputString, inputFormat: inputFormat, outputFormat: outputFormat)

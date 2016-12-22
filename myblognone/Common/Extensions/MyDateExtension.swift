@@ -20,7 +20,7 @@ extension Date {
     static func getNewDateTimeString(inputStr: String, inputFormat: String, outputFormat: String) -> String? {
         // input
         let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "GMT")
+        formatter.locale = Locale.current
         formatter.dateFormat = inputFormat
         guard let inputDate = formatter.date(from: inputStr) else {
             return nil
