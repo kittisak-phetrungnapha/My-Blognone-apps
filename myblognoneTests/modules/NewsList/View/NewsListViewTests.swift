@@ -91,6 +91,34 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(mockPresenter.news?.title, "title", "News title should be \"title\".")
     }
     
+    func testHeightOfNewsListCell() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        
+        let cellHeight = view.tableView(view.newsTableView, heightForRowAt: IndexPath(item: 0, section: 0))
+        XCTAssertEqual(cellHeight, NewsListTableViewCell.cellHeight, "Height of cell should be equal \(NewsListTableViewCell.cellHeight)")
+    }
+    
+    func testAllOfElementsInNewsListTableViewCellAreLoaded() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! NewsListTableViewCell
+        
+        XCTAssertNotNil(cell.titleLabel, "Title label should not be nil.")
+        XCTAssertNotNil(cell.detailLabel, "Detail label should not be nil.")
+        XCTAssertNotNil(cell.dateTimeLabel, "DateTime label should not be nil.")
+    }
+    
+    func testAllOfElementsInNewsListTableViewCellAreSetToNews() {
+        let news = News(title: "title", link: nil, detail: "detail", pubDate: "datetime", creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! NewsListTableViewCell
+        
+        XCTAssertEqual(cell.titleLabel.text, news.title, "Title label should be set.")
+        XCTAssertEqual(cell.detailLabel.text, news.detail, "Detail label should be set.")
+        XCTAssertEqual(cell.dateTimeLabel.text, news.pubDate, "DateTime label should be set.")
+    }
+    
     override func tearDown() {
         view = nil
         mockPresenter = nil

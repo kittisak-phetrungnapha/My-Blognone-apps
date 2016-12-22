@@ -60,6 +60,12 @@ extension NewsListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        guard let news = newsList?[indexPath.row] else {
+            return cell
+        }
+        
+        cell.setup(with: news)
+        
         return cell
     }
     
@@ -72,6 +78,10 @@ extension NewsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let news = newsList?[indexPath.row] else { return }
         presenter?.didRequestNewsDetail(news: news)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NewsListTableViewCell.cellHeight
     }
     
 }

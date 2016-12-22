@@ -55,11 +55,11 @@ class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
                 
                 var newsFeedList = [News]()
                 for item in items {
-                    let title = item.attributes["title"]
-                    let link = item.attributes["link"]
-                    let detail = item.attributes["description"]
-                    let pubDate = item.attributes["pubDate"]
-                    let creator = item.attributes["dc:creator"]
+                    let title = item["title"].value
+                    let link = item["link"].value
+                    let detail = item["description"].value
+                    let pubDate = item["pubDate"].value
+                    let creator = item["dc:creator"].value
                     
                     let news = News(title: title, link: link, detail: detail, pubDate: pubDate, creator: creator)
                     newsFeedList.append(news)
