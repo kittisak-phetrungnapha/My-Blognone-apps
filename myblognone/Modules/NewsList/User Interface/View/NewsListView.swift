@@ -14,6 +14,7 @@ class NewsListViewController: UIViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
     fileprivate var newsList: [News]?
+    var refreshControl: UIRefreshControl!
     
     // MARK: - View controller's life cycle
     
@@ -21,12 +22,25 @@ class NewsListViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("app_name_text", comment: "")
+        
         newsTableView.tableFooterView = UIView(frame: .zero)
         newsTableView.register(UINib(nibName: NewsListTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: NewsListTableViewCell.identifier)
         newsTableView.estimatedRowHeight = 100
         newsTableView.rowHeight = UITableViewAutomaticDimension
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(requestNewsFeedData), for: UIControlEvents.valueChanged)
+        if #available(iOS 10.0, *) {
+            newsTableView.refreshControl = refreshControl
+        } else {
+            newsTableView.addSubview(refreshControl)
+        }
+    
         ProgressView.shared.show()
+        requestNewsFeedData()
+    }
+    
+    func requestNewsFeedData() {
         presenter?.didRequestNewsFeedData()
     }
     
@@ -37,12 +51,15 @@ class NewsListViewController: UIViewController {
 extension NewsListViewController: NewsListViewProtocol {
     
     func updateNewsTableView(newsList: [News]) {
+        refreshControl.endRefreshing()
         ProgressView.shared.hide()
+        
         self.newsList = newsList
         newsTableView.reloadData()
     }
     
     func showErrorMessage(message: String) {
+        refreshControl.endRefreshing()
         ProgressView.shared.hide()
         MyAlertView.shared.showWithTitle(title: message, message: nil)
     }

@@ -43,6 +43,26 @@ class NewsListViewTests: XCTestCase {
         XCTAssertTrue(ProgressView.shared.isShown(), "ProgressView should be shown.")
     }
     
+    func testRefreshControlForNewsTableViewNotNil() {
+        if #available(iOS 10.0, *) {
+            XCTAssertNotNil(view.newsTableView.refreshControl, "RefreshControl should be set.")
+        } else {
+            XCTAssertEqual(view.refreshControl.superview, view.newsTableView, "RefreshControl should be set.")
+        }
+    }
+    
+    func testRefreshControlStatusLoading() {
+        view.refreshControl.endRefreshing()
+        view.refreshControl.beginRefreshing()
+        XCTAssertTrue(view.refreshControl.isRefreshing, "RefreshControl should be loading.")
+    }
+    
+    func testRefreshControlStatusEnded() {
+        view.refreshControl.beginRefreshing()
+        view.refreshControl.endRefreshing()
+        XCTAssertFalse(view.refreshControl.isRefreshing, "RefreshControl should be ended.")
+    }
+    
     func testProgressViewIsHiddenAfterReceiveDataFromPresentorSuccessful() {
         view.updateNewsTableView(newsList: [News]())
         XCTAssertFalse(ProgressView.shared.isShown(), "ProgressView should be hidden.")
@@ -113,6 +133,21 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, news.title, "Title label should be set.")
         XCTAssertEqual(cell.creatorLabel.text, news.creator, "Creator label should be set.")
         XCTAssertEqual(cell.dateTimeLabel.text, news.pubDate, "DateTime label should be set.")
+    }
+    
+    func testRefreshControlStatusWhenReceivedDataFromPresentorSuccess() {
+        view.refreshControl.beginRefreshing()
+        
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        
+        XCTAssertFalse(view.refreshControl.isRefreshing, "RefreshControl should be ended.")
+    }
+    
+    func testRefreshControlStatusWhenReceivedDataFromPresentorFail() {
+        view.refreshControl.beginRefreshing()
+        view.showErrorMessage(message: "")
+        XCTAssertFalse(view.refreshControl.isRefreshing, "RefreshControl should be ended.")
     }
     
     override func tearDown() {
