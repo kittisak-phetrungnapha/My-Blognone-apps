@@ -28,6 +28,7 @@ class NewsListViewController: UIViewController {
         newsTableView.register(UINib(nibName: NewsListTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: NewsListTableViewCell.identifier)
         newsTableView.estimatedRowHeight = 100
         newsTableView.rowHeight = UITableViewAutomaticDimension
+        newsTableView.isHidden = true
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(requestNewsFeedData), for: UIControlEvents.valueChanged)
@@ -63,6 +64,7 @@ extension NewsListViewController: NewsListViewProtocol {
         ProgressView.shared.hide()
         
         self.newsList = newsList
+        newsTableView.isHidden = false
         newsTableView.reloadData()
     }
     
@@ -70,6 +72,7 @@ extension NewsListViewController: NewsListViewProtocol {
         refreshControl.endRefreshing()
         ProgressView.shared.hide()
         MyAlertView.shared.showWithTitle(title: message, message: nil)
+        newsTableView.isHidden = false
     }
     
 }

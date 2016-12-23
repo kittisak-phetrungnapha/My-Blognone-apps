@@ -44,6 +44,21 @@ class NewsListViewTests: XCTestCase {
         XCTAssertNotNil(view.newsTableView, "NewsTableView should not be nil.")
     }
     
+    func testNewsTableViewIsHiddenAtInitialState() {
+        XCTAssertTrue(view.newsTableView.isHidden, "NewsTableView should be hidden at the initial state.")
+    }
+    
+    func testNewsTableViewIsShownWhenUpdateNewsTableViewIsCalled() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        XCTAssertFalse(view.newsTableView.isHidden, "NewsTableView should be shown.")
+    }
+    
+    func testNewsTableViewIsShownWhenShowErrorMessageIsCalled() {
+        view.showErrorMessage(message: "")
+        XCTAssertFalse(view.newsTableView.isHidden, "NewsTableView should be shown.")
+    }
+    
     func testTableFooterViewForNewsTableView() {
         XCTAssertEqual(view.newsTableView.tableFooterView?.frame, CGRect(x: 0, y: 0, width: 375, height: 0), "TableFooterView's frame for newsTableView shoul be zero (except width).")
     }
