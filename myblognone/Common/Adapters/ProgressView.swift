@@ -16,6 +16,8 @@ class ProgressView: NSObject {
     
     private override init() {
         indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        indicator.transform = transform
         indicator.startAnimating()
     }
     

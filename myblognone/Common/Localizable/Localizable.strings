@@ -10,8 +10,9 @@
 "app_name_text" = "My Blognone";
 
 // Error message
-"unknown_error_text" = "Wroops, something went wrong. Please try again later.";
-"parse_xml_data_error_text" = "Wroop, parse data fail. Please try again later.";
+"whoop_title_error_text" = "Wroops";
+"unknown_error_text" = "Something went wrong. Please try again later.";
+"parse_xml_data_error_text" = "Parse data fail. Please try again later.";
 
 // News list
 "last_update_time_text" = "Last update: %@";

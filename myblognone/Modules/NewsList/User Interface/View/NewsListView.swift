@@ -71,7 +71,7 @@ extension NewsListViewController: NewsListViewProtocol {
     func showErrorMessage(message: String) {
         refreshControl.endRefreshing()
         ProgressView.shared.hide()
-        MyAlertView.shared.showWithTitle(title: message, message: nil)
+        MyAlertView.shared.showWithTitle(title: NSLocalizedString("whoop_title_error_text", comment: ""), message: message)
         newsTableView.isHidden = false
     }
     
