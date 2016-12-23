@@ -22,6 +22,7 @@ class NewsListViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("app_name_text", comment: "")
+        navigationController?.hidesBarsOnSwipe = true
         
         newsTableView.tableFooterView = UIView(frame: .zero)
         newsTableView.register(UINib(nibName: NewsListTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: NewsListTableViewCell.identifier)

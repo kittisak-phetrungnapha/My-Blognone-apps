@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jSg-0h-0Hr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jSg-0h-0Hr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,8 +46,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vWX-2q-u3E" firstAttribute="leading" secondItem="kRW-nl-Pns" secondAttribute="leading" id="317-JC-T5r"/>
+                            <constraint firstItem="vWX-2q-u3E" firstAttribute="top" secondItem="kRW-nl-Pns" secondAttribute="top" id="5xS-ib-kgP"/>
                             <constraint firstAttribute="trailing" secondItem="vWX-2q-u3E" secondAttribute="trailing" id="O63-uA-Zmb"/>
-                            <constraint firstItem="vWX-2q-u3E" firstAttribute="top" secondItem="kRW-nl-Pns" secondAttribute="top" id="ewj-Yz-Wj6"/>
                             <constraint firstItem="3gu-WH-2SH" firstAttribute="top" secondItem="vWX-2q-u3E" secondAttribute="bottom" id="qZm-kQ-Yu8"/>
                         </constraints>
                     </view>
@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFB-VC-npl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="-173"/>
+            <point key="canvasLocation" x="-298.39999999999998" y="-173.16341829085459"/>
         </scene>
     </scenes>
 </document>

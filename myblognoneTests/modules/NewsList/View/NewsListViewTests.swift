@@ -18,13 +18,26 @@ class NewsListViewTests: XCTestCase {
         super.setUp()
         
         view = UIStoryboard(name: "NewsList", bundle: Bundle.main).instantiateViewController(withIdentifier: NewsListWireFrame.NewsListViewControllerIdentifier) as! NewsListViewController
+        let _ = UINavigationController(rootViewController: view)
         mockPresenter = MockNewsListPresenter()
         view.presenter = mockPresenter
         let _ = view.view
     }
     
+    override func tearDown() {
+        view.removeFromParentViewController()
+        view = nil
+        mockPresenter = nil
+        
+        super.tearDown()
+    }
+    
     func testTitleForView() {
         XCTAssertEqual(view.title, NSLocalizedString("app_name_text", comment: ""), "Title should be \(NSLocalizedString("app_name_text", comment: "")).")
+    }
+    
+    func testNavigationControllerHidesBarsOnSwipeIsSet() {
+        XCTAssertTrue((view.navigationController?.hidesBarsOnSwipe)!, "Navigation bar should be hidden when it is scrolled up.")
     }
     
     func testNewsTableViewIsNotNil() {
@@ -154,13 +167,6 @@ class NewsListViewTests: XCTestCase {
         let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
         view.updateNewsTableView(newsList: [news])
         XCTAssertNotNil(view.refreshControl.attributedTitle, "Refresh date time should be set.")
-    }
-    
-    override func tearDown() {
-        view = nil
-        mockPresenter = nil
-        
-        super.tearDown()
     }
 
 }
