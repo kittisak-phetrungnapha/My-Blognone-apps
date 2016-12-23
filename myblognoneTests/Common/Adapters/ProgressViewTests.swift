@@ -25,12 +25,12 @@ class ProgressViewTests: XCTestCase {
     
     func testShowProgressView() {
         progressView.hide()
-        progressView.show()
+        progressView.show(in: UIView())
         XCTAssertTrue(progressView.isShown(), "ProgressView should be shown.")
     }
     
     func testHideProgressView() {
-        progressView.show()
+        progressView.show(in: UIView())
         progressView.hide()
         XCTAssertFalse(progressView.isShown(), "ProgressView should be hidden.")
     }

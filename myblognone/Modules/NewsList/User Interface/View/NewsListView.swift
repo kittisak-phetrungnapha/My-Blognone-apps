@@ -37,7 +37,7 @@ class NewsListViewController: UIViewController {
             newsTableView.addSubview(refreshControl)
         }
     
-        ProgressView.shared.show()
+        ProgressView.shared.show(in: view)
         requestNewsFeedData()
     }
     

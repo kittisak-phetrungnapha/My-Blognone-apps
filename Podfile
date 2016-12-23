@@ -7,7 +7,6 @@ target 'myblognone' do
   pod 'Fabric'
   pod 'AEXML'
   pod 'RKDropdownAlert'
-  pod 'SVProgressHUD'
 
   #target 'myblognoneTests' do
    # inherit! :search_paths

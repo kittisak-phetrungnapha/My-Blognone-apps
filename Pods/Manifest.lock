@@ -4,22 +4,19 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - RKDropdownAlert (0.3.0)
-  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - AEXML
   - Crashlytics
   - Fabric
   - RKDropdownAlert
-  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AEXML: 905e50474c0a261d335aa8be4ee32d22d69b6fd5
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: e0f37cbf40c1e435d641a428c361a50ff3244e90
+PODFILE CHECKSUM: 3ddfbe7421bd708677dbec924189db68ce8f079d
 
 COCOAPODS: 1.2.0.beta.1

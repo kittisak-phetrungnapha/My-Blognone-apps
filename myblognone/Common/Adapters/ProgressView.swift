@@ -7,22 +7,26 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class ProgressView: NSObject {
 
     static let shared = ProgressView()
     private var shown = false
+    private var indicator: UIActivityIndicatorView!
     
-    private override init() {}
+    private override init() {
+        indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        indicator.startAnimating()
+    }
     
-    func show() {
-        SVProgressHUD.show()
+    func show(in view: UIView!) {
+        indicator.center = view.center
+        view.addSubview(indicator)
         shown = true
     }
     
     func hide() {
-        SVProgressHUD.dismiss()
+        indicator.removeFromSuperview()
         shown = false
     }
     
