@@ -36,6 +36,10 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(view.title, NSLocalizedString("app_name_text", comment: ""), "Title should be \(NSLocalizedString("app_name_text", comment: "")).")
     }
     
+    func testAddedAboutInfoNavigationItemAtRight() {
+        XCTAssertNotNil(view.navigationItem.rightBarButtonItem, "About info right nav button should be added.")
+    }
+    
     func testNavigationControllerHidesBarsOnSwipeIsSet() {
         XCTAssertTrue((view.navigationController?.hidesBarsOnSwipe)!, "Navigation bar should be hidden when it is scrolled up.")
     }
