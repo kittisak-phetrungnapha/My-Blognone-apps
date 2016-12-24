@@ -24,6 +24,19 @@ class NewsListWireFrameTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSetNewsListInterfaceToWindow() {
+        // Given
+        let window = UIWindow()
+        let nav = UINavigationController()
+        window.rootViewController = nav
+        
+        // When
+        NewsListWireFrame.setNewsListInterface(to: window)
+        
+        // Then
+        XCTAssertTrue(nav.viewControllers[0] is NewsListViewController, "NewsListViewController should be existed.")
+    }
+    
     func testPushToNewsDetailInterfaceWithInvalidLink() {
         // Given
         let news = News(title: nil, link: "", detail: nil, pubDate: nil, creator: nil)
