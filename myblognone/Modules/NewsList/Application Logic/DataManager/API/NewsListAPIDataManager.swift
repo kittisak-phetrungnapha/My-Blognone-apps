@@ -18,7 +18,7 @@ class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
         var request = URLRequest(url: URL(string: NEWS_FEED_API)!)
         request.httpMethod = "GET"
-        request.timeoutInterval = 10
+        request.timeoutInterval = 15
         
         URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
@@ -57,11 +57,11 @@ class NewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
                 for item in items {
                     let title = item["title"].value
                     let link = item["link"].value
-                    let detail = item["description"].value
+//                    let detail = item["description"].value
                     let pubDate = item["pubDate"].value
                     let creator = item["dc:creator"].value
                     
-                    let news = News(title: title, link: link, detail: detail, pubDate: pubDate, creator: creator)
+                    let news = News(title: title, link: link, detail: "", pubDate: pubDate, creator: creator)
                     newsFeedList.append(news)
                 }
                 

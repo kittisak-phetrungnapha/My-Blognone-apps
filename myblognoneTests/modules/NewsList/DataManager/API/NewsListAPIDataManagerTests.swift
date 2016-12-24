@@ -27,7 +27,7 @@ class NewsListAPIDataManagerTests: XCTestCase {
             asyncExpectation.fulfill()
         })
         
-        waitForExpectations(timeout: 10, handler: { error in
+        waitForExpectations(timeout: 15, handler: { error in
             XCTAssertNil(error, "Something went horribly wrong.")
             XCTAssertNil(errorMsg, "Error message should be nil.")
             XCTAssertNotNil(newsFeedList, "News feed list shoud not be nil.")

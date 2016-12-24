@@ -17,7 +17,6 @@
 		EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EF1E0ACEC1004C690A /* NewsListTableViewCell.swift */; };
 		EE36F1F21E0ACEC1004C690A /* NewsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */; };
 		EE36F2011E0C17B2004C690A /* MyDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */; };
-		EE36F2021E0C17B2004C690A /* MyStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F2001E0C17B2004C690A /* MyStringExtension.swift */; };
 		EE36F2041E0C17DF004C690A /* MyDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */; };
 		EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */; };
 		EE5D15C31E063C6E004F5605 /* NewsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */; };
@@ -64,7 +63,6 @@
 		EE36F1EF1E0ACEC1004C690A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsListTableViewCell.xib; sourceTree = "<group>"; };
 		EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateExtension.swift; sourceTree = "<group>"; };
-		EE36F2001E0C17B2004C690A /* MyStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStringExtension.swift; sourceTree = "<group>"; };
 		EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateExtensionTests.swift; sourceTree = "<group>"; };
 		EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManager.swift; sourceTree = "<group>"; };
 		EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractor.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */,
-				EE36F2001E0C17B2004C690A /* MyStringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -587,7 +584,6 @@
 				EE36F2011E0C17B2004C690A /* MyDateExtension.swift in Sources */,
 				EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */,
 				EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */,
-				EE36F2021E0C17B2004C690A /* MyStringExtension.swift in Sources */,
 				EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */,
 				EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */,
 				EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */,
@@ -733,7 +729,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = myblognone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csnu17top.myblognone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -747,7 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = myblognone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csnu17top.myblognone;
 				PRODUCT_NAME = "$(TARGET_NAME)";

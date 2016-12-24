@@ -42,6 +42,15 @@ class NewsListViewController: UIViewController {
         requestNewsFeedData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let selectionIndexPath = newsTableView.indexPathForSelectedRow {
+            newsTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
+    }
+    
+    // MARK: -
+    
     func requestNewsFeedData() {
         presenter?.didRequestNewsFeedData()
     }

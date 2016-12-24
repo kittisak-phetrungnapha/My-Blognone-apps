@@ -7,9 +7,49 @@
 //
 
 import XCTest
+import SafariServices
+@testable import myblognone
 
 class NewsListWireFrameTests: XCTestCase {
     
+    private var wireframe: NewsListWireFrame!
     
+    override func setUp() {
+        super.setUp()
+        wireframe = NewsListWireFrame()
+    }
+    
+    override func tearDown() {
+        wireframe = nil
+        super.tearDown()
+    }
+    
+    func testPushToNewsDetailInterfaceWithInvalidLink() {
+        // Given
+        let news = News(title: nil, link: "", detail: nil, pubDate: nil, creator: nil)
+        let view = UIViewController()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = view
+        
+        // When
+        wireframe.pushToNewsDetailInterface(news: news, viewController: view)
+        
+        // Then
+        XCTAssertNil(view.presentedViewController, "PresentedViewController should be nil.")
+    }
+
+    func testPushToNewsDetailInterfaceWithValidLink() {
+        // Given
+        let news = News(title: nil, link: "https://www.facebook.com/", detail: nil, pubDate: nil, creator: nil)
+        let view = UIViewController()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = view
+        
+        // When
+        wireframe.pushToNewsDetailInterface(news: news, viewController: view)
+        
+        // Then
+        XCTAssertTrue(view.presentedViewController is SFSafariViewController, "Presented view should be SFSafariViewController.")
+    }
     
 }

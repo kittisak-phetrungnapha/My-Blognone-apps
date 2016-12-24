@@ -46,7 +46,7 @@ class NewsListPresenterTest: XCTestCase {
     
     func testPushToNewsDetailInterface() {
         let news = News(title: "", link: "", detail: "", pubDate: "", creator: "")
-        presenter.wireFrame?.pushToNewsDetailInterface(news: news)
+        presenter.wireFrame?.pushToNewsDetailInterface(news: news, viewController: mockView)
         XCTAssertNotNil(mockWireframe.news, "News should not be nil.")
     }
     
@@ -89,7 +89,7 @@ private class MockWireframe: NewsListWireFrameProtocol {
         
     }
     
-    func pushToNewsDetailInterface(news: News) {
+    func pushToNewsDetailInterface(news: News, viewController: AnyObject?) {
         self.news = news
     }
     

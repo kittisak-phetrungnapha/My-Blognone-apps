@@ -20,7 +20,12 @@ class NewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProt
     }
     
     func didRequestNewsDetail(news: News) {
-        wireFrame?.pushToNewsDetailInterface(news: news)
+        guard let _ = URL(string: news.link) else {
+            view?.showErrorMessage(message: NSLocalizedString("invalid_news_link_error_text", comment: ""))
+            return
+        }
+        
+        wireFrame?.pushToNewsDetailInterface(news: news, viewController: view)
     }
     
     // MARK: - NewsListInteractorOutputProtocol

@@ -12,7 +12,8 @@
 // Error message
 "whoop_title_error_text" = "Wroops";
 "unknown_error_text" = "Something went wrong. Pull a screen down to refresh the data.";
-"parse_xml_data_error_text" = "Parse data fail. Pull a screen down to refresh the data";
+"parse_xml_data_error_text" = "Parse data fail. Pull a screen down to refresh the data.";
+"invalid_news_link_error_text" = "Can not open a news detail page cause of invalid news link.";
 
 // News list
 "last_update_time_text" = "Last update: %@";

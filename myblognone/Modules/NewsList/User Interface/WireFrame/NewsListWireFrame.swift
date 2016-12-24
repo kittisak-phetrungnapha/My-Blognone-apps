@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class NewsListWireFrame: NewsListWireFrameProtocol {
     
@@ -39,8 +40,18 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
         }
     }
     
-    func pushToNewsDetailInterface(news: News) {
+    func pushToNewsDetailInterface(news: News, viewController: AnyObject?) {
+        guard let view = viewController as? UIViewController, let url = URL(string: news.link)
+            else {
+                return
+        }
         
+        let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        if #available(iOS 10.0, *) {
+            svc.preferredBarTintColor = UIColor.blue
+            svc.preferredControlTintColor = UIColor.white
+        }
+        view.present(svc, animated: true, completion: nil)
     }
     
 }
