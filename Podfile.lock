@@ -1,22 +1,33 @@
 PODS:
   - AEXML (4.0.1)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
+  - FBSDKCoreKit (4.18.0):
+    - Bolts (~> 1.7)
   - RKDropdownAlert (0.3.0)
 
 DEPENDENCIES:
   - AEXML
   - Crashlytics
   - Fabric
+  - FBSDKCoreKit
   - RKDropdownAlert
 
 SPEC CHECKSUMS:
   AEXML: 905e50474c0a261d335aa8be4ee32d22d69b6fd5
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
 
-PODFILE CHECKSUM: 3ddfbe7421bd708677dbec924189db68ce8f079d
+PODFILE CHECKSUM: 712e76b62e8d0c8f1780a513d9f6c9eae7e35b43
 
 COCOAPODS: 1.2.0.beta.1

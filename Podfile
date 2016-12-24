@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'myblognone' do
   use_frameworks!
@@ -7,6 +7,7 @@ target 'myblognone' do
   pod 'Fabric'
   pod 'AEXML'
   pod 'RKDropdownAlert'
+  pod 'FBSDKCoreKit'
 
   #target 'myblognoneTests' do
    # inherit! :search_paths

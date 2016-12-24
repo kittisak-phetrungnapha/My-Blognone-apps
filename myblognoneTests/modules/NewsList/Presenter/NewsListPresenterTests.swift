@@ -44,11 +44,19 @@ class NewsListPresenterTest: XCTestCase {
         XCTAssertTrue(mockInteractor.verifyPerformGetNewsFeedTask, "PerformGetNewsFeedTask should be called.")
     }
     
-    func testPushToNewsDetailInterface() {
+    /*
+    func testPushToNewsDetailInterfaceWithInvalidLink() {
         let news = News(title: "", link: "", detail: "", pubDate: "", creator: "")
         presenter.wireFrame?.pushToNewsDetailInterface(news: news, viewController: mockView)
-        XCTAssertNotNil(mockWireframe.news, "News should not be nil.")
+        XCTAssertNil(mockView.message, "Error message should be \"\(NSLocalizedString("invalid_news_link_error_text", comment: ""))\".")
     }
+    
+    func testPushToNewsDetailInterfaceWithValidLink() {
+        let news = News(title: "", link: "https://www.facebook.com/", detail: "", pubDate: "", creator: "")
+        presenter.wireFrame?.pushToNewsDetailInterface(news: news, viewController: mockView)
+        XCTAssertEqual(mockView.newsList?.count, 2, "Mock news list should has 2 elements.")
+    }
+    */
     
     func testUpdateNewsTableView() {
         var newsList = [News]()
