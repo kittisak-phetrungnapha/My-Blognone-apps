@@ -11,8 +11,8 @@
 
 // Error message
 "whoop_title_error_text" = "Wroops";
-"unknown_error_text" = "Something went wrong. Please try again later.";
-"parse_xml_data_error_text" = "Parse data fail. Please try again later.";
+"unknown_error_text" = "Something went wrong. Pull a screen down to refresh the data.";
+"parse_xml_data_error_text" = "Parse data fail. Pull a screen down to refresh the data";
 
 // News list
 "last_update_time_text" = "Last update: %@";
