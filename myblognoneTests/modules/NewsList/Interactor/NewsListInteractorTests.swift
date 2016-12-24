@@ -68,6 +68,10 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
         
     }
     
+    func requestOpeningAboutPage() {
+        
+    }
+    
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
         switch newsFeedResult {
         case .success(_):

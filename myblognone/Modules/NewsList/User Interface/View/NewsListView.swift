@@ -23,7 +23,7 @@ class NewsListViewController: UIViewController {
         
         title = NSLocalizedString("app_name_text", comment: "")
         navigationController?.hidesBarsOnSwipe = true
-        let aboutInfoNavItem = UIBarButtonItem(image: #imageLiteral(resourceName: "about"), style: .plain, target: self, action: #selector(requestNewsFeedData))
+        let aboutInfoNavItem = UIBarButtonItem(image: #imageLiteral(resourceName: "about"), style: .plain, target: self, action: #selector(requestOpeningAboutPage))
         navigationItem.rightBarButtonItem = aboutInfoNavItem
         
         newsTableView.tableFooterView = UIView(frame: .zero)
@@ -55,6 +55,10 @@ class NewsListViewController: UIViewController {
     
     func requestNewsFeedData() {
         presenter?.didRequestNewsFeedData()
+    }
+    
+    func requestOpeningAboutPage() {
+        presenter?.requestOpeningAboutPage()
     }
     
     fileprivate func updatedLastUpdatedTime() {

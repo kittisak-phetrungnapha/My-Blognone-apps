@@ -35,6 +35,7 @@ protocol NewsListPresenterProtocol: class {
     */
     func didRequestNewsFeedData()
     func didRequestNewsDetail(news: News)
+    func requestOpeningAboutPage()
 }
 
 protocol NewsListInteractorOutputProtocol: class {

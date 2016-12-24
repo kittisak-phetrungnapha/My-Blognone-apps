@@ -187,6 +187,11 @@ class NewsListViewTests: XCTestCase {
         view.updateNewsTableView(newsList: [news])
         XCTAssertNotNil(view.refreshControl.attributedTitle, "Refresh date time should be set.")
     }
+    
+    func testRequestOpeningAboutPage() {
+        view.presenter?.requestOpeningAboutPage()
+        XCTAssertTrue(mockPresenter.isRequestOpeningAboutPage, "RequestOpeningAboutPage should be called.")
+    }
 
 }
 
@@ -198,6 +203,7 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
     
     var isRequestedNewsFeedData = false
     var news: News?
+    var isRequestOpeningAboutPage = false
     
     func didRequestNewsFeedData() {
         isRequestedNewsFeedData = true
@@ -205,6 +211,10 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
     
     func didRequestNewsDetail(news: News) {
         self.news = news
+    }
+    
+    func requestOpeningAboutPage() {
+        self.isRequestOpeningAboutPage = true
     }
     
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
