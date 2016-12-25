@@ -47,4 +47,20 @@ extension UIFont {
         return UIFont(name: MyFont.SFUITextLight.rawValue, size: 14) ?? defaultFont
     }
     
+    static func fontForVersionTitle() -> UIFont {
+        return UIFont(name: MyFont.SFUITextRegular.rawValue, size: 17) ?? defaultFont
+    }
+    
+    static func fontForVersionValue() -> UIFont {
+        return UIFont(name: MyFont.SFUITextRegular.rawValue, size: 17) ?? defaultFont
+    }
+    
+    static func fontForSendEmailFeedback() -> UIFont {
+        return UIFont(name: MyFont.SFUITextRegular.rawValue, size: 17) ?? defaultFont
+    }
+    
+    static func fontForRateApps() -> UIFont {
+        return UIFont(name: MyFont.SFUITextRegular.rawValue, size: 17) ?? defaultFont
+    }
+    
 }

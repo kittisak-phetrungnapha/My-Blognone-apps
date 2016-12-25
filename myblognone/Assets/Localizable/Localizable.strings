@@ -17,3 +17,6 @@
 
 // News list
 "last_update_time_text" = "Last update: %@";
+
+// About
+"about_title_text" = "About";

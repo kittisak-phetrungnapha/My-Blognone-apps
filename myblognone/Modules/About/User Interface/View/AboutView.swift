@@ -9,6 +9,26 @@
 import Foundation
 import UIKit
 
-class AboutViewController: UIViewController, AboutViewProtocol {
+class AboutViewController: UITableViewController, AboutViewProtocol {
     var presenter: AboutPresenterProtocol?
+    
+    @IBOutlet weak var versionTitleLabel: UILabel!
+    @IBOutlet weak var versionValueLabel: UILabel!
+    @IBOutlet weak var sendFeedbackTitleLabel: UILabel!
+    @IBOutlet weak var rateThisAppsLabel: UILabel!
+    
+    // MARK: - View controller
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = NSLocalizedString("about_title_text", comment: "")
+        
+        versionTitleLabel.font = UIFont.fontForVersionTitle()
+        versionValueLabel.font = UIFont.fontForVersionValue()
+        sendFeedbackTitleLabel.font = UIFont.fontForSendEmailFeedback()
+        rateThisAppsLabel.font = UIFont.fontForRateApps()
+        
+        versionValueLabel.textColor = UIColor.lightGray
+    }
 }

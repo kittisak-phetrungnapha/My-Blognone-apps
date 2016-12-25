@@ -52,6 +52,9 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
             svc.preferredBarTintColor = UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue) ?? UIColor.defaultNavigationBarColor()
             svc.preferredControlTintColor = UIColor.white
         }
+//        else {
+//            UIApplication.shared.statusBarStyle = .default
+//        }
         view.present(svc, animated: true, completion: nil)
     }
     

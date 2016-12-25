@@ -16,7 +16,7 @@ class NewsListViewController: UIViewController {
     fileprivate var newsList: [News]?
     var refreshControl: UIRefreshControl!
     
-    // MARK: - View controller's life cycle
+    // MARK: - View controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,8 @@ class NewsListViewController: UIViewController {
     
         ProgressView.shared.show(in: view)
         requestNewsFeedData()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

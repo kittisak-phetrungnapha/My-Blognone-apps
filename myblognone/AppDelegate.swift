@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupForceUpdate()
         setupNavigationBar()
+        setupStatusBar()
         
         NewsListWireFrame.setNewsListInterface(to: window ?? UIWindow(frame: UIScreen.main.bounds))
         return true
@@ -36,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+    }
+    
+    private func setupStatusBar() {
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     private func setupNavigationBar() {

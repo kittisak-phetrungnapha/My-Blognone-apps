@@ -17,7 +17,7 @@ class NewsListViewTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        view = UIStoryboard(name: "NewsList", bundle: Bundle.main).instantiateViewController(withIdentifier: NewsListWireFrame.NewsListViewControllerIdentifier) as! NewsListViewController
+        view = UIStoryboard(name: NewsListWireFrame.StoryboardIdentifier, bundle: Bundle.main).instantiateViewController(withIdentifier: NewsListWireFrame.NewsListViewControllerIdentifier) as! NewsListViewController
         let _ = UINavigationController(rootViewController: view)
         mockPresenter = MockNewsListPresenter()
         view.presenter = mockPresenter
