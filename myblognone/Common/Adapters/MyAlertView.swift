@@ -12,16 +12,17 @@ import RKDropdownAlert
 class MyAlertView: NSObject {
 
     static let shared = MyAlertView()
+    let displayTime = 3
     
     private override init() { }
     
     func showWithTitle(title: String, message: String?) {
         if let message = message {
-            RKDropdownAlert.title(title, message: message)
+            RKDropdownAlert.title(title, message: message, backgroundColor: UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue), textColor: UIColor.white, time: displayTime)
             return
         }
         
-        RKDropdownAlert.title(title)
+        RKDropdownAlert.title(title, backgroundColor: UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue), textColor: UIColor.white, time: displayTime)
     }
     
 }
