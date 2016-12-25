@@ -32,6 +32,8 @@ class NewsListViewController: UIViewController {
         newsTableView.isHidden = true
         
         refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue)
+        refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(requestNewsFeedData), for: UIControlEvents.valueChanged)
         if #available(iOS 10.0, *) {
             newsTableView.refreshControl = refreshControl
@@ -62,7 +64,10 @@ class NewsListViewController: UIViewController {
     
     fileprivate func updatedLastUpdatedTime() {
         let title = String(format: NSLocalizedString("last_update_time_text", comment: ""), Date().getStringWith(format: "MMM d, HH:mm"))
-        let attributedDict = [NSFontAttributeName: UIFont.fontFotLastUpdateTime()]
+        let attributedDict = [
+            NSFontAttributeName: UIFont.fontFotLastUpdateTime(),
+            NSForegroundColorAttributeName: UIColor.white
+        ]
         let attributedTitle = NSAttributedString(string: title, attributes: attributedDict)
         self.refreshControl.attributedTitle = attributedTitle;
     }

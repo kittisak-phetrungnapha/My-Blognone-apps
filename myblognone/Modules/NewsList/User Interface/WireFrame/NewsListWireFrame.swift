@@ -48,7 +48,7 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
         
         let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
         if #available(iOS 10.0, *) {
-            svc.preferredBarTintColor = UIColor.blue
+            svc.preferredBarTintColor = UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue) ?? UIColor.defaultNavigationBarColor()
             svc.preferredControlTintColor = UIColor.white
         }
         view.present(svc, animated: true, completion: nil)
