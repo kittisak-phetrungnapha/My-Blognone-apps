@@ -20,8 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        setupNavigationBar()
+        
         NewsListWireFrame.setNewsListInterface(to: window ?? UIWindow(frame: UIScreen.main.bounds))
         return true
+    }
+    
+    private func setupNavigationBar() {
+         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.fontForNavigationBarTitle()]
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

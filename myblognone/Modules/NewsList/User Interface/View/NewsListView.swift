@@ -63,7 +63,8 @@ class NewsListViewController: UIViewController {
     
     fileprivate func updatedLastUpdatedTime() {
         let title = String(format: NSLocalizedString("last_update_time_text", comment: ""), Date().getStringWith(format: "MMM d, HH:mm"))
-        let attributedTitle = NSAttributedString(string: title)
+        let attributedDict = [NSFontAttributeName: UIFont.fontFotLastUpdateTime()]
+        let attributedTitle = NSAttributedString(string: title, attributes: attributedDict)
         self.refreshControl.attributedTitle = attributedTitle;
     }
     

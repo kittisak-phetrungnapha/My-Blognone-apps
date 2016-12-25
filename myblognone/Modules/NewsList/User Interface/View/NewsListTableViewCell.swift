@@ -19,8 +19,9 @@ class NewsListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 21)
-        creatorLabel.font = UIFont.italicSystemFont(ofSize: 17)
+        titleLabel.font = UIFont.fontForNewsTitle()
+        creatorLabel.font = UIFont.fontForNewsCreator()
+        dateTimeLabel.font = UIFont.fontForNewsPubDate()
     }
     
     func setup(with news: News) {
