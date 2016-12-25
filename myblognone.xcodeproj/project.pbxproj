@@ -35,6 +35,8 @@
 		EE197D381E0EEFE600FCA9FA /* SF-UI-Text-Ultrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D211E0EEFE600FCA9FA /* SF-UI-Text-Ultrathin.otf */; };
 		EE197D391E0EEFE600FCA9FA /* SF-UI-Text-UltrathinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D221E0EEFE600FCA9FA /* SF-UI-Text-UltrathinItalic.otf */; };
 		EE197D3B1E0EF0FD00FCA9FA /* MyFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */; };
+		EE197D3D1E0F8FBF00FCA9FA /* MyColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */; };
+		EE197D3F1E0F94F900FCA9FA /* MyColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */; };
 		EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1E81E0ABBBB004C690A /* ProgressView.swift */; };
 		EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */; };
 		EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1ED1E0AC461004C690A /* MyAlertView.swift */; };
@@ -105,6 +107,8 @@
 		EE197D211E0EEFE600FCA9FA /* SF-UI-Text-Ultrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Ultrathin.otf"; sourceTree = "<group>"; };
 		EE197D221E0EEFE600FCA9FA /* SF-UI-Text-UltrathinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-UltrathinItalic.otf"; sourceTree = "<group>"; };
 		EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFontExtension.swift; sourceTree = "<group>"; };
+		EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtension.swift; sourceTree = "<group>"; };
+		EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtensionTests.swift; sourceTree = "<group>"; };
 		EE36F1E81E0ABBBB004C690A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		EE36F1ED1E0AC461004C690A /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */,
+				EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			children = (
 				EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */,
 				EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */,
+				EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */,
 				EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */,
 				EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */,
+				EE197D3D1E0F8FBF00FCA9FA /* MyColorExtension.swift in Sources */,
 				EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */,
 				EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */,
 			);
@@ -732,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE36F2041E0C17DF004C690A /* MyDateExtensionTests.swift in Sources */,
+				EE197D3F1E0F94F900FCA9FA /* MyColorExtensionTests.swift in Sources */,
 				EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */,
 				EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */,
 				EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */,

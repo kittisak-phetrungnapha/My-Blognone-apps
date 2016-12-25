@@ -40,10 +40,6 @@ class NewsListViewTests: XCTestCase {
         XCTAssertNotNil(view.navigationItem.rightBarButtonItem, "About info right nav button should be added.")
     }
     
-    func testNavigationControllerHidesBarsOnSwipeIsSet() {
-        XCTAssertTrue((view.navigationController?.hidesBarsOnSwipe)!, "Navigation bar should be hidden when it is scrolled up.")
-    }
-    
     func testNewsTableViewIsNotNil() {
         XCTAssertNotNil(view.newsTableView, "NewsTableView should not be nil.")
     }

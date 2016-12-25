@@ -22,7 +22,6 @@ class NewsListViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("app_name_text", comment: "")
-        navigationController?.hidesBarsOnSwipe = true
         let aboutInfoNavItem = UIBarButtonItem(image: #imageLiteral(resourceName: "about"), style: .plain, target: self, action: #selector(requestOpeningAboutPage))
         navigationItem.rightBarButtonItem = aboutInfoNavItem
         
