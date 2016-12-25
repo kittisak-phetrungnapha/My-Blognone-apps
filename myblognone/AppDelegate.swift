@@ -10,20 +10,32 @@ import UIKit
 import Fabric
 import Crashlytics
 import FBSDKCoreKit
+import ForceUpdateSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let iTunesID = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        setupForceUpdate()
         setupNavigationBar()
         
         NewsListWireFrame.setNewsListInterface(to: window ?? UIWindow(frame: UIScreen.main.bounds))
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+        FUSManager.sharedInstance().checkLatestAppStoreVersion()
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
     }
     
     private func setupNavigationBar() {
@@ -35,12 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
     }
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        FBSDKAppEvents.activateApp()
-    }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+    private func setupForceUpdate() {
+        FUSManager.sharedInstance().itunesId = iTunesID
+//        FUSManager.sharedInstance().debugMode = true
     }
 
 }

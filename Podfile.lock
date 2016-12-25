@@ -11,6 +11,7 @@ PODS:
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
+  - ForceUpdateSDK (1.0.4)
   - RKDropdownAlert (0.3.0)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - FBSDKCoreKit
+  - ForceUpdateSDK
   - RKDropdownAlert
 
 SPEC CHECKSUMS:
@@ -26,8 +28,9 @@ SPEC CHECKSUMS:
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  ForceUpdateSDK: a09a9f47ff055272d0eb549b08cfe85a723d890a
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
 
-PODFILE CHECKSUM: 712e76b62e8d0c8f1780a513d9f6c9eae7e35b43
+PODFILE CHECKSUM: 392cd312217f6d781a76f8d0d6f3402f4cd0d84f
 
 COCOAPODS: 1.2.0.beta.1

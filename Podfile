@@ -8,6 +8,7 @@ target 'myblognone' do
   pod 'AEXML'
   pod 'RKDropdownAlert'
   pod 'FBSDKCoreKit'
+  pod 'ForceUpdateSDK'
 
   #target 'myblognoneTests' do
    # inherit! :search_paths
