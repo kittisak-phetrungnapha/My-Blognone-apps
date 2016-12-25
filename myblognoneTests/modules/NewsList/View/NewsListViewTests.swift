@@ -129,6 +129,16 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(view.newsTableView.numberOfRows(inSection: 0), 0, "Number of rows should be 0.")
     }
     
+    func testSelectedBackgroundViewForNewsListCellIsSetByColorCorrectly() {
+        let news = News(title: nil, link: nil, detail: nil, pubDate: nil, creator: nil)
+        view.updateNewsTableView(newsList: [news])
+        
+        let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0))
+        
+        XCTAssertNotNil(cell?.selectedBackgroundView, "SelectedBackgroundView should be set.")
+        XCTAssertEqual(cell?.selectedBackgroundView?.backgroundColor, UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue), "SelectedBackgroundView's background color should be Blognone green.")
+    }
+    
     func testDidSelectNewsTableView() {
         // Given
         var newsList = [News]()

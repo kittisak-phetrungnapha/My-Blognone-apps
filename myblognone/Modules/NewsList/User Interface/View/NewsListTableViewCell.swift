@@ -22,6 +22,10 @@ class NewsListTableViewCell: UITableViewCell {
         titleLabel.font = UIFont.fontForNewsTitle()
         creatorLabel.font = UIFont.fontForNewsCreator()
         dateTimeLabel.font = UIFont.fontForNewsPubDate()
+        
+        let bgColorView = UIView(frame: frame)
+        bgColorView.backgroundColor = UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue)
+        selectedBackgroundView = bgColorView
     }
     
     func setup(with news: News) {
