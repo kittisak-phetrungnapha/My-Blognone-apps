@@ -8,7 +8,7 @@
 
 import XCTest
 
-class AddRouterTests: XCTestCase {
+class AboutWireframeTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

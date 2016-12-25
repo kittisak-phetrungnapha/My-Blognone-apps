@@ -8,7 +8,7 @@
 
 import XCTest
 
-class AddInteractorTests: XCTestCase {
+class AboutInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

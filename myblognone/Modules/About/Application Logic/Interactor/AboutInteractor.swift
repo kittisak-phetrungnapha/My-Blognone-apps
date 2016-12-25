@@ -11,8 +11,6 @@ import Foundation
 class AboutInteractor: AboutInteractorInputProtocol {
 
     weak var presenter: AboutInteractorOutputProtocol?
-    var APIDataManager: AboutAPIDataManagerInputProtocol?
     var localDatamanager: AboutLocalDataManagerInputProtocol?
-
-    init() {}
+    
 }

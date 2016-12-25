@@ -37,7 +37,6 @@
 		EE197D3B1E0EF0FD00FCA9FA /* MyFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */; };
 		EE197D3D1E0F8FBF00FCA9FA /* MyColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */; };
 		EE197D3F1E0F94F900FCA9FA /* MyColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */; };
-		EE197D581E0FBFD700FCA9FA /* AboutAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D4A1E0FBFD700FCA9FA /* AboutAPIDataManager.swift */; };
 		EE197D591E0FBFD700FCA9FA /* AboutLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D4C1E0FBFD700FCA9FA /* AboutLocalDataManager.swift */; };
 		EE197D5A1E0FBFD700FCA9FA /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D4E1E0FBFD700FCA9FA /* AboutInteractor.swift */; };
 		EE197D5B1E0FBFD700FCA9FA /* AboutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D501E0FBFD700FCA9FA /* AboutProtocols.swift */; };
@@ -49,6 +48,7 @@
 		EE197D6A1E0FBFF900FCA9FA /* AboutViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D651E0FBFF900FCA9FA /* AboutViewTests.swift */; };
 		EE197D6B1E0FBFF900FCA9FA /* AboutWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D671E0FBFF900FCA9FA /* AboutWireFrameTests.swift */; };
 		EE197D6D1E0FCEC800FCA9FA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE197D6C1E0FCEC800FCA9FA /* About.storyboard */; };
+		EE197D701E100B9200FCA9FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE197D6F1E100B9200FCA9FA /* Localizable.strings */; };
 		EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1E81E0ABBBB004C690A /* ProgressView.swift */; };
 		EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */; };
 		EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1ED1E0AC461004C690A /* MyAlertView.swift */; };
@@ -67,7 +67,6 @@
 		EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */; };
 		EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */; };
 		EE5D15FA1E0656DC004F5605 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15F91E0656DC004F5605 /* News.swift */; };
-		EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16001E0667F9004F5605 /* Localizable.strings */; };
 		EE5D16081E069EC8004F5605 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16071E069EC8004F5605 /* NewsList.storyboard */; };
 		EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */; };
 		EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA46F1E06ED8C00511637 /* NewsTests.swift */; };
@@ -120,7 +119,6 @@
 		EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFontExtension.swift; sourceTree = "<group>"; };
 		EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtension.swift; sourceTree = "<group>"; };
 		EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtensionTests.swift; sourceTree = "<group>"; };
-		EE197D4A1E0FBFD700FCA9FA /* AboutAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutAPIDataManager.swift; sourceTree = "<group>"; };
 		EE197D4C1E0FBFD700FCA9FA /* AboutLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutLocalDataManager.swift; sourceTree = "<group>"; };
 		EE197D4E1E0FBFD700FCA9FA /* AboutInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
 		EE197D501E0FBFD700FCA9FA /* AboutProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutProtocols.swift; sourceTree = "<group>"; };
@@ -132,6 +130,7 @@
 		EE197D651E0FBFF900FCA9FA /* AboutViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewTests.swift; sourceTree = "<group>"; };
 		EE197D671E0FBFF900FCA9FA /* AboutWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWireFrameTests.swift; sourceTree = "<group>"; };
 		EE197D6C1E0FCEC800FCA9FA /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		EE197D6F1E100B9200FCA9FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EE36F1E81E0ABBBB004C690A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		EE36F1ED1E0AC461004C690A /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 		EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewTests.swift; sourceTree = "<group>"; };
 		EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListWireFrameTests.swift; sourceTree = "<group>"; };
 		EE5D15F91E0656DC004F5605 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		EE5D16001E0667F9004F5605 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EE5D16071E069EC8004F5605 /* NewsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
 		EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManagerTests.swift; sourceTree = "<group>"; };
 		EE6CA46F1E06ED8C00511637 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
@@ -236,6 +234,7 @@
 		EE197D071E0EEFBA00FCA9FA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EE197D6E1E100B9200FCA9FA /* Localizable */,
 				EE0568461E0639A7008FABA6 /* Assets.xcassets */,
 				EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */,
 				EE05684B1E0639A7008FABA6 /* Info.plist */,
@@ -320,18 +319,9 @@
 		EE197D481E0FBFD700FCA9FA /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				EE197D491E0FBFD700FCA9FA /* API */,
 				EE197D4B1E0FBFD700FCA9FA /* Local */,
 			);
 			path = DataManager;
-			sourceTree = "<group>";
-		};
-		EE197D491E0FBFD700FCA9FA /* API */ = {
-			isa = PBXGroup;
-			children = (
-				EE197D4A1E0FBFD700FCA9FA /* AboutAPIDataManager.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		EE197D4B1E0FBFD700FCA9FA /* Local */ = {
@@ -435,6 +425,14 @@
 				EE197D671E0FBFF900FCA9FA /* AboutWireFrameTests.swift */,
 			);
 			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		EE197D6E1E100B9200FCA9FA /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EE197D6F1E100B9200FCA9FA /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		EE36F1E71E0ABB60004C690A /* Adapters */ = {
@@ -629,7 +627,6 @@
 			children = (
 				EE36F1FE1E0C17B2004C690A /* Extensions */,
 				EE36F1E71E0ABB60004C690A /* Adapters */,
-				EE5D15FF1E06679B004F5605 /* Localizable */,
 				EE5D15F81E06568A004F5605 /* Models */,
 			);
 			path = Common;
@@ -641,14 +638,6 @@
 				EE5D15F91E0656DC004F5605 /* News.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		EE5D15FF1E06679B004F5605 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				EE5D16001E0667F9004F5605 /* Localizable.strings */,
-			);
-			path = Localizable;
 			sourceTree = "<group>";
 		};
 		EE5D16021E069329004F5605 /* Common */ = {
@@ -782,7 +771,6 @@
 				EE197D351E0EEFE600FCA9FA /* SF-UI-Text-RegularItalic.otf in Resources */,
 				EE197D271E0EEFE600FCA9FA /* SF-UI-Display-Medium.otf in Resources */,
 				EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */,
-				EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */,
 				EE197D231E0EEFE600FCA9FA /* SF-UI-Display-Black.otf in Resources */,
 				EE197D331E0EEFE600FCA9FA /* SF-UI-Text-MediumItalic.otf in Resources */,
 				EE197D371E0EEFE600FCA9FA /* SF-UI-Text-SemiboldItalic.otf in Resources */,
@@ -796,6 +784,7 @@
 				EE197D381E0EEFE600FCA9FA /* SF-UI-Text-Ultrathin.otf in Resources */,
 				EE197D291E0EEFE600FCA9FA /* SF-UI-Display-Semibold.otf in Resources */,
 				EE197D391E0EEFE600FCA9FA /* SF-UI-Text-UltrathinItalic.otf in Resources */,
+				EE197D701E100B9200FCA9FA /* Localizable.strings in Resources */,
 				EE197D281E0EEFE600FCA9FA /* SF-UI-Display-Regular.otf in Resources */,
 				EE197D2B1E0EEFE600FCA9FA /* SF-UI-Display-Ultralight.otf in Resources */,
 				EE5D16081E069EC8004F5605 /* NewsList.storyboard in Resources */,
@@ -886,7 +875,6 @@
 				EE5D15C71E063C6E004F5605 /* NewsListWireFrame.swift in Sources */,
 				EE197D5D1E0FBFD700FCA9FA /* AboutView.swift in Sources */,
 				EE5D15FA1E0656DC004F5605 /* News.swift in Sources */,
-				EE197D581E0FBFD700FCA9FA /* AboutAPIDataManager.swift in Sources */,
 				EE197D5E1E0FBFD700FCA9FA /* AboutWireFrame.swift in Sources */,
 				EE5D15C61E063C6E004F5605 /* NewsListView.swift in Sources */,
 				EE5D15C51E063C6E004F5605 /* NewsListPresenter.swift in Sources */,

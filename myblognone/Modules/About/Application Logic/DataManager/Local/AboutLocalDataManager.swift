@@ -9,5 +9,5 @@
 import Foundation
 
 class AboutLocalDataManager: AboutLocalDataManagerInputProtocol {
-    init() {}
+    
 }

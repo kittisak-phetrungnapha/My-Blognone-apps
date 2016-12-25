@@ -21,7 +21,6 @@ class AboutWireFrame: AboutWireFrameProtocol {
         let aboutView = storyboard.instantiateViewController(withIdentifier: AboutViewControllerIdentifier) as! AboutViewController
         let presenter: AboutPresenterProtocol & AboutInteractorOutputProtocol = AboutPresenter()
         let interactor: AboutInteractorInputProtocol = AboutInteractor()
-        let APIDataManager: AboutAPIDataManagerInputProtocol = AboutAPIDataManager()
         let localDataManager: AboutLocalDataManagerInputProtocol = AboutLocalDataManager()
         let wireFrame: AboutWireFrameProtocol = AboutWireFrame()
         
@@ -31,7 +30,6 @@ class AboutWireFrame: AboutWireFrameProtocol {
         presenter.wireFrame = wireFrame
         presenter.interactor = interactor
         interactor.presenter = presenter
-        interactor.APIDataManager = APIDataManager
         interactor.localDatamanager = localDataManager
         
         // Push
