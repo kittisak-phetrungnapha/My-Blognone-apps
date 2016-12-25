@@ -54,7 +54,6 @@
 		EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15CD1E063C7B004F5605 /* NewsListPresenterTests.swift */; };
 		EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */; };
 		EE5D15D51E063C7B004F5605 /* NewsListWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */; };
-		EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */; };
 		EE5D15FA1E0656DC004F5605 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15F91E0656DC004F5605 /* News.swift */; };
 		EE5D16011E0667F9004F5605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16001E0667F9004F5605 /* Localizable.strings */; };
 		EE5D16081E069EC8004F5605 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D16071E069EC8004F5605 /* NewsList.storyboard */; };
@@ -78,9 +77,9 @@
 		7F55F3AE76E5D32384D11473 /* Pods-myblognone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myblognone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myblognone/Pods-myblognone.debug.xcconfig"; sourceTree = "<group>"; };
 		EE05683C1E0639A7008FABA6 /* myblognone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myblognone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE05683F1E0639A7008FABA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE0568461E0639A7008FABA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE0568461E0639A7008FABA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = myblognone/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		EE0568491E0639A7008FABA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EE05684B1E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE05684B1E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		EE0568501E0639A7008FABA6 /* myblognoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myblognoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0568561E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE197D0B1E0EEFE600FCA9FA /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
@@ -126,7 +125,6 @@
 		EE5D15CD1E063C7B004F5605 /* NewsListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListPresenterTests.swift; sourceTree = "<group>"; };
 		EE5D15CF1E063C7B004F5605 /* NewsListViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewTests.swift; sourceTree = "<group>"; };
 		EE5D15D11E063C7B004F5605 /* NewsListWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListWireFrameTests.swift; sourceTree = "<group>"; };
-		EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myblognoneTests.swift; sourceTree = "<group>"; };
 		EE5D15F91E0656DC004F5605 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		EE5D16001E0667F9004F5605 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EE5D16071E069EC8004F5605 /* NewsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
@@ -197,9 +195,6 @@
 				EE5D15F71E065674004F5605 /* Common */,
 				EE5D15AE1E063C6E004F5605 /* Modules */,
 				EE05683F1E0639A7008FABA6 /* AppDelegate.swift */,
-				EE0568461E0639A7008FABA6 /* Assets.xcassets */,
-				EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */,
-				EE05684B1E0639A7008FABA6 /* Info.plist */,
 			);
 			path = myblognone;
 			sourceTree = "<group>";
@@ -209,7 +204,6 @@
 			children = (
 				EE5D16021E069329004F5605 /* Common */,
 				EE5D15C81E063C7B004F5605 /* Modules */,
-				EE5D15D61E063DB6004F5605 /* myblognoneTests.swift */,
 				EE0568561E0639A7008FABA6 /* Info.plist */,
 			);
 			path = myblognoneTests;
@@ -218,6 +212,9 @@
 		EE197D071E0EEFBA00FCA9FA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EE0568461E0639A7008FABA6 /* Assets.xcassets */,
+				EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */,
+				EE05684B1E0639A7008FABA6 /* Info.plist */,
 				EE197D081E0EEFCC00FCA9FA /* Fonts */,
 			);
 			path = Assets;
@@ -744,7 +741,6 @@
 				EE5D15D41E063C7B004F5605 /* NewsListViewTests.swift in Sources */,
 				EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */,
 				EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */,
-				EE5D15D71E063DB6004F5605 /* myblognoneTests.swift in Sources */,
 				EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
@@ -768,6 +764,7 @@
 				EE0568491E0639A7008FABA6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
