@@ -28,8 +28,8 @@ class NewsListPresenter: NewsListPresenterProtocol, NewsListInteractorOutputProt
         wireFrame?.pushToNewsDetailInterface(news: news, viewController: view)
     }
     
-    func requestOpeningAboutPage() {
-        print(#function)
+    func requestOpeningAboutPage(fromView view: AnyObject) {
+        wireFrame?.pushToAboutInterface(fromView: view)
     }
     
     // MARK: - NewsListInteractorOutputProtocol

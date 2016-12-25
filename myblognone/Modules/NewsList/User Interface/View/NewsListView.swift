@@ -59,7 +59,9 @@ class NewsListViewController: UIViewController {
     }
     
     func requestOpeningAboutPage() {
-        presenter?.requestOpeningAboutPage()
+        if let nav = self.navigationController {
+            presenter?.requestOpeningAboutPage(fromView: nav)
+        }
     }
     
     fileprivate func updatedLastUpdatedTime() {

@@ -65,4 +65,10 @@ class NewsListWireFrameTests: XCTestCase {
         XCTAssertTrue(view.presentedViewController is SFSafariViewController, "Presented view should be SFSafariViewController.")
     }
     
+    func testPushToAboutInterface() {
+        let nav = UINavigationController()
+        AboutWireFrame.presentAboutModule(fromView: nav)
+        XCTAssertTrue(nav.visibleViewController is AboutViewController, "AboutViewController should be presented.")
+    }
+    
 }

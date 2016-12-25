@@ -56,6 +56,17 @@ class NewsListPresenterTest: XCTestCase {
         XCTAssertTrue(mockWireframe.willCallUpdateNewsTableView, "UpdateNewsTableView should be called.")
     }
     
+    func testPushToAboutInterface() {
+        // Given
+        let nav = UINavigationController()
+        
+        // When
+        presenter.wireFrame?.pushToAboutInterface(fromView: nav)
+        
+        // Then
+        XCTAssertTrue(mockWireframe.willCallPushToAboutInterface, "PushToAboutInterface should be called.")
+    }
+    
     func testUpdateNewsTableView() {
         var newsList = [News]()
         for _ in 0..<2 {
@@ -91,6 +102,7 @@ private class MockWireframe: NewsListWireFrameProtocol {
     
     var willCallUpdateNewsTableView = false
     var willCallShowErrorMessage = false
+    var willCallPushToAboutInterface = false
     
     static func setNewsListInterface(to window: AnyObject) {
         
@@ -103,6 +115,10 @@ private class MockWireframe: NewsListWireFrameProtocol {
         }
         
         willCallUpdateNewsTableView = true
+    }
+    
+    func pushToAboutInterface(fromView view: AnyObject) {
+        willCallPushToAboutInterface = true
     }
     
 }

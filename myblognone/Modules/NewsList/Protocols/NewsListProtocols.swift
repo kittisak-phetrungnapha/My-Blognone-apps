@@ -24,6 +24,7 @@ protocol NewsListWireFrameProtocol: class {
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
     func pushToNewsDetailInterface(news: News, viewController: AnyObject?)
+    func pushToAboutInterface(fromView view: AnyObject)
 }
 
 protocol NewsListPresenterProtocol: class {
@@ -35,7 +36,7 @@ protocol NewsListPresenterProtocol: class {
     */
     func didRequestNewsFeedData()
     func didRequestNewsDetail(news: News)
-    func requestOpeningAboutPage()
+    func requestOpeningAboutPage(fromView view: AnyObject)
 }
 
 protocol NewsListInteractorOutputProtocol: class {

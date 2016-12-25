@@ -13,11 +13,12 @@ import SafariServices
 class NewsListWireFrame: NewsListWireFrameProtocol {
     
     static let NewsListViewControllerIdentifier = "NewsListViewController"
+    static let StoryboardIdentifier = "NewsList"
     
     // MARK: - NewsListWireFrameProtocol
     
     class func setNewsListInterface(to window: AnyObject) {
-        let storyboard = UIStoryboard(name: "NewsList", bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: StoryboardIdentifier, bundle: Bundle.main)
         
         // Generating module components
         let view = storyboard.instantiateViewController(withIdentifier: NewsListViewControllerIdentifier) as! NewsListViewController
@@ -52,6 +53,10 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
             svc.preferredControlTintColor = UIColor.white
         }
         view.present(svc, animated: true, completion: nil)
+    }
+    
+    func pushToAboutInterface(fromView view: AnyObject) {
+        AboutWireFrame.presentAboutModule(fromView: view)
     }
     
 }

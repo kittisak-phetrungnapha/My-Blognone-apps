@@ -68,7 +68,7 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
         
     }
     
-    func requestOpeningAboutPage() {
+    func requestOpeningAboutPage(fromView view: AnyObject) {
         
     }
     
