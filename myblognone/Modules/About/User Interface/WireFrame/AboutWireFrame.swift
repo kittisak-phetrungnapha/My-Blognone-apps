@@ -22,6 +22,7 @@ class AboutWireFrame: AboutWireFrameProtocol {
         let presenter: AboutPresenterProtocol & AboutInteractorOutputProtocol = AboutPresenter()
         let interactor: AboutInteractorInputProtocol = AboutInteractor()
         let wireFrame: AboutWireFrameProtocol = AboutWireFrame()
+        let dataManager = AboutDataManager()
         
         // Connecting
         aboutView.presenter = presenter
@@ -29,6 +30,7 @@ class AboutWireFrame: AboutWireFrameProtocol {
         presenter.wireFrame = wireFrame
         presenter.interactor = interactor
         interactor.presenter = presenter
+        interactor.dataManager = dataManager
         
         // Push
         if let nav = view as? UINavigationController {

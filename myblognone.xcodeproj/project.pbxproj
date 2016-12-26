@@ -50,6 +50,8 @@
 		EE197D701E100B9200FCA9FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE197D6F1E100B9200FCA9FA /* Localizable.strings */; };
 		EE197D741E1142A500FCA9FA /* MyBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */; };
 		EE197D781E11433100FCA9FA /* MyBundleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */; };
+		EE197D7A1E1147D900FCA9FA /* AboutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D791E1147D900FCA9FA /* AboutDataManager.swift */; };
+		EE197D7E1E11487A00FCA9FA /* AboutDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D7D1E11487A00FCA9FA /* AboutDataManagerTests.swift */; };
 		EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1E81E0ABBBB004C690A /* ProgressView.swift */; };
 		EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */; };
 		EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1ED1E0AC461004C690A /* MyAlertView.swift */; };
@@ -133,6 +135,8 @@
 		EE197D6F1E100B9200FCA9FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBundleExtension.swift; sourceTree = "<group>"; };
 		EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBundleExtensionTests.swift; sourceTree = "<group>"; };
+		EE197D791E1147D900FCA9FA /* AboutDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDataManager.swift; sourceTree = "<group>"; };
+		EE197D7D1E11487A00FCA9FA /* AboutDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDataManagerTests.swift; sourceTree = "<group>"; };
 		EE36F1E81E0ABBBB004C690A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		EE36F1ED1E0AC461004C690A /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				EE197D4E1E0FBFD700FCA9FA /* AboutInteractor.swift */,
+				EE197D791E1147D900FCA9FA /* AboutDataManager.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				EE197D611E0FBFF900FCA9FA /* AboutInteractorTests.swift */,
+				EE197D7D1E11487A00FCA9FA /* AboutDataManagerTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 				EE5D15FA1E0656DC004F5605 /* News.swift in Sources */,
 				EE197D5E1E0FBFD700FCA9FA /* AboutWireFrame.swift in Sources */,
 				EE5D15C61E063C6E004F5605 /* NewsListView.swift in Sources */,
+				EE197D7A1E1147D900FCA9FA /* AboutDataManager.swift in Sources */,
 				EE5D15C51E063C6E004F5605 /* NewsListPresenter.swift in Sources */,
 				EE197D5C1E0FBFD700FCA9FA /* AboutPresenter.swift in Sources */,
 				EE36F2011E0C17B2004C690A /* MyDateExtension.swift in Sources */,
@@ -898,6 +905,7 @@
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE197D681E0FBFF900FCA9FA /* AboutInteractorTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
+				EE197D7E1E11487A00FCA9FA /* AboutDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
