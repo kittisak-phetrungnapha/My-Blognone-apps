@@ -21,7 +21,6 @@ class AboutWireFrame: AboutWireFrameProtocol {
         let aboutView = storyboard.instantiateViewController(withIdentifier: AboutViewControllerIdentifier) as! AboutViewController
         let presenter: AboutPresenterProtocol & AboutInteractorOutputProtocol = AboutPresenter()
         let interactor: AboutInteractorInputProtocol = AboutInteractor()
-        let localDataManager: AboutLocalDataManagerInputProtocol = AboutLocalDataManager()
         let wireFrame: AboutWireFrameProtocol = AboutWireFrame()
         
         // Connecting
@@ -30,7 +29,6 @@ class AboutWireFrame: AboutWireFrameProtocol {
         presenter.wireFrame = wireFrame
         presenter.interactor = interactor
         interactor.presenter = presenter
-        interactor.localDatamanager = localDataManager
         
         // Push
         if let nav = view as? UINavigationController {

@@ -37,7 +37,6 @@
 		EE197D3B1E0EF0FD00FCA9FA /* MyFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */; };
 		EE197D3D1E0F8FBF00FCA9FA /* MyColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */; };
 		EE197D3F1E0F94F900FCA9FA /* MyColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */; };
-		EE197D591E0FBFD700FCA9FA /* AboutLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D4C1E0FBFD700FCA9FA /* AboutLocalDataManager.swift */; };
 		EE197D5A1E0FBFD700FCA9FA /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D4E1E0FBFD700FCA9FA /* AboutInteractor.swift */; };
 		EE197D5B1E0FBFD700FCA9FA /* AboutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D501E0FBFD700FCA9FA /* AboutProtocols.swift */; };
 		EE197D5C1E0FBFD700FCA9FA /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D531E0FBFD700FCA9FA /* AboutPresenter.swift */; };
@@ -121,7 +120,6 @@
 		EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFontExtension.swift; sourceTree = "<group>"; };
 		EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtension.swift; sourceTree = "<group>"; };
 		EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColorExtensionTests.swift; sourceTree = "<group>"; };
-		EE197D4C1E0FBFD700FCA9FA /* AboutLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutLocalDataManager.swift; sourceTree = "<group>"; };
 		EE197D4E1E0FBFD700FCA9FA /* AboutInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
 		EE197D501E0FBFD700FCA9FA /* AboutProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutProtocols.swift; sourceTree = "<group>"; };
 		EE197D531E0FBFD700FCA9FA /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
@@ -314,26 +312,9 @@
 		EE197D471E0FBFD700FCA9FA /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				EE197D481E0FBFD700FCA9FA /* DataManager */,
 				EE197D4D1E0FBFD700FCA9FA /* Interactor */,
 			);
 			path = "Application Logic";
-			sourceTree = "<group>";
-		};
-		EE197D481E0FBFD700FCA9FA /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				EE197D4B1E0FBFD700FCA9FA /* Local */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
-		EE197D4B1E0FBFD700FCA9FA /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				EE197D4C1E0FBFD700FCA9FA /* AboutLocalDataManager.swift */,
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		EE197D4D1E0FBFD700FCA9FA /* Interactor */ = {
@@ -877,7 +858,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE5D15C31E063C6E004F5605 /* NewsListInteractor.swift in Sources */,
-				EE197D591E0FBFD700FCA9FA /* AboutLocalDataManager.swift in Sources */,
 				EE197D5A1E0FBFD700FCA9FA /* AboutInteractor.swift in Sources */,
 				EE5D15C71E063C6E004F5605 /* NewsListWireFrame.swift in Sources */,
 				EE197D5D1E0FBFD700FCA9FA /* AboutView.swift in Sources */,

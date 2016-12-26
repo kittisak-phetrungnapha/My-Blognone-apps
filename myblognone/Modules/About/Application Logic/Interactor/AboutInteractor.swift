@@ -11,6 +11,5 @@ import Foundation
 class AboutInteractor: AboutInteractorInputProtocol {
 
     weak var presenter: AboutInteractorOutputProtocol?
-    var localDatamanager: AboutLocalDataManagerInputProtocol?
     
 }

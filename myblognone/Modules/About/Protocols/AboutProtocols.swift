@@ -39,14 +39,7 @@ protocol AboutInteractorOutputProtocol: class {
 
 protocol AboutInteractorInputProtocol: class {
     var presenter: AboutInteractorOutputProtocol? { get set }
-    var localDatamanager: AboutLocalDataManagerInputProtocol? { get set }
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
-    */
-}
-
-protocol AboutLocalDataManagerInputProtocol: class {
-    /**
-    * Add here your methods for communication INTERACTOR -> LOCALDATAMANAGER
     */
 }
