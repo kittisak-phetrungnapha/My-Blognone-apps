@@ -49,6 +49,8 @@
 		EE197D6B1E0FBFF900FCA9FA /* AboutWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D671E0FBFF900FCA9FA /* AboutWireFrameTests.swift */; };
 		EE197D6D1E0FCEC800FCA9FA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE197D6C1E0FCEC800FCA9FA /* About.storyboard */; };
 		EE197D701E100B9200FCA9FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE197D6F1E100B9200FCA9FA /* Localizable.strings */; };
+		EE197D741E1142A500FCA9FA /* MyBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */; };
+		EE197D781E11433100FCA9FA /* MyBundleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */; };
 		EE36F1E91E0ABBBB004C690A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1E81E0ABBBB004C690A /* ProgressView.swift */; };
 		EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */; };
 		EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1ED1E0AC461004C690A /* MyAlertView.swift */; };
@@ -131,6 +133,8 @@
 		EE197D671E0FBFF900FCA9FA /* AboutWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWireFrameTests.swift; sourceTree = "<group>"; };
 		EE197D6C1E0FCEC800FCA9FA /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		EE197D6F1E100B9200FCA9FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBundleExtension.swift; sourceTree = "<group>"; };
+		EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBundleExtensionTests.swift; sourceTree = "<group>"; };
 		EE36F1E81E0ABBBB004C690A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		EE36F1EB1E0ABE15004C690A /* ProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		EE36F1ED1E0AC461004C690A /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 			children = (
 				EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */,
 				EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */,
+				EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */,
 				EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */,
 				EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */,
+				EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -883,6 +889,7 @@
 				EE36F2011E0C17B2004C690A /* MyDateExtension.swift in Sources */,
 				EE197D5B1E0FBFD700FCA9FA /* AboutProtocols.swift in Sources */,
 				EE197D3B1E0EF0FD00FCA9FA /* MyFontExtension.swift in Sources */,
+				EE197D741E1142A500FCA9FA /* MyBundleExtension.swift in Sources */,
 				EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */,
 				EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */,
 				EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */,
@@ -898,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE197D6B1E0FBFF900FCA9FA /* AboutWireFrameTests.swift in Sources */,
+				EE197D781E11433100FCA9FA /* MyBundleExtensionTests.swift in Sources */,
 				EE197D691E0FBFF900FCA9FA /* AboutPresenterTests.swift in Sources */,
 				EE36F2041E0C17DF004C690A /* MyDateExtensionTests.swift in Sources */,
 				EE197D3F1E0F94F900FCA9FA /* MyColorExtensionTests.swift in Sources */,
