@@ -47,7 +47,14 @@ class AboutInteractorTests: XCTestCase {
     }
  
     func testRequestVersionAndBuildNumber() {
+        // Given
+        let dataWillReturn = "1.0 (1)"
         
+        // When
+        interactor.requestVersionAndBuildNumber()
+        
+        // Then
+        XCTAssertEqual(mockPresentor.output, dataWillReturn, "Output to presentor should equal dataWillReturn.")
     }
     
 }
