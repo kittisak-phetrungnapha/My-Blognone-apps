@@ -18,11 +18,11 @@ class MyAlertView: NSObject {
     
     func showWithTitle(title: String, message: String?) {
         if let message = message {
-            RKDropdownAlert.title(title, message: message, backgroundColor: UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue), textColor: UIColor.white, time: displayTime)
+            RKDropdownAlert.title(title, message: message, backgroundColor: UIColor(hexString: UIColor.errorViewBackground), textColor: UIColor.white, time: displayTime)
             return
         }
         
-        RKDropdownAlert.title(title, backgroundColor: UIColor(hexString: UIColor.MyColor.navigationBarBackground.rawValue), textColor: UIColor.white, time: displayTime)
+        RKDropdownAlert.title(title, backgroundColor: UIColor(hexString: UIColor.errorViewBackground), textColor: UIColor.white, time: displayTime)
     }
     
 }

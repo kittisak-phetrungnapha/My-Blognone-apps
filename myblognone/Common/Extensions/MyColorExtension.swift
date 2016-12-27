@@ -11,10 +11,10 @@ import UIKit
 
 extension UIColor {
     
-    enum MyColor: String {
-        case navigationBarBackground = "#38649d"
-        case refreshViewBackground = "#569044"
-    }
+    static let navigationBarBackground = "#38649d"
+    static let refreshViewBackground = "#569044"
+    static let errorViewBackground = navigationBarBackground
+    static let hightLightNewsListCellBackground = refreshViewBackground
     
     static func defaultNavigationBarColor() -> UIColor {
         return UIColor(colorLiteralRed: (247/255), green: (247/255), blue: (247/255), alpha: 1)

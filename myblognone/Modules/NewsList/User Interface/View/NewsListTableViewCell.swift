@@ -24,7 +24,7 @@ class NewsListTableViewCell: UITableViewCell {
         dateTimeLabel.font = UIFont.fontForNewsPubDate()
         
         let bgColorView = UIView(frame: frame)
-        bgColorView.backgroundColor = UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue)
+        bgColorView.backgroundColor = UIColor(hexString: UIColor.hightLightNewsListCellBackground)
         selectedBackgroundView = bgColorView
     }
     

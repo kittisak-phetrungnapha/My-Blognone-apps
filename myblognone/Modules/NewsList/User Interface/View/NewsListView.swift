@@ -32,7 +32,7 @@ class NewsListViewController: UIViewController {
         newsTableView.isHidden = true
         
         refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue)
+        refreshControl.backgroundColor = UIColor(hexString: UIColor.refreshViewBackground)
         refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(requestNewsFeedData), for: UIControlEvents.valueChanged)
         if #available(iOS 10.0, *) {

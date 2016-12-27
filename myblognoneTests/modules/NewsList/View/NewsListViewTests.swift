@@ -136,7 +136,7 @@ class NewsListViewTests: XCTestCase {
         let cell = view.newsTableView.cellForRow(at: IndexPath(item: 0, section: 0))
         
         XCTAssertNotNil(cell?.selectedBackgroundView, "SelectedBackgroundView should be set.")
-        XCTAssertEqual(cell?.selectedBackgroundView?.backgroundColor, UIColor(hexString: UIColor.MyColor.refreshViewBackground.rawValue), "SelectedBackgroundView's background color should be Blognone green.")
+        XCTAssertEqual(cell?.selectedBackgroundView?.backgroundColor, UIColor(hexString: UIColor.hightLightNewsListCellBackground), "SelectedBackgroundView's background color should be Blognone green.")
     }
     
     func testDidSelectNewsTableView() {
