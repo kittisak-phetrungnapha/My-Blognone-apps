@@ -30,6 +30,8 @@ class AboutViewTests: XCTestCase {
         XCTAssertNotNil(view.versionValueLabel, "VersionValueLabel should not be nil.")
         XCTAssertNotNil(view.sendFeedbackTitleLabel, "SendFeedback should not be nil.")
         XCTAssertNotNil(view.rateThisAppsLabel, "RateThisAppsLabel should not be nil.")
+        XCTAssertNotNil(view.sendFeedbackCell, "SendFeedbackCell should not be nil.")
+        XCTAssertNotNil(view.rateCell, "RateCell should not be nil.")
     }
     
     func testTitleIsSet() {
@@ -38,6 +40,12 @@ class AboutViewTests: XCTestCase {
     
     func testTableViewIsGroupStyle() {
         XCTAssertEqual(view.tableView.style, .grouped, "TableView should be group style.")
+    }
+    
+    func testSelectedBackgroundViewForSendFeedbackAndRateAppsIsBlognoneGreen() {
+        XCTAssertEqual(view.sendFeedbackCell.selectedBackgroundView?.backgroundColor, UIColor(hexString: UIColor.highLightNewsListCellBackground), "SelectedBackgroundView should be green.")
+        
+        XCTAssertEqual(view.rateCell.selectedBackgroundView?.backgroundColor, UIColor(hexString: UIColor.highLightNewsListCellBackground), "SelectedBackgroundView should be green.")
     }
     
     func testTableViewWithCorrectSections() {

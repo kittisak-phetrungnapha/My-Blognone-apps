@@ -108,7 +108,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="rateCell" destination="yBa-lc-nwj" id="yIU-aQ-ku0"/>
                         <outlet property="rateThisAppsLabel" destination="p5R-t7-IPA" id="AVy-ec-10z"/>
+                        <outlet property="sendFeedbackCell" destination="oYz-Vn-1jP" id="dbH-sV-HkN"/>
                         <outlet property="sendFeedbackTitleLabel" destination="Ya8-WT-hGM" id="sAp-GR-bad"/>
                         <outlet property="versionTitleLabel" destination="K2U-gV-BCM" id="IPG-cz-dIS"/>
                         <outlet property="versionValueLabel" destination="deG-bW-bUM" id="lGl-gO-5gS"/>

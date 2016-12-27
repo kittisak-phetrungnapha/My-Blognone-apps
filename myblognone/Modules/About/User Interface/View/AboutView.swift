@@ -16,6 +16,8 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
     @IBOutlet weak var versionValueLabel: UILabel!
     @IBOutlet weak var sendFeedbackTitleLabel: UILabel!
     @IBOutlet weak var rateThisAppsLabel: UILabel!
+    @IBOutlet weak var sendFeedbackCell: UITableViewCell!
+    @IBOutlet weak var rateCell: UITableViewCell!
     
     // MARK: - View controller
     
@@ -28,8 +30,12 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
         versionValueLabel.font = UIFont.fontForVersionValue()
         sendFeedbackTitleLabel.font = UIFont.fontForSendEmailFeedback()
         rateThisAppsLabel.font = UIFont.fontForRateApps()
-        
         versionValueLabel.textColor = UIColor.lightGray
+        
+        let bgColorView = UIView(frame: sendFeedbackCell.frame)
+        bgColorView.backgroundColor = UIColor(hexString: UIColor.highLightNewsListCellBackground)
+        sendFeedbackCell.selectedBackgroundView = bgColorView
+        rateCell.selectedBackgroundView = bgColorView
         
         presenter?.didRequestVersionAndBuildNumber()
     }
