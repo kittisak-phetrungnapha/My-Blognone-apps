@@ -3,7 +3,7 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPhone_Notification_App_iOS7-9_20pt@2x.png",
+      "filename" : "iPhone_App_Notification_iOS7-9_20pt@2x.png",
       "scale" : "2x"
     },
     {
@@ -66,7 +66,7 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad_Notification_App_iOS7-9_20pt.png",
+      "filename" : "iPad_App_Notification_iOS7-9_20pt.png",
       "scale" : "1x"
     },
     {
