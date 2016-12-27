@@ -13,7 +13,11 @@ class AboutPresenter: AboutPresenterProtocol, AboutInteractorOutputProtocol {
     var interactor: AboutInteractorInputProtocol?
     var wireFrame: AboutWireFrameProtocol?
     
-    func didReceiveVersionAndBuildNumber(output: String) {
-        
+    func didRequestVersionAndBuildNumber() {
+        interactor?.requestVersionAndBuildNumber()
+    }
+    
+    func didReceiveVersionAndBuildNumber(input: String) {
+        view?.setupVersionAndBuildNumber(input: input)
     }
 }

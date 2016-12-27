@@ -7,33 +7,81 @@
 //
 
 import XCTest
+@testable import myblognone
 
 class AboutPresenterTest: XCTestCase {
-
+    
+    private var presenter: AboutPresenter!
+    private var mockView: MockViewController!
+    private var mockInteractor: MockInteractor!
+    private var mockWireframe: MockWireframe!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        presenter = AboutPresenter()
+        mockView = MockViewController()
+        mockInteractor = MockInteractor()
+        mockWireframe = MockWireframe()
+        
+        presenter.interactor = mockInteractor
+        presenter.view = mockView
+        presenter.wireFrame = mockWireframe
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        presenter = nil
+        mockView = nil
+        mockInteractor = nil
+        mockWireframe = nil
+        
         super.tearDown()
     }
-
-    /*
-    class MockInteractor: AboutInteractorInputProtocol {
-
+    
+    func testFoundVersionAndBuildNumber() {
+        // Given
+        let outputFromInteractor = "1.0 (1)"
+        
+        // When
+        presenter.didReceiveVersionAndBuildNumber(input: outputFromInteractor)
+        
+        // Then
+        XCTAssertEqual(mockView.versionValueLabel.text, outputFromInteractor, "VersionValueLabel should equal outputFromInteractor.")
     }
+    
+}
 
-    class MockWireframe: AboutWireFrameProtocol {
-
+private class MockInteractor: AboutInteractorInputProtocol {
+    
+    var presenter: AboutInteractorOutputProtocol?
+    var dataManager: AboutDataManagerInputProtocol?
+    
+    func requestVersionAndBuildNumber() {
+        
     }
+    
+}
 
-    class MockViewController: AboutViewProtocol {
-
-        func setupInitialState() {
-
-        }
+private class MockWireframe: AboutWireFrameProtocol {
+    
+    static func presentAboutModule(fromView view: AnyObject) {
+        
     }
-     */
+    
+}
+
+private class MockViewController: AboutViewProtocol {
+    
+    var presenter: AboutPresenterProtocol?
+    
+    var versionValueLabel: UILabel!
+    
+    init() {
+        versionValueLabel = UILabel()
+    }
+    
+    func setupVersionAndBuildNumber(input: String) {
+        versionValueLabel.text = input
+    }
+    
 }

@@ -30,5 +30,14 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
         rateThisAppsLabel.font = UIFont.fontForRateApps()
         
         versionValueLabel.textColor = UIColor.lightGray
+        
+        presenter?.didRequestVersionAndBuildNumber()
     }
+    
+    // MARK: - AboutViewProtocol
+    
+    func setupVersionAndBuildNumber(input: String) {
+        versionValueLabel.text = input
+    }
+    
 }

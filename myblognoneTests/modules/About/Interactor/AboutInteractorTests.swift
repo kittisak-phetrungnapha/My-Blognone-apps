@@ -54,7 +54,7 @@ class AboutInteractorTests: XCTestCase {
         interactor.requestVersionAndBuildNumber()
         
         // Then
-        XCTAssertEqual(mockPresentor.output, dataWillReturn, "Output to presentor should equal dataWillReturn.")
+        XCTAssertEqual(mockPresentor.input, dataWillReturn, "Output to presentor should equal dataWillReturn.")
     }
     
 }
@@ -64,10 +64,14 @@ private class MockPresenter: AboutPresenterProtocol, AboutInteractorOutputProtoc
     var interactor: AboutInteractorInputProtocol?
     var wireFrame: AboutWireFrameProtocol?
     
-    var output: String?
+    var input: String?
     
-    func didReceiveVersionAndBuildNumber(output: String) {
-        self.output = output
+    func didRequestVersionAndBuildNumber() {
+        
+    }
+    
+    func didReceiveVersionAndBuildNumber(input: String) {
+        self.input = input
     }
 }
 

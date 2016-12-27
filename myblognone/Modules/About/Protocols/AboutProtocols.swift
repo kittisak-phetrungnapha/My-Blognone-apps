@@ -13,6 +13,7 @@ protocol AboutViewProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
+    func setupVersionAndBuildNumber(input: String)
 }
 
 protocol AboutWireFrameProtocol: class {
@@ -29,13 +30,14 @@ protocol AboutPresenterProtocol: class {
     /**
     * Add here your methods for communication VIEW -> PRESENTER
     */
+    func didRequestVersionAndBuildNumber()
 }
 
 protocol AboutInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
-    func didReceiveVersionAndBuildNumber(output: String)
+    func didReceiveVersionAndBuildNumber(input: String)
 }
 
 protocol AboutInteractorInputProtocol: class {

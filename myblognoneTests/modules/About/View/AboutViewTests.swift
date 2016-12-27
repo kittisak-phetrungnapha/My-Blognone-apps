@@ -51,5 +51,11 @@ class AboutViewTests: XCTestCase {
     func testTableViewIsDisableScrolled() {
         XCTAssertFalse(view.tableView.isScrollEnabled, "TableView should not be scrollable.")
     }
+    
+    func testVersionValueLabelIsSet() {
+        let input = "1.0 (1)"
+        view.setupVersionAndBuildNumber(input: input)
+        XCTAssertEqual(view.versionValueLabel.text, input, "VersionValueLabel should equal 1.0 (1).")
+    }
 
 }

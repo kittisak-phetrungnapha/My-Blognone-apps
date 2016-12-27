@@ -17,7 +17,7 @@ class AboutInteractor: AboutInteractorInputProtocol {
         let versionNumber = dataManager?.getReleaseVersionNumber()
         let buildNumber = dataManager?.getBuildVersionNumber()
         let output = "\(versionNumber!) (\(buildNumber!))"
-        presenter?.didReceiveVersionAndBuildNumber(output: output)
+        presenter?.didReceiveVersionAndBuildNumber(input: output)
     }
     
 }
