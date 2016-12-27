@@ -12,4 +12,8 @@ class AboutPresenter: AboutPresenterProtocol, AboutInteractorOutputProtocol {
     weak var view: AboutViewProtocol?
     var interactor: AboutInteractorInputProtocol?
     var wireFrame: AboutWireFrameProtocol?
+    
+    func didReceiveVersionAndBuildNumber(output: String) {
+        
+    }
 }

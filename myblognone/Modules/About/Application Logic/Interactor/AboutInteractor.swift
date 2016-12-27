@@ -12,5 +12,9 @@ class AboutInteractor: AboutInteractorInputProtocol {
 
     weak var presenter: AboutInteractorOutputProtocol?
     var dataManager: AboutDataManagerInputProtocol?
+
+    func requestVersionAndBuildNumber() {
+        
+    }
     
 }

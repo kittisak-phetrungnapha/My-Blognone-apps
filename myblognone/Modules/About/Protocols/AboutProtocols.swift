@@ -35,6 +35,7 @@ protocol AboutInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
+    func didReceiveVersionAndBuildNumber(output: String)
 }
 
 protocol AboutInteractorInputProtocol: class {
@@ -43,10 +44,13 @@ protocol AboutInteractorInputProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
+    func requestVersionAndBuildNumber()
 }
 
 protocol AboutDataManagerInputProtocol: class {
     /**
      * Add here your methods for communication INTERACTOR -> DATAMANAGER
      */
+    func getReleaseVersionNumber() -> String
+    func getBuildVersionNumber() -> String
 }

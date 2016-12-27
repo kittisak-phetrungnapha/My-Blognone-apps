@@ -10,4 +10,12 @@ import Foundation
 
 class AboutDataManager: AboutDataManagerInputProtocol {
     
+    func getReleaseVersionNumber() -> String {
+        return Bundle.main.releaseVersionNumber ?? ""
+    }
+    
+    func getBuildVersionNumber() -> String {
+        return Bundle.main.buildVersionNumber ?? ""
+    }
+    
 }
