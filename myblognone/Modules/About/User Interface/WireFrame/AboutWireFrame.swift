@@ -14,6 +14,9 @@ class AboutWireFrame: AboutWireFrameProtocol {
     static let AboutViewControllerIdentifier = "AboutViewController"
     static let StoryboardIdentifier = "About"
     
+    private let emailForFeedback = "cs.sealsoul@gmail.com"    
+    private let appStoreUrl = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=971567952&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
+    
     static func presentAboutModule(fromView view: AnyObject) {
         let storyboard = UIStoryboard(name: StoryboardIdentifier, bundle: Bundle.main)
         
@@ -35,6 +38,26 @@ class AboutWireFrame: AboutWireFrameProtocol {
         // Push
         if let nav = view as? UINavigationController {
             nav.pushViewController(aboutView, animated: true)
+        }
+    }
+    
+    func openMailApp() {
+        guard let url = URL(string: "mailto:\(emailForFeedback)") else { return }
+        
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    func openAppStore() {
+        guard let url = URL(string: appStoreUrl) else { return }
+        
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
     }
     

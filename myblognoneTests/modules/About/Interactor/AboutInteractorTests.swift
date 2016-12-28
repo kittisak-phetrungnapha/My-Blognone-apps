@@ -73,6 +73,15 @@ private class MockPresenter: AboutPresenterProtocol, AboutInteractorOutputProtoc
     func didReceiveVersionAndBuildNumber(input: String) {
         self.input = input
     }
+    
+    func didRequestSendEmailFeedback() {
+        
+    }
+    
+    func didRequestRateThisApps() {
+        
+    }
+    
 }
 
 private class MockDataManager: AboutDataManagerInputProtocol {

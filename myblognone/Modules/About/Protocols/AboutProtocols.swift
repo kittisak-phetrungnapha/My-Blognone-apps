@@ -21,6 +21,8 @@ protocol AboutWireFrameProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
+    func openMailApp()
+    func openAppStore()
 }
 
 protocol AboutPresenterProtocol: class {
@@ -31,6 +33,8 @@ protocol AboutPresenterProtocol: class {
     * Add here your methods for communication VIEW -> PRESENTER
     */
     func didRequestVersionAndBuildNumber()
+    func didRequestSendEmailFeedback()
+    func didRequestRateThisApps()
 }
 
 protocol AboutInteractorOutputProtocol: class {

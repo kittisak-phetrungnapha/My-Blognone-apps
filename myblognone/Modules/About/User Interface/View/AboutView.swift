@@ -46,4 +46,22 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
         versionValueLabel.text = input
     }
     
+    func showErrorMessage(message: String) {
+        
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.section == 0 else { return }
+        
+        if indexPath.row == 1 {
+            presenter?.didRequestSendEmailFeedback()
+        }
+        else if indexPath.row == 2 {
+            presenter?.didRequestRateThisApps()
+        }
+    }
+    
 }

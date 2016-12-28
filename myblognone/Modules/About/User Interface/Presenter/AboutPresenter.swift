@@ -20,4 +20,13 @@ class AboutPresenter: AboutPresenterProtocol, AboutInteractorOutputProtocol {
     func didReceiveVersionAndBuildNumber(input: String) {
         view?.setupVersionAndBuildNumber(input: input)
     }
+    
+    func didRequestSendEmailFeedback() {
+        wireFrame?.openMailApp()
+    }
+    
+    func didRequestRateThisApps() {
+        wireFrame?.openAppStore()
+    }
+    
 }

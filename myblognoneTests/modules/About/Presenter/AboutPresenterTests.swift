@@ -68,6 +68,14 @@ private class MockWireframe: AboutWireFrameProtocol {
         
     }
     
+    func openMailApp() {
+        
+    }
+    
+    func openAppStore() {
+        
+    }
+    
 }
 
 private class MockViewController: AboutViewProtocol {
@@ -82,6 +90,10 @@ private class MockViewController: AboutViewProtocol {
     
     func setupVersionAndBuildNumber(input: String) {
         versionValueLabel.text = input
+    }
+    
+    func showErrorMessage(message: String) {
+        MyAlertView.shared.showWithTitle(title: "Wroops", message: message)
     }
     
 }

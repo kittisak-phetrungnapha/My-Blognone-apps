@@ -12,16 +12,22 @@ import XCTest
 class AboutViewTests: XCTestCase {
 
     private var view: AboutViewController!
+    private var mockPresentor: MockPresentor!
     
     override func setUp() {
         super.setUp()
         
         view = UIStoryboard(name: AboutWireFrame.StoryboardIdentifier, bundle: Bundle.main).instantiateViewController(withIdentifier: AboutWireFrame.AboutViewControllerIdentifier) as! AboutViewController
+        mockPresentor = MockPresentor()
+        view.presenter = mockPresentor
+        
         let _ = view.view
     }
     
     override func tearDown() {
         view = nil
+        mockPresentor = nil
+        
         super.tearDown()
     }
     
@@ -65,5 +71,50 @@ class AboutViewTests: XCTestCase {
         view.setupVersionAndBuildNumber(input: input)
         XCTAssertEqual(view.versionValueLabel.text, input, "VersionValueLabel should equal 1.0 (1).")
     }
+    
+    func testShouldRequestSendEmailFeedback() {
+        // Given
+        let indexPath = IndexPath(row: 1, section: 0)
+        
+        // When
+        view.tableView(view.tableView, didSelectRowAt: indexPath)
+        
+        // Then
+        XCTAssertTrue(mockPresentor.isRequestSendEmailFeedback, "didRequestSendEmailFeedback should be called.")
+    }
+    
+    func testShouldRequestRateThisApps() {
+        // Given
+        let indexPath = IndexPath(row: 2, section: 0)
+        
+        // When
+        view.tableView(view.tableView, didSelectRowAt: indexPath)
+        
+        // Then
+        XCTAssertTrue(mockPresentor.isRequestRateThisApps, "didRequestRateThisApps should be called.")
+    }
 
+}
+
+private class MockPresentor: AboutPresenterProtocol {
+    
+    var view: AboutViewProtocol?
+    var interactor: AboutInteractorInputProtocol?
+    var wireFrame: AboutWireFrameProtocol?
+    
+    var isRequestSendEmailFeedback = false
+    var isRequestRateThisApps = false
+    
+    func didRequestSendEmailFeedback() {
+        isRequestSendEmailFeedback = true
+    }
+    
+    func didRequestRateThisApps() {
+        isRequestRateThisApps = true
+    }
+    
+    func didRequestVersionAndBuildNumber() {
+        
+    }
+    
 }

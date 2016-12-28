@@ -7,16 +7,20 @@
 //
 
 import XCTest
+@testable import myblognone
 
 class AboutWireframeTests: XCTestCase {
 
+    var wireframe: AboutWireFrame!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        wireframe = AboutWireFrame()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        wireframe = nil
         super.tearDown()
     }
+    
 }
