@@ -159,7 +159,7 @@ private class MockViewController: NewsListViewProtocol {
         self.message = message
     }
     
-    class FakeDataSource : NSObject, UITableViewDataSource {
+    class FakeDataSource: NSObject, UITableViewDataSource {
         
         private var newsList: [News]?
         

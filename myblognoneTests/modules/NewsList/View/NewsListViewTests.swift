@@ -32,6 +32,11 @@ class NewsListViewTests: XCTestCase {
         super.tearDown()
     }
     
+    func testStatusBarShouldBeLightStyleWhenViewDidAppear() {
+        view.viewDidAppear(true)
+        XCTAssertEqual(UIApplication.shared.statusBarStyle, .lightContent, "Status bar should be light.")
+    }
+    
     func testTitleForView() {
         XCTAssertEqual(view.title, NSLocalizedString("app_name_text", comment: ""), "Title should be \(NSLocalizedString("app_name_text", comment: "")).")
     }

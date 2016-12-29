@@ -52,6 +52,7 @@ class NewsListViewController: UIViewController {
         if let selectionIndexPath = newsTableView.indexPathForSelectedRow {
             newsTableView.deselectRow(at: selectionIndexPath, animated: true)
         }
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     // MARK: -
