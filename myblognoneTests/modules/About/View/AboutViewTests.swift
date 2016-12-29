@@ -93,6 +93,18 @@ class AboutViewTests: XCTestCase {
         // Then
         XCTAssertTrue(mockPresentor.isRequestRateThisApps, "didRequestRateThisApps should be called.")
     }
+    
+    func testShouldDoNothingIfSelectVersionCell() {
+        // Given
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // When
+        view.tableView(view.tableView, didSelectRowAt: indexPath)
+        
+        // Then
+        XCTAssertFalse(mockPresentor.isRequestRateThisApps, "Select version's cell should to nothing.")
+        XCTAssertFalse(mockPresentor.isRequestSendEmailFeedback, "Select version's cell should to nothing.")
+    }
 
 }
 

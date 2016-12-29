@@ -49,6 +49,21 @@ class AboutPresenterTest: XCTestCase {
         XCTAssertEqual(mockView.versionValueLabel.text, outputFromInteractor, "VersionValueLabel should equal outputFromInteractor.")
     }
     
+    func testRequestVersionAndBuildNumberToInteractor() {
+        presenter.didRequestVersionAndBuildNumber()
+        XCTAssertTrue(mockInteractor.isRequestedVersionAndBuildNumber, "requestVersionAndBuildNumber() should be called.")
+    }
+    
+    func testOpenMailAppToWireframe() {
+        presenter.didRequestSendEmailFeedback()
+        XCTAssertTrue(mockWireframe.isOpenedMailApp, "openMailApp() should be called.")
+    }
+    
+    func testOpenAppStoreToWireframe() {
+        presenter.didRequestRateThisApps()
+        XCTAssertTrue(mockWireframe.isOpenAppStore, "openAppStore() should be called.")
+    }
+    
 }
 
 private class MockInteractor: AboutInteractorInputProtocol {
@@ -56,24 +71,29 @@ private class MockInteractor: AboutInteractorInputProtocol {
     var presenter: AboutInteractorOutputProtocol?
     var dataManager: AboutDataManagerInputProtocol?
     
+    var isRequestedVersionAndBuildNumber = false
+    
     func requestVersionAndBuildNumber() {
-        
+        isRequestedVersionAndBuildNumber = true
     }
     
 }
 
 private class MockWireframe: AboutWireFrameProtocol {
     
+    var isOpenedMailApp = false
+    var isOpenAppStore = false
+    
     static func presentAboutModule(fromView view: AnyObject) {
         
     }
     
     func openMailApp() {
-        
+        isOpenedMailApp = true
     }
     
     func openAppStore() {
-        
+        isOpenAppStore = true
     }
     
 }
