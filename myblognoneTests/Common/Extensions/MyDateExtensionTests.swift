@@ -15,7 +15,7 @@ class MyDateExtensionTests: XCTestCase {
         // given
         let givenString = "Dec 22, 21:25"
         let formatter = DateFormatter()
-        formatter.locale = Locale.current
+        formatter.timeZone = TimeZone(secondsFromGMT: 25200)
         formatter.dateFormat = "MMM d, HH:mm"
         let givenDate = formatter.date(from: givenString)
         

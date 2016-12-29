@@ -10,17 +10,16 @@ import XCTest
 @testable import myblognone
 
 class AboutWireframeTests: XCTestCase {
-
-    var wireframe: AboutWireFrame!
     
-    override func setUp() {
-        super.setUp()
-        wireframe = AboutWireFrame()
-    }
-
-    override func tearDown() {
-        wireframe = nil
-        super.tearDown()
+    func testPresentAboutModule() {
+        // Given
+        let nav = UINavigationController()
+        
+        // When
+        AboutWireFrame.presentAboutModule(fromView: nav)
+        
+        // Then
+        XCTAssertTrue(nav.viewControllers[0] is AboutViewController, "AboutViewController should be presented.")
     }
     
 }

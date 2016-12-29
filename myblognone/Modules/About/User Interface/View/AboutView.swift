@@ -46,10 +46,6 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
         versionValueLabel.text = input
     }
     
-    func showErrorMessage(message: String) {
-        
-    }
-    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -93,7 +93,7 @@ private class MockViewController: AboutViewProtocol {
     }
     
     func showErrorMessage(message: String) {
-        MyAlertView.shared.showWithTitle(title: "Wroops", message: message)
+        
     }
     
 }

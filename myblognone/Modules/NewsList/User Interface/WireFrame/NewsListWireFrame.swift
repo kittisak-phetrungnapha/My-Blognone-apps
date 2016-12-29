@@ -43,9 +43,7 @@ class NewsListWireFrame: NewsListWireFrameProtocol {
     
     func pushToNewsDetailInterface(news: News, viewController: AnyObject?) {
         guard let view = viewController as? UIViewController, let url = URL(string: news.link)
-            else {
-                return
-        }
+            else { return }
         
         let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
         if #available(iOS 10.0, *) {
