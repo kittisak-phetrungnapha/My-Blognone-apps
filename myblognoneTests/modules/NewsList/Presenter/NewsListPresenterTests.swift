@@ -45,14 +45,20 @@ class NewsListPresenterTest: XCTestCase {
     }
     
     func testPushToNewsDetailInterfaceWithInvalidLink() {
+        // Given
+        let expectErrorMessage = NSLocalizedString("invalid_news_link_error_text", comment: "")
+        
+        // When
         let news = News(title: "", link: "", detail: "", pubDate: "", creator: "")
-        presenter.wireFrame?.pushToNewsDetailInterface(news: news, viewController: mockView)
-        XCTAssertTrue(mockWireframe.willCallShowErrorMessage, "ShowErrorMessage should be called.")
+        presenter.didRequestNewsDetail(news: news)
+        
+        // Then
+        XCTAssertEqual(mockView.message, expectErrorMessage, "NewsListView should show error message.")
     }
     
     func testPushToNewsDetailInterfaceWithValidLink() {
         let news = News(title: "", link: "https://www.facebook.com/", detail: "", pubDate: "", creator: "")
-        presenter.wireFrame?.pushToNewsDetailInterface(news: news, viewController: mockView)
+        presenter.didRequestNewsDetail(news: news)
         XCTAssertTrue(mockWireframe.willCallUpdateNewsTableView, "UpdateNewsTableView should be called.")
     }
     
@@ -61,7 +67,7 @@ class NewsListPresenterTest: XCTestCase {
         let nav = UINavigationController()
         
         // When
-        presenter.wireFrame?.pushToAboutInterface(fromView: nav)
+        presenter.requestOpeningAboutPage(fromView: nav)
         
         // Then
         XCTAssertTrue(mockWireframe.willCallPushToAboutInterface, "PushToAboutInterface should be called.")
@@ -120,10 +126,7 @@ private class MockWireframe: NewsListWireFrameProtocol {
     }
     
     func pushToNewsDetailInterface(news: News, viewController: AnyObject?) {
-        guard let _ = URL(string: news.link) else {
-            willCallShowErrorMessage = true
-            return
-        }
+        guard let _ = URL(string: news.link) else { return }
         
         willCallUpdateNewsTableView = true
     }

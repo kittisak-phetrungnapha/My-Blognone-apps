@@ -73,6 +73,7 @@
 		EE5D160C1E06D153004F5605 /* NewsListAPIDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */; };
 		EE6CA4701E06ED8C00511637 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA46F1E06ED8C00511637 /* NewsTests.swift */; };
 		EED1C2971E15454C0090B017 /* mock_for_missing_node.xml in Resources */ = {isa = PBXBuildFile; fileRef = EED1C2961E15454C0090B017 /* mock_for_missing_node.xml */; };
+		EED1C2991E156BDC0090B017 /* AboutDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1C2981E156BDC0090B017 /* AboutDataManagerTests.swift */; };
 		FC172AE077C47E1AE6FC60A8 /* Pods_myblognoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91697E43C5B762D83CB93D /* Pods_myblognoneTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,7 @@
 		EE5D160B1E06D153004F5605 /* NewsListAPIDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManagerTests.swift; sourceTree = "<group>"; };
 		EE6CA46F1E06ED8C00511637 /* NewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 		EED1C2961E15454C0090B017 /* mock_for_missing_node.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mock_for_missing_node.xml; sourceTree = "<group>"; };
+		EED1C2981E156BDC0090B017 /* AboutDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				EE197D611E0FBFF900FCA9FA /* AboutInteractorTests.swift */,
+				EED1C2981E156BDC0090B017 /* AboutDataManagerTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -962,6 +965,7 @@
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE197D681E0FBFF900FCA9FA /* AboutInteractorTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
+				EED1C2991E156BDC0090B017 /* AboutDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -200,7 +200,7 @@ class NewsListViewTests: XCTestCase {
     }
     
     func testRequestOpeningAboutPage() {
-        view.presenter?.requestOpeningAboutPage(fromView: UINavigationController())
+        view.requestOpeningAboutPage()
         XCTAssertTrue(mockPresenter.isRequestOpeningAboutPage, "RequestOpeningAboutPage should be called.")
     }
 

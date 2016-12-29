@@ -33,18 +33,6 @@ class AboutInteractorTests: XCTestCase {
         
         super.tearDown()
     }
-    
-    func testGetReleaseVersionNumber() {
-        let expect = "1.0"
-        let output = interactor.dataManager?.getReleaseVersionNumber()
-        XCTAssertEqual(output, expect, "ReleaseVersionNumber should be equal \(expect).")
-    }
-    
-    func getBuildVersionNumber() {
-        let expect = "1"
-        let output = interactor.dataManager?.getBuildVersionNumber()
-        XCTAssertEqual(output, expect, "BuildVersionNumber should be equal \(expect).")
-    }
  
     func testRequestVersionAndBuildNumber() {
         // Given
