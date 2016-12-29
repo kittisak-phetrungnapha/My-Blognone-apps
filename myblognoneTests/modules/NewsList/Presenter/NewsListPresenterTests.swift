@@ -68,19 +68,30 @@ class NewsListPresenterTest: XCTestCase {
     }
     
     func testUpdateNewsTableView() {
+        // Given
         var newsList = [News]()
         for _ in 0..<2 {
             let news = News(title: "", link: "", detail: "", pubDate: "", creator: "")
             newsList.append(news)
         }
-        presenter.view?.updateNewsTableView(newsList: newsList)
-        XCTAssertEqual(mockView.newsList?.count, 2, "Mock news list should has 2 elements.")
+        let successResult = NewsListInteractor.NewsFeedResult.success(newsList)
+        
+        // When
+        presenter.didReceiveNewsFeedResult(newsFeedResult: successResult)
+        
+        // Then
+        XCTAssertEqual(mockView.tableView.numberOfRows(inSection: 0), 2, "TableView should has 2 cells.")
     }
     
     func testShowErrorMessage() {
-        let message = "Dummy error message"
-        presenter.view?.showErrorMessage(message: message)
-        XCTAssertEqual(mockView.message, message, "Error message should be \"Dummy error message\".")
+        // Given
+        let errorResult = NewsListInteractor.NewsFeedResult.error("Dummy error")
+        
+        // When
+        presenter.didReceiveNewsFeedResult(newsFeedResult: errorResult)
+        
+        // Then
+        XCTAssertEqual(mockView.message, "Dummy error", "Error message should be equal \"Dummy error\".")
     }
     
 }
@@ -129,12 +140,41 @@ private class MockViewController: NewsListViewProtocol {
     var newsList: [News]?
     var message: String?
     
+    var tableView: UITableView!
+    var dataSource: FakeDataSource!
+    
+    init() {
+        tableView = UITableView(frame: .zero, style: .plain)
+        dataSource = FakeDataSource()
+        tableView.dataSource = dataSource
+    }
+    
     func updateNewsTableView(newsList: [News]) {
         self.newsList = newsList
+        dataSource.setupItemsForDataSource(newsList: newsList)
+        tableView.reloadData()
     }
     
     func showErrorMessage(message: String) {
         self.message = message
+    }
+    
+    class FakeDataSource : NSObject, UITableViewDataSource {
+        
+        private var newsList: [News]?
+        
+        func setupItemsForDataSource(newsList: [News]) {
+            self.newsList = newsList
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return newsList?.count ?? 0
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
+        }
+        
     }
     
 }
