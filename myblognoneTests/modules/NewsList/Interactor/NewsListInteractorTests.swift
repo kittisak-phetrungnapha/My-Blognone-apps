@@ -13,6 +13,7 @@ class NewsListInteractorTests: XCTestCase {
     
     private var interactor: NewsListInteractor!
     private var mockPresenter: MockNewsListPresenter!
+    private var mockApiDataManager: MockNewsListAPIDataManager!
     
     override func setUp() {
         super.setUp()
@@ -21,33 +22,38 @@ class NewsListInteractorTests: XCTestCase {
         mockPresenter = MockNewsListPresenter()
         interactor.presenter = mockPresenter
         
-        let mockApiDataManager = MockNewsListAPIDataManager()
+        mockApiDataManager = MockNewsListAPIDataManager()
         interactor.apiDataManager = mockApiDataManager
     }
     
     override func tearDown() {
         interactor = nil
         mockPresenter = nil
+        mockApiDataManager = nil
         
         super.tearDown()
     }
     
-    func testGetNewsFeed() {
-        interactor.apiDataManager?.getNewsFeed(with: { newsFeedResult in
-            XCTAssertNotNil(newsFeedResult, "NewsFeedResult should not be nil.")
-        })
-    }
-    
     func testPerformNewsFeedTaskSuccess() {
-        let successResult = NewsListInteractor.NewsFeedResult.success([News]())
-        self.interactor.presenter?.didReceiveNewsFeedResult(newsFeedResult: successResult)
-        XCTAssertTrue(self.mockPresenter.isSuccess ?? false, "NewsFeedResult should be successful case.")
+        // Given
+        mockApiDataManager.wantSuccess = true
+        
+        // When
+        interactor.performGetNewsFeedTask()
+        
+        // Then
+        XCTAssertNotNil(self.mockPresenter.newsList, "NewsList should not be nil.")
     }
     
     func testPerformNewsFeedTaskFail() {
-        let failResult = NewsListInteractor.NewsFeedResult.error("Dummy error")
-        self.interactor.presenter?.didReceiveNewsFeedResult(newsFeedResult: failResult)
-        XCTAssertFalse(self.mockPresenter.isSuccess ?? true, "NewsFeedResult should be failure case.")
+        // Given
+        mockApiDataManager.wantSuccess = false
+        
+        // When
+        interactor.performGetNewsFeedTask()
+        
+        // Then
+        XCTAssertNotNil(self.mockPresenter.errorMessage, "ErrorMessage should not be nil.")
     }
     
 }
@@ -58,7 +64,8 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
     var interactor: NewsListInteractorInputProtocol?
     var wireFrame: NewsListWireFrameProtocol?
     
-    var isSuccess: Bool?
+    var newsList: [News]?
+    var errorMessage: String?
     
     func didRequestNewsFeedData() {
         
@@ -74,10 +81,10 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
     
     func didReceiveNewsFeedResult(newsFeedResult: NewsListInteractor.NewsFeedResult) {
         switch newsFeedResult {
-        case .success(_):
-            isSuccess = true
-        case .error(_):
-            isSuccess = false
+        case .success(let newsList):
+            self.newsList = newsList
+        case .error(let errorMessage):
+            self.errorMessage = errorMessage
         }
     }
     
@@ -85,9 +92,15 @@ private class MockNewsListPresenter: NewsListPresenterProtocol, NewsListInteract
 
 private class MockNewsListAPIDataManager: NewsListAPIDataManagerInputProtocol {
     
+    var wantSuccess = false
+    
     func getNewsFeed(with completion: @escaping (NewsListInteractor.NewsFeedResult) -> Void) {
-        // It doesn't matter return success or failure case.
-        completion(.success([News]()))
+        if wantSuccess {
+            completion(.success([News]()))
+        }
+        else {
+            completion(.error(""))
+        }
     }
     
 }
