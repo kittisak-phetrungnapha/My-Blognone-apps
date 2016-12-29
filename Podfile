@@ -10,8 +10,11 @@ target 'myblognone' do
   pod 'FBSDKCoreKit'
   pod 'ForceUpdateSDK'
 
-  #target 'myblognoneTests' do
-   # inherit! :search_paths
-  #end
+  target 'myblognoneTests' do
+    inherit! :search_paths
+    
+    pod 'Mockingjay'
+    
+  end
 
 end

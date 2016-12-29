@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xml:base="https://www.blognone.com"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Blognone</title>
+    <link>https://www.blognone.com</link>
+    <description>Blognone is Thai, Slashdot-liked, tech news site.</description>
+    <language>en</language>
+  </channel>
+</rss>

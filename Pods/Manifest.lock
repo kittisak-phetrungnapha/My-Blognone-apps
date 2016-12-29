@@ -12,7 +12,15 @@ PODS:
   - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
   - ForceUpdateSDK (1.0.4)
+  - Mockingjay (2.0.0):
+    - Mockingjay/Core (= 2.0.0)
+    - Mockingjay/XCTest (= 2.0.0)
+  - Mockingjay/Core (2.0.0):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.0):
+    - Mockingjay/Core
   - RKDropdownAlert (0.3.0)
+  - URITemplate (2.0.0)
 
 DEPENDENCIES:
   - AEXML
@@ -20,6 +28,7 @@ DEPENDENCIES:
   - Fabric
   - FBSDKCoreKit
   - ForceUpdateSDK
+  - Mockingjay
   - RKDropdownAlert
 
 SPEC CHECKSUMS:
@@ -29,8 +38,10 @@ SPEC CHECKSUMS:
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   ForceUpdateSDK: a09a9f47ff055272d0eb549b08cfe85a723d890a
+  Mockingjay: 7122a3fc0597aa63438e4cd9b71b7bc8aac05b87
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  URITemplate: a5acb3f76c6a2338116fde88b658d83f91bbac45
 
-PODFILE CHECKSUM: 392cd312217f6d781a76f8d0d6f3402f4cd0d84f
+PODFILE CHECKSUM: 7bac779973ecabe85c9930110f6d376794eaa4b9
 
 COCOAPODS: 1.2.0.beta.1
