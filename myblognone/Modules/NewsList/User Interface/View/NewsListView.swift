@@ -23,6 +23,7 @@ class NewsListViewController: UIViewController {
         
         title = NSLocalizedString("app_name_text", comment: "")
         let aboutInfoNavItem = UIBarButtonItem(image: #imageLiteral(resourceName: "about"), style: .plain, target: self, action: #selector(requestOpeningAboutPage))
+        aboutInfoNavItem.accessibilityLabel = NSLocalizedString("go_to_about_nav_button", comment: "")
         navigationItem.rightBarButtonItem = aboutInfoNavItem
         
         newsTableView.tableFooterView = UIView(frame: .zero)

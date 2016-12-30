@@ -41,8 +41,9 @@ class NewsListViewTests: XCTestCase {
         XCTAssertEqual(view.title, NSLocalizedString("app_name_text", comment: ""), "Title should be \(NSLocalizedString("app_name_text", comment: "")).")
     }
     
-    func testAddedAboutInfoNavigationItemAtRight() {
+    func testAboutInfoNavigationItemAtRight() {
         XCTAssertNotNil(view.navigationItem.rightBarButtonItem, "About info right nav button should be added.")
+        XCTAssertEqual(view.navigationItem.rightBarButtonItem?.accessibilityLabel, NSLocalizedString("go_to_about_nav_button", comment: ""))
     }
     
     func testNewsTableViewIsNotNil() {

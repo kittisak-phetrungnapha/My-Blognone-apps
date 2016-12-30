@@ -20,3 +20,6 @@
 
 // About
 "about_title_text" = "About";
+
+// Accessibility
+"go_to_about_nav_button" = "goToAboutNavButton";

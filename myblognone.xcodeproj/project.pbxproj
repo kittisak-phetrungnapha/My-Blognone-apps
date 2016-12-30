@@ -58,7 +58,8 @@
 		EE36F1F21E0ACEC1004C690A /* NewsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE36F1F01E0ACEC1004C690A /* NewsListTableViewCell.xib */; };
 		EE36F2011E0C17B2004C690A /* MyDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */; };
 		EE36F2041E0C17DF004C690A /* MyDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */; };
-		EE3BFC911E167CE3002F6804 /* myblognoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BFC901E167CE3002F6804 /* myblognoneUITests.swift */; };
+		EE3BFC911E167CE3002F6804 /* NewsListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BFC901E167CE3002F6804 /* NewsListUITests.swift */; };
+		EE3BFC9A1E1699A7002F6804 /* MyXCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BFC991E1699A7002F6804 /* MyXCUIElementExtension.swift */; };
 		EE5D15C11E063C6E004F5605 /* NewsListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */; };
 		EE5D15C31E063C6E004F5605 /* NewsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */; };
 		EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D15B91E063C6E004F5605 /* NewsListProtocols.swift */; };
@@ -157,8 +158,9 @@
 		EE36F1FF1E0C17B2004C690A /* MyDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateExtension.swift; sourceTree = "<group>"; };
 		EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateExtensionTests.swift; sourceTree = "<group>"; };
 		EE3BFC8E1E167CE3002F6804 /* myblognoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myblognoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE3BFC901E167CE3002F6804 /* myblognoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myblognoneUITests.swift; sourceTree = "<group>"; };
+		EE3BFC901E167CE3002F6804 /* NewsListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUITests.swift; sourceTree = "<group>"; };
 		EE3BFC921E167CE3002F6804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE3BFC991E1699A7002F6804 /* MyXCUIElementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyXCUIElementExtension.swift; sourceTree = "<group>"; };
 		EE5D15B31E063C6E004F5605 /* NewsListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAPIDataManager.swift; sourceTree = "<group>"; };
 		EE5D15B71E063C6E004F5605 /* NewsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractor.swift; sourceTree = "<group>"; };
 		EE5D15B91E063C6E004F5605 /* NewsListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListProtocols.swift; sourceTree = "<group>"; };
@@ -497,10 +499,19 @@
 		EE3BFC8F1E167CE3002F6804 /* myblognoneUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EE3BFC901E167CE3002F6804 /* myblognoneUITests.swift */,
+				EE3BFC981E169982002F6804 /* Extensions */,
+				EE3BFC901E167CE3002F6804 /* NewsListUITests.swift */,
 				EE3BFC921E167CE3002F6804 /* Info.plist */,
 			);
 			path = myblognoneUITests;
+			sourceTree = "<group>";
+		};
+		EE3BFC981E169982002F6804 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE3BFC991E1699A7002F6804 /* MyXCUIElementExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EE5D15AE1E063C6E004F5605 /* Modules */ = {
@@ -1034,7 +1045,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE3BFC911E167CE3002F6804 /* myblognoneUITests.swift in Sources */,
+				EE3BFC911E167CE3002F6804 /* NewsListUITests.swift in Sources */,
+				EE3BFC9A1E1699A7002F6804 /* MyXCUIElementExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1287,6 +1299,7 @@
 				EE3BFC961E167CE3002F6804 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,105 @@
+//
+//  myblognoneUITests.swift
+//  myblognoneUITests
+//
+//  Created by Kittisak Phetrungnapha on 12/30/2559 BE.
+//  Copyright © 2559 Kittisak Phetrungnapha. All rights reserved.
+//
+
+import XCTest
+
+class NewsListUITests: XCTestCase {
+    
+    var app: XCUIApplication!
+        
+    override func setUp() {
+        super.setUp()
+        
+        continueAfterFailure = false
+        app = XCUIApplication()
+        app.launch()
+        XCUIDevice.shared().orientation = .portrait
+    }
+    
+    override func tearDown() {
+        app = nil
+        super.tearDown()
+    }
+    
+    func testAllElementsAreExist() {
+        XCTAssert(app.tables.element.exists)
+        XCTAssert(app.navigationBars["My Blognone"].exists)
+        XCTAssert(app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].exists)
+    }
+    
+    func testScrollTableView() {
+        let table = app.tables.element
+        guard table.cells.count > 0 else {
+            XCTFail("TableView should not be empty rows.")
+            return
+        }
+        
+        let lastCell = table.cells.element(boundBy: table.cells.count - 1)
+        table.scrollDownToElement(element: lastCell)
+        XCTAssert(lastCell.visible(), "TableView should be scrolled to last cell.")
+        
+        let firstCell = table.cells.element(boundBy: 0)
+        table.scrollUpToElement(element: firstCell)
+        XCTAssert(firstCell.visible(), "TableView should be scrolled to first cell.")
+    }
+    
+    func testPullToRefreshTableView() {
+        let table = app.tables.element
+        guard table.cells.count > 0 else {
+            XCTFail("TableView should not be empty rows.")
+            return
+        }
+        
+        let firstCell = table.cells.element(boundBy: 0)
+        let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
+        start.press(forDuration: 2, thenDragTo: finish)
+        XCTAssert(true, "TableView should be refreshed successfully.")
+    }
+    
+    func testPushAndPopWithAboutScreen() {
+        app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].tap()
+        XCTAssert(app.navigationBars["About"].exists)
+        
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssert(app.navigationBars["My Blognone"].exists)
+    }
+    
+    func testPushAndPopWithSFViewControllerScreen() {
+        let table = app.tables.element
+        guard table.cells.count > 0 else {
+            XCTFail("TableView should not be empty rows.")
+            return
+        }
+        
+        table.cells.element(boundBy: 0).tap()
+        XCTAssert(app.buttons["Done"].exists)
+
+        app.buttons["Done"].tap()
+        XCTAssert(app.navigationBars["My Blognone"].exists)
+    }
+    
+    func testScrollToLastRowThenSelectIt() {
+        let table = app.tables.element
+        guard table.cells.count > 0 else {
+            XCTFail("TableView should not be empty rows.")
+            return
+        }
+        
+        let lastCell = table.cells.element(boundBy: table.cells.count - 1)
+        table.scrollDownToElement(element: lastCell)
+        XCTAssert(lastCell.visible(), "TableView should be scrolled to last cell.")
+        
+        table.cells.element(boundBy: table.cells.count - 1).tap()
+        XCTAssert(app.buttons["Done"].exists)
+        
+        app.buttons["Done"].tap()
+        XCTAssert(app.navigationBars["My Blognone"].exists)
+    }
+    
+}
