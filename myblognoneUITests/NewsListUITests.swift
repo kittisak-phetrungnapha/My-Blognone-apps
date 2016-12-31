@@ -11,7 +11,7 @@ import XCTest
 class NewsListUITests: XCTestCase {
     
     var app: XCUIApplication!
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -53,7 +53,7 @@ class NewsListUITests: XCTestCase {
         let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
         let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
         start.press(forDuration: 2, thenDragTo: finish)
-        XCTAssert(true, "TableView should be refreshed successfully.")
+//        XCTAssert(true, "TableView should be refreshed successfully.")
     }
     
     func testPushAndPopWithAboutScreen() {
@@ -72,8 +72,8 @@ class NewsListUITests: XCTestCase {
         
         let doneButtonInDetailScreen = app.buttons["Done"]
         waitForElementToAppear(element: doneButtonInDetailScreen)
-        XCTAssert(doneButtonInDetailScreen.exists)
-
+        XCTAssert(doneButtonInDetailScreen.exists, "Done button should be exist.")
+        
         doneButtonInDetailScreen.tap()
         XCTAssert(app.navigationBars["My Blognone"].exists)
     }
@@ -87,9 +87,11 @@ class NewsListUITests: XCTestCase {
         XCTAssert(lastCell.visible(), "TableView should be scrolled to last cell.")
         
         table.cells.element(boundBy: table.cells.count - 1).tap()
-        XCTAssert(app.buttons["Done"].exists)
+        let doneButtonInDetailScreen = app.buttons["Done"]
+        waitForElementToAppear(element: doneButtonInDetailScreen)
+        XCTAssert(doneButtonInDetailScreen.exists, "Done button should be exist.")
         
-        app.buttons["Done"].tap()
+        doneButtonInDetailScreen.tap()
         XCTAssert(app.navigationBars["My Blognone"].exists)
     }
     
