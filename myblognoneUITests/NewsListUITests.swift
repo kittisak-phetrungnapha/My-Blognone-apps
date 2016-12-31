@@ -34,10 +34,7 @@ class NewsListUITests: XCTestCase {
     
     func testScrollTableView() {
         let table = app.tables.element
-        guard table.cells.count > 0 else {
-            XCTFail("TableView should not be empty rows.")
-            return
-        }
+        waitForElementToAppear(element: table.cells.element)
         
         let lastCell = table.cells.element(boundBy: table.cells.count - 1)
         table.scrollDownToElement(element: lastCell)
@@ -50,10 +47,7 @@ class NewsListUITests: XCTestCase {
     
     func testPullToRefreshTableView() {
         let table = app.tables.element
-        guard table.cells.count > 0 else {
-            XCTFail("TableView should not be empty rows.")
-            return
-        }
+        waitForElementToAppear(element: table.cells.element)
         
         let firstCell = table.cells.element(boundBy: 0)
         let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
@@ -72,10 +66,7 @@ class NewsListUITests: XCTestCase {
     
     func testPushAndPopWithSFViewControllerScreen() {
         let table = app.tables.element
-        guard table.cells.count > 0 else {
-            XCTFail("TableView should not be empty rows.")
-            return
-        }
+        waitForElementToAppear(element: table.cells.element)
         
         table.cells.element(boundBy: 0).tap()
         XCTAssert(app.buttons["Done"].exists)
@@ -86,10 +77,7 @@ class NewsListUITests: XCTestCase {
     
     func testScrollToLastRowThenSelectIt() {
         let table = app.tables.element
-        guard table.cells.count > 0 else {
-            XCTFail("TableView should not be empty rows.")
-            return
-        }
+        waitForElementToAppear(element: table.cells.element)
         
         let lastCell = table.cells.element(boundBy: table.cells.count - 1)
         table.scrollDownToElement(element: lastCell)
