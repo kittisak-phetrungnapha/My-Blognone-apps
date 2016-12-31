@@ -69,9 +69,12 @@ class NewsListUITests: XCTestCase {
         waitForElementToAppear(element: table.cells.element)
         
         table.cells.element(boundBy: 0).tap()
-        XCTAssert(app.buttons["Done"].exists)
+        
+        let doneButtonInDetailScreen = app.buttons["Done"]
+        waitForElementToAppear(element: doneButtonInDetailScreen)
+        XCTAssert(doneButtonInDetailScreen.exists)
 
-        app.buttons["Done"].tap()
+        doneButtonInDetailScreen.tap()
         XCTAssert(app.navigationBars["My Blognone"].exists)
     }
     
@@ -88,6 +91,14 @@ class NewsListUITests: XCTestCase {
         
         app.buttons["Done"].tap()
         XCTAssert(app.navigationBars["My Blognone"].exists)
+    }
+    
+    func testFullBehaviorForNewsList() {
+        testScrollTableView()
+        testPullToRefreshTableView()
+        testPushAndPopWithSFViewControllerScreen()
+        testScrollToLastRowThenSelectIt()
+        testPushAndPopWithAboutScreen()
     }
     
 }
