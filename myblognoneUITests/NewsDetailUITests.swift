@@ -39,20 +39,6 @@ class NewsDetailUITests: XCTestCase {
         }
     }
     
-    func testRefreshSFSafariContentWhenStayInNormalMode() {
-        let readerButton = app.buttons["Reader"]
-        if readerButton.exists {
-            readerButton.tap()
-        }
-        
-        let reloadButton = app.buttons["ReloadButton"]
-        waitForElementToAppear(element: reloadButton)
-        XCTAssert(reloadButton.exists, "Reload button should be exist.")
-        
-        reloadButton.tap()
-//        XCTAssert(true, "SFSafariViewController should be reloaded.")
-    }
-    
     func testShareThenCancelIts() {
         let shareButton = app.toolbars.buttons["Share"]
         shareButton.tap()
@@ -125,6 +111,17 @@ class NewsDetailUITests: XCTestCase {
             waitForElementToDisAppear(element: facebookShareView)
             XCTAssertFalse(facebookShareView.exists, "Facebook share view should be dismissed.")
         }
+    }
+    
+    func testOpenNewsOnSafariApp() {
+        let shareButton = app.toolbars.buttons["Share"]
+        waitForElementToAppear(element: shareButton)
+        XCTAssert(shareButton.exists, "ShareButton should appear.")
+        
+        app.toolbars.buttons["Open in Safari"].tap()
+        
+//        waitForElementToDisAppear(element: shareButton)
+//        XCTAssertFalse(shareButton.exists, "The apps can not open Safari.")
     }
     
 }
