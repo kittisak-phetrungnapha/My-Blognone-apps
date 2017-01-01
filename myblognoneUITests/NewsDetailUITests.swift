@@ -51,77 +51,85 @@ class NewsDetailUITests: XCTestCase {
     }
     
     func testShareFacebookOnlySimulator() {
-        if TARGET_OS_SIMULATOR != 0 {
-            let shareButton = app.toolbars.buttons["Share"]
-            shareButton.tap()
-            let collectionViewsQuery = app.collectionViews
-            let facebookButton = collectionViewsQuery.buttons["Facebook"]
-            XCTAssert(facebookButton.exists, "Facebook button should be exist.")
-            
-            facebookButton.tap()
-            let alert = app.alerts["No Facebook Account"]
-            waitForElementToAppear(element: alert)
-            XCTAssert(alert.exists, "Alert should be exist.")
-            
-            alert.buttons["Cancel"].tap() // Test user presses cancel button.
-            
-            // Test user presses settings button.
-            shareButton.tap()
-            facebookButton.tap()
-            
-            let settings = alert.buttons["Settings"]
-            waitForElementToAppear(element: settings)
-            XCTAssert(settings.exists, "Settings button should be exist.")
-            settings.tap()
-            
-            XCTAssertFalse(alert.exists, "Found element, so app didn't open Facebook.")
+        if TARGET_OS_SIMULATOR == 0 {
+            XCTAssert(true)
+            return
         }
+        
+        let shareButton = app.toolbars.buttons["Share"]
+        shareButton.tap()
+        let collectionViewsQuery = app.collectionViews
+        let facebookButton = collectionViewsQuery.buttons["Facebook"]
+        XCTAssert(facebookButton.exists, "Facebook button should exist.")
+        
+        facebookButton.tap()
+        let alert = app.alerts["No Facebook Account"]
+        waitForElementToAppear(element: alert)
+        XCTAssert(alert.exists, "Alert should exist.")
+        
+        alert.buttons["Cancel"].tap() // Test user presses cancel button.
+        XCTAssertFalse(alert.exists, "Alert should not exist.")
+        
+        // Test user presses settings button.
+        shareButton.tap()
+        facebookButton.tap()
+        
+        let settings = alert.buttons["Settings"]
+        waitForElementToAppear(element: settings)
+        XCTAssert(settings.exists, "Settings button should exist.")
+        settings.tap()
+        
+        XCTAssertFalse(alert.exists, "Found element, so app didn't open Facebook.")
     }
     
     func testShareFacebookOnlyRealDevice() {
-        if TARGET_OS_SIMULATOR == 0 {
-            let shareButton = app.toolbars.buttons["Share"]
-            shareButton.tap()
-            let collectionViewsQuery = app.collectionViews
-            collectionViewsQuery.buttons["Mail"].swipeLeft()
-            let facebookButton = collectionViewsQuery.buttons["Facebook"]
-            XCTAssert(facebookButton.exists, "Facebook button should be exist.")
-            
-            // Cancel button will be pressed at the first.
-            facebookButton.tap()
-            let facebookShareView = app.navigationBars["Facebook"]
-            waitForElementToAppear(element: facebookShareView)
-            XCTAssert(facebookShareView.exists, "Facebook share view should appear.")
-            
-            facebookShareView.buttons["Cancel"].tap()
-            app.sheets.buttons["Discard"].tap()
- 
-            // Test share to facebook.
-            waitForElementToAppear(element: shareButton)
-            XCTAssert(shareButton.exists, "Share button should appear.")
-            
-            shareButton.tap()
-            collectionViewsQuery.buttons["Mail"].swipeLeft()
-            XCTAssert(facebookButton.exists, "Facebook button should be exist.")
-            
-            facebookButton.tap()
-            waitForElementToAppear(element: facebookShareView)
-            XCTAssert(facebookShareView.exists, "Facebook share view should appear.")
-            
-            let facebookTextViewToShare = app.textViews["Say something ..."]
-            XCTAssert(facebookTextViewToShare.exists, "Say something... should appear.")
-            facebookTextViewToShare.typeText("Trying iOS Unit+UI Automation Testing with Facebook build-in SDK on iPhone 6. Ureka!")
-            facebookShareView.buttons["Post"].tap()
-            
-            waitForElementToDisAppear(element: facebookShareView)
-            XCTAssertFalse(facebookShareView.exists, "Facebook share view should be dismissed.")
+        if TARGET_OS_SIMULATOR != 0 {
+            XCTAssert(true)
+            return
         }
+        
+        let shareButton = app.toolbars.buttons["Share"]
+        shareButton.tap()
+        let collectionViewsQuery = app.collectionViews
+        collectionViewsQuery.buttons["Mail"].swipeLeft()
+        let facebookButton = collectionViewsQuery.buttons["Facebook"]
+        XCTAssert(facebookButton.exists, "Facebook button should be exist.")
+        
+        // Cancel button will be pressed at the first.
+        facebookButton.tap()
+        let facebookShareView = app.navigationBars["Facebook"]
+        waitForElementToAppear(element: facebookShareView)
+        XCTAssert(facebookShareView.exists, "Facebook share view should appear.")
+        
+        facebookShareView.buttons["Cancel"].tap()
+        app.sheets.buttons["Discard"].tap()
+        
+        // Test share to facebook.
+        waitForElementToAppear(element: shareButton)
+        XCTAssert(shareButton.exists, "Share button should appear.")
+        
+        shareButton.tap()
+        collectionViewsQuery.buttons["Mail"].swipeLeft()
+        XCTAssert(facebookButton.exists, "Facebook button should be exist.")
+        
+        facebookButton.tap()
+        waitForElementToAppear(element: facebookShareView)
+        XCTAssert(facebookShareView.exists, "Facebook share view should appear.")
+        
+        let facebookTextViewToShare = app.textViews["Say something ..."]
+        XCTAssert(facebookTextViewToShare.exists, "Say something... should appear.")
+        facebookTextViewToShare.typeText("I am trying iOS Unit+UI Automation Testing with Facebook build-in SDK on iPhone 6. I really sorry if this post makes you are annoyed.")
+        facebookShareView.buttons["Post"].tap()
+        
+        waitForElementToDisAppear(element: facebookShareView)
+        XCTAssertFalse(facebookShareView.exists, "Facebook share view should be dismissed.")
     }
     
     func testOpenNewsOnSafariApp() {
         let openSafariButton = app.toolbars.buttons["Open in Safari"]
         waitForElementToAppear(element: openSafariButton)
-        XCTAssert(openSafariButton.exists, "openSafariButton should appear.")        
+        XCTAssert(openSafariButton.exists, "openSafariButton should appear.")
+        
         openSafariButton.tap()
     }
     
