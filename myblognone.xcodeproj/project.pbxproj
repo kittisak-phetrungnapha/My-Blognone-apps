@@ -11,6 +11,7 @@
 		EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05683F1E0639A7008FABA6 /* AppDelegate.swift */; };
 		EE0568471E0639A7008FABA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0568461E0639A7008FABA6 /* Assets.xcassets */; };
 		EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */; };
+		EE05DB061E18C530008C0BF5 /* AboutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05DB051E18C530008C0BF5 /* AboutUITests.swift */; };
 		EE197D231E0EEFE600FCA9FA /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0B1E0EEFE600FCA9FA /* SF-UI-Display-Black.otf */; };
 		EE197D241E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0C1E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf */; };
 		EE197D251E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0D1E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf */; };
@@ -113,6 +114,7 @@
 		EE05684B1E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		EE0568501E0639A7008FABA6 /* myblognoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myblognoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0568561E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE05DB051E18C530008C0BF5 /* AboutUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUITests.swift; sourceTree = "<group>"; };
 		EE197D0B1E0EEFE600FCA9FA /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		EE197D0C1E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		EE197D0D1E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				EE3BFC981E169982002F6804 /* Extensions */,
 				EE3BFC901E167CE3002F6804 /* NewsListUITests.swift */,
 				EE3BFC9F1E176A2E002F6804 /* NewsDetailUITests.swift */,
+				EE05DB051E18C530008C0BF5 /* AboutUITests.swift */,
 				EE3BFC921E167CE3002F6804 /* Info.plist */,
 			);
 			path = myblognoneUITests;
@@ -1053,6 +1056,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE05DB061E18C530008C0BF5 /* AboutUITests.swift in Sources */,
 				EE3BFC9D1E1750BD002F6804 /* MyXCTestCaseExtension.swift in Sources */,
 				EE3BFC911E167CE3002F6804 /* NewsListUITests.swift in Sources */,
 				EE3BFC9A1E1699A7002F6804 /* MyXCUIElementExtension.swift in Sources */,
