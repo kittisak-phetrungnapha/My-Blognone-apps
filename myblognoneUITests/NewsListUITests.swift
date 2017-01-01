@@ -95,12 +95,4 @@ class NewsListUITests: XCTestCase {
         XCTAssert(app.navigationBars["My Blognone"].exists)
     }
     
-    func testFullBehaviorForNewsList() {
-        testScrollTableView()
-        testPullToRefreshTableView()
-        testPushAndPopWithSFViewControllerScreen()
-        testScrollToLastRowThenSelectIt()
-        testPushAndPopWithAboutScreen()
-    }
-    
 }

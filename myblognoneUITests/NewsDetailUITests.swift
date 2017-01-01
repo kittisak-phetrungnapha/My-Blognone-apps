@@ -114,14 +114,12 @@ class NewsDetailUITests: XCTestCase {
     }
     
     func testOpenNewsOnSafariApp() {
-        let shareButton = app.toolbars.buttons["Share"]
-        waitForElementToAppear(element: shareButton)
-        XCTAssert(shareButton.exists, "ShareButton should appear.")
+        let openSafariButton = app.toolbars.buttons["Open in Safari"]
+        waitForElementToAppear(element: openSafariButton)
+        XCTAssert(openSafariButton.exists, "openSafariButton should appear.")
         
-        app.toolbars.buttons["Open in Safari"].tap()
-        
-//        waitForElementToDisAppear(element: shareButton)
-//        XCTAssertFalse(shareButton.exists, "The apps can not open Safari.")
+        openSafariButton.tap()
+//        XCTAssertFalse(openSafariButton.exists, "The apps can not open Safari.")
     }
     
 }
