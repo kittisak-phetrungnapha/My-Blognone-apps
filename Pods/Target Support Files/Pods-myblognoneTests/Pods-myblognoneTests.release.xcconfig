@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Mockingjay" "$PODS_CONFIGURATION_BUILD_DIR/URITemplate" "$PODS_CONFIGURATION_BUILD_DIR/AEXML" "$PODS_CONFIGURATION_BUILD_DIR/Bolts" "$PODS_CONFIGURATION_BUILD_DIR/FBSDKCoreKit" "$PODS_CONFIGURATION_BUILD_DIR/ForceUpdateSDK" "$PODS_CONFIGURATION_BUILD_DIR/RKDropdownAlert"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Mockingjay" "$PODS_CONFIGURATION_BUILD_DIR/URITemplate" "$PODS_CONFIGURATION_BUILD_DIR/AEXML" "$PODS_CONFIGURATION_BUILD_DIR/Bolts" "$PODS_CONFIGURATION_BUILD_DIR/FBSDKCoreKit" "$PODS_CONFIGURATION_BUILD_DIR/ForceUpdateSDK" "$PODS_CONFIGURATION_BUILD_DIR/RKDropdownAlert" "${PODS_ROOT}/Crashlytics/iOS" "${PODS_ROOT}/Fabric/iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/Fabric"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Mockingjay/Mockingjay.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/URITemplate/URITemplate.framework/Headers" $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AEXML/AEXML.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Bolts/Bolts.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FBSDKCoreKit/FBSDKCoreKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ForceUpdateSDK/ForceUpdateSDK.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RKDropdownAlert/RKDropdownAlert.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Crashlytics" -isystem "${PODS_ROOT}/Headers/Public/Fabric"
-OTHER_LDFLAGS = $(inherited) -framework "Mockingjay" -framework "URITemplate"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "Crashlytics" -framework "Fabric" -framework "Mockingjay" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "URITemplate"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
