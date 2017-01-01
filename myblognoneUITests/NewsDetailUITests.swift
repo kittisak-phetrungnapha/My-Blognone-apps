@@ -35,14 +35,19 @@ class NewsDetailUITests: XCTestCase {
         if readerButton.exists {
             readerButton.tap()
             readerButton.tap()
-//            XCTAssert(true, "SFSafariViewController should be able to swap between normal and reader modes.")
         }
     }
     
     func testShareThenCancelIts() {
         let shareButton = app.toolbars.buttons["Share"]
         shareButton.tap()
-        app.buttons["Cancel"].tap()
+        let cancelButton = app.buttons["Cancel"]
+        waitForElementToAppear(element: cancelButton)
+        XCTAssert(cancelButton.exists, "cancelButton should exist.")
+        
+        cancelButton.tap()
+        waitForElementToDisAppear(element: cancelButton)
+        XCTAssertFalse(cancelButton.exists, "cancelButton should not exist.")
     }
     
     func testShareFacebookOnlySimulator() {
@@ -116,10 +121,8 @@ class NewsDetailUITests: XCTestCase {
     func testOpenNewsOnSafariApp() {
         let openSafariButton = app.toolbars.buttons["Open in Safari"]
         waitForElementToAppear(element: openSafariButton)
-        XCTAssert(openSafariButton.exists, "openSafariButton should appear.")
-        
+        XCTAssert(openSafariButton.exists, "openSafariButton should appear.")        
         openSafariButton.tap()
-//        XCTAssertFalse(openSafariButton.exists, "The apps can not open Safari.")
     }
     
 }

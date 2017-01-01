@@ -53,7 +53,6 @@ class NewsListUITests: XCTestCase {
         let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
         let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
         start.press(forDuration: 2, thenDragTo: finish)
-//        XCTAssert(true, "TableView should be refreshed successfully.")
     }
     
     func testPushAndPopWithAboutScreen() {
