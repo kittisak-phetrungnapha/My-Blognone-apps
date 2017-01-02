@@ -52,12 +52,10 @@ platform :ios do
 
     cert
     sigh(force: true)
-
-    # match(type: "appstore")
     snapshot
     frameit
-    gym(scheme: "myblognone") # Build your app - more options available
-    deliver(force: true)
+    gym
+    deliver
   end
 
   # You can define as many lanes as you want
