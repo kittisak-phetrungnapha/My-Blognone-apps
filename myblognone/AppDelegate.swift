@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupForceUpdate() {
         FUSManager.sharedInstance().itunesId = iTunesID
-//        FUSManager.sharedInstance().debugMode = true
     }
 
 }

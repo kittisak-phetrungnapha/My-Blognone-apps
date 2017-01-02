@@ -56,7 +56,7 @@ platform :ios do
     # match(type: "appstore")
     snapshot
     frameit
-    # gym(scheme: "myblognone") # Build your app - more options available
+    gym(scheme: "myblognone") # Build your app - more options available
     deliver(force: true)
   end
 
