@@ -50,6 +50,9 @@ platform :ios do
       team_name: 'Kittisak Phetrungnapha' # only necessary when in multiple teams
     )
 
+    cert
+    sigh(force: true)
+
     # match(type: "appstore")
     # snapshot
     # gym(scheme: "myblognone") # Build your app - more options available
