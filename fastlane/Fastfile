@@ -54,10 +54,10 @@ platform :ios do
     sigh(force: true)
 
     # match(type: "appstore")
-    # snapshot
+    snapshot
+    frameit
     # gym(scheme: "myblognone") # Build your app - more options available
-    # deliver(force: true)
-    # frameit
+    deliver(force: true)
   end
 
   # You can define as many lanes as you want
