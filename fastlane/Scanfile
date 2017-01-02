@@ -7,24 +7,13 @@
 # Remove the # in front of the line to enable the option
 
 scheme "myblognone"
+workspace "../myblognone.xcworkspace"
 
 devices [
+  "iPhone SE",
   "iPhone 7",
-  "iPad Air 2"
+  "iPhone 7 Plus"
 ]
-
-# devices [
-# "iPhone 7",
-# "iPhone 7 Plus",
-# "iPhone 6s",
-# "iPhone 6s Plus",
-# "iPhone SE",
-# "iPad Air",
-# "iPad Air 2",
-# "iPad Pro (9.7 inch)",
-# "iPad Pro (12.9 inch)",
-# "iPad Retina"
-# ]
 
 open_report true
 clean true
