@@ -48,6 +48,9 @@ class NewsDetailUITests: XCTestCase {
         
         cancelButton.tap()
         waitForElementToDisAppear(element: cancelButton)
+        
+        snapshot("01NewsDetailScreen")
+        
         XCTAssertFalse(cancelButton.exists, "cancelButton should not exist.")
     }
     
@@ -88,8 +91,6 @@ class NewsDetailUITests: XCTestCase {
             XCTAssert(true)
             return
         }
-        
-        snapshot("01NewsDetailScreen")
         
         let shareButton = app.toolbars.buttons["Share"]
         shareButton.tap()
