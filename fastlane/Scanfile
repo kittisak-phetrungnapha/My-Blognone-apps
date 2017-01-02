@@ -1,0 +1,34 @@
+# For more information about this configuration visit
+# https://github.com/fastlane/fastlane/tree/master/scan#scanfile
+
+# In general, you can use the options available
+# scan --help
+
+# Remove the # in front of the line to enable the option
+
+scheme "myblognone"
+
+devices [
+  "iPhone 7",
+  "iPad Air 2"
+]
+
+# devices [
+# "iPhone 7",
+# "iPhone 7 Plus",
+# "iPhone 6s",
+# "iPhone 6s Plus",
+# "iPhone SE",
+# "iPad Air",
+# "iPad Air 2",
+# "iPad Pro (9.7 inch)",
+# "iPad Pro (12.9 inch)",
+# "iPad Retina"
+# ]
+
+open_report true
+clean true
+
+output_types "html"
+
+# output_types "html, junit, json-compilation-database"

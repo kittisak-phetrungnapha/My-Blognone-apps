@@ -1,15 +1,13 @@
 {
   "images" : [
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPhone_App_Notification_iOS7-9_20pt@2x.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPhone_App_Notification_iOS7-9_20pt@3x.png",
+      "size" : "20x20",
       "scale" : "3x"
     },
     {
@@ -64,15 +62,13 @@
       "scale" : "3x"
     },
     {
-      "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad_App_Notification_iOS7-9_20pt.png",
+      "size" : "20x20",
       "scale" : "1x"
     },
     {
-      "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad_App_Notification_iOS7-9_20pt@2x.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {

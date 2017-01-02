@@ -8,7 +8,7 @@
 
 #define FUS_APP_VERSION     [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 
-#define FUS_API_ACCESSBLOCKING(itunesId)         [NSString stringWithFormat:@"http://mlib.eggdigital.com/accessblocking/check.php?id=%@&version=%@&os=ios", itunesId, FUS_APP_VERSION]
+#define FUS_API_ACCESSBLOCKING(itunesId)         [NSString stringWithFormat:@"https://mlib.eggdigital.com/accessblocking/check.php?id=%@&version=%@&os=ios", itunesId, FUS_APP_VERSION]
 #define FUS_iTunesStringUrl(itunesId) [NSString stringWithFormat:@"https://itunes.apple.com/app/id%@", itunesId]
 
 #define FUS_ACCESS_BLOCKING_JSON_DICT_CACHE_KEY(itunesId)     [NSString stringWithFormat:@"fus_access_blocking_json_dict_cache_key/id%@/v%@", itunesId, FUS_APP_VERSION]

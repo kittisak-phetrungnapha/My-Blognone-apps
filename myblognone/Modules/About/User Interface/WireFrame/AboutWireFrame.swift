@@ -15,7 +15,7 @@ class AboutWireFrame: AboutWireFrameProtocol {
     static let StoryboardIdentifier = "About"
     
     private let emailForFeedback = "cs.sealsoul@gmail.com"
-    private let appStoreUrl = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=971567952&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
+    private let appStoreUrl = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1191248877&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
     
     static func presentAboutModule(fromView view: AnyObject) {
         let storyboard = UIStoryboard(name: StoryboardIdentifier, bundle: Bundle.main)
