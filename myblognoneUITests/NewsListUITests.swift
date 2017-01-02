@@ -17,6 +17,7 @@ class NewsListUITests: XCTestCase {
         
         continueAfterFailure = false
         app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
         XCUIDevice.shared().orientation = .portrait
     }
@@ -30,6 +31,8 @@ class NewsListUITests: XCTestCase {
         XCTAssert(app.tables.element.exists)
         XCTAssert(app.navigationBars["My Blognone"].exists)
         XCTAssert(app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].exists)
+        
+        snapshot("01NewsListScreen")
     }
     
     func testScrollTableView() {
@@ -53,6 +56,8 @@ class NewsListUITests: XCTestCase {
         let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
         let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 6))
         start.press(forDuration: 2, thenDragTo: finish)
+        
+        snapshot("02NewsListScreen")
     }
     
     func testPushAndPopWithAboutScreen() {
@@ -68,6 +73,7 @@ class NewsListUITests: XCTestCase {
         waitForElementToAppear(element: table.cells.element)
         
         table.cells.element(boundBy: 0).tap()
+        snapshot("03NewsListScreen")
         
         let doneButtonInDetailScreen = app.buttons["Done"]
         waitForElementToAppear(element: doneButtonInDetailScreen)

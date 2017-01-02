@@ -17,6 +17,7 @@ class AboutUITests: XCTestCase {
         
         continueAfterFailure = false
         app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
         XCUIDevice.shared().orientation = .portrait
         
@@ -31,6 +32,9 @@ class AboutUITests: XCTestCase {
     func testOpenMailForSendFeedback() {
         let table = app.tables.element
         waitForElementToAppear(element: table.cells.element)
+        
+        snapshot("01AboutScreen")
+        
         table.cells.element(boundBy: 1).tap()
     }
     

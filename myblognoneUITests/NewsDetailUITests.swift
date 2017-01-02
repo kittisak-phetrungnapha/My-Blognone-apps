@@ -17,6 +17,7 @@ class NewsDetailUITests: XCTestCase {
         
         continueAfterFailure = false
         app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
         XCUIDevice.shared().orientation = .portrait
         
@@ -88,6 +89,8 @@ class NewsDetailUITests: XCTestCase {
             return
         }
         
+        snapshot("01NewsDetailScreen")
+        
         let shareButton = app.toolbars.buttons["Share"]
         shareButton.tap()
         let collectionViewsQuery = app.collectionViews
@@ -118,6 +121,9 @@ class NewsDetailUITests: XCTestCase {
         
         let facebookTextViewToShare = app.textViews["Say something ..."]
         XCTAssert(facebookTextViewToShare.exists, "Say something... should appear.")
+        
+        snapshot("02NewsDetailScreen")
+        
         facebookTextViewToShare.typeText("I am trying iOS Unit+UI Automation Testing with Facebook build-in SDK on iPhone 6. I really sorry if this post makes you are annoyed.")
         facebookShareView.buttons["Post"].tap()
         

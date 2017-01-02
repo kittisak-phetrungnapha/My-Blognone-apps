@@ -12,8 +12,7 @@
 		EE0568471E0639A7008FABA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0568461E0639A7008FABA6 /* Assets.xcassets */; };
 		EE05684A1E0639A7008FABA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0568481E0639A7008FABA6 /* LaunchScreen.storyboard */; };
 		EE05DB061E18C530008C0BF5 /* AboutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05DB051E18C530008C0BF5 /* AboutUITests.swift */; };
-		EE05DB081E1A2213008C0BF5 /* MyDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05DB071E1A2213008C0BF5 /* MyDeviceExtension.swift */; };
-		EE05DB0A1E1A22A5008C0BF5 /* MyDeviceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05DB091E1A22A5008C0BF5 /* MyDeviceExtensionTests.swift */; };
+		EE05DB0F1E1A44CA008C0BF5 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE05DB0E1E1A44CA008C0BF5 /* SnapshotHelper.swift */; };
 		EE197D231E0EEFE600FCA9FA /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0B1E0EEFE600FCA9FA /* SF-UI-Display-Black.otf */; };
 		EE197D241E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0C1E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf */; };
 		EE197D251E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE197D0D1E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf */; };
@@ -117,8 +116,7 @@
 		EE0568501E0639A7008FABA6 /* myblognoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myblognoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0568561E0639A7008FABA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE05DB051E18C530008C0BF5 /* AboutUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUITests.swift; sourceTree = "<group>"; };
-		EE05DB071E1A2213008C0BF5 /* MyDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDeviceExtension.swift; sourceTree = "<group>"; };
-		EE05DB091E1A22A5008C0BF5 /* MyDeviceExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDeviceExtensionTests.swift; sourceTree = "<group>"; };
+		EE05DB0E1E1A44CA008C0BF5 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		EE197D0B1E0EEFE600FCA9FA /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		EE197D0C1E0EEFE600FCA9FA /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		EE197D0D1E0EEFE600FCA9FA /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
@@ -279,6 +277,14 @@
 				EE0568561E0639A7008FABA6 /* Info.plist */,
 			);
 			path = myblognoneTests;
+			sourceTree = "<group>";
+		};
+		EE05DB0B1E1A445A008C0BF5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EE05DB0E1E1A44CA008C0BF5 /* SnapshotHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		EE197D071E0EEFBA00FCA9FA /* Assets */ = {
@@ -493,7 +499,6 @@
 				EE36F2031E0C17DF004C690A /* MyDateExtensionTests.swift */,
 				EE197D3E1E0F94F900FCA9FA /* MyColorExtensionTests.swift */,
 				EE197D771E11433100FCA9FA /* MyBundleExtensionTests.swift */,
-				EE05DB091E1A22A5008C0BF5 /* MyDeviceExtensionTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -505,7 +510,6 @@
 				EE197D3A1E0EF0FD00FCA9FA /* MyFontExtension.swift */,
 				EE197D3C1E0F8FBF00FCA9FA /* MyColorExtension.swift */,
 				EE197D731E1142A500FCA9FA /* MyBundleExtension.swift */,
-				EE05DB071E1A2213008C0BF5 /* MyDeviceExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -513,6 +517,7 @@
 		EE3BFC8F1E167CE3002F6804 /* myblognoneUITests */ = {
 			isa = PBXGroup;
 			children = (
+				EE05DB0B1E1A445A008C0BF5 /* Helper */,
 				EE3BFC981E169982002F6804 /* Extensions */,
 				EE3BFC901E167CE3002F6804 /* NewsListUITests.swift */,
 				EE3BFC9F1E176A2E002F6804 /* NewsDetailUITests.swift */,
@@ -1027,7 +1032,6 @@
 				EE197D3B1E0EF0FD00FCA9FA /* MyFontExtension.swift in Sources */,
 				EE197D741E1142A500FCA9FA /* MyBundleExtension.swift in Sources */,
 				EE0568401E0639A7008FABA6 /* AppDelegate.swift in Sources */,
-				EE05DB081E1A2213008C0BF5 /* MyDeviceExtension.swift in Sources */,
 				EE5D15C41E063C6E004F5605 /* NewsListProtocols.swift in Sources */,
 				EE36F1EE1E0AC461004C690A /* MyAlertView.swift in Sources */,
 				EE36F1F11E0ACEC1004C690A /* NewsListTableViewCell.swift in Sources */,
@@ -1054,7 +1058,6 @@
 				EE36F1EC1E0ABE15004C690A /* ProgressViewTests.swift in Sources */,
 				EE5D15D31E063C7B004F5605 /* NewsListPresenterTests.swift in Sources */,
 				EE197D681E0FBFF900FCA9FA /* AboutInteractorTests.swift in Sources */,
-				EE05DB0A1E1A22A5008C0BF5 /* MyDeviceExtensionTests.swift in Sources */,
 				EE5D15D21E063C7B004F5605 /* NewsListInteractorTests.swift in Sources */,
 				EED1C2991E156BDC0090B017 /* AboutDataManagerTests.swift in Sources */,
 			);
@@ -1069,6 +1072,7 @@
 				EE3BFC911E167CE3002F6804 /* NewsListUITests.swift in Sources */,
 				EE3BFC9A1E1699A7002F6804 /* MyXCUIElementExtension.swift in Sources */,
 				EE3BFCA01E176A2E002F6804 /* NewsDetailUITests.swift in Sources */,
+				EE05DB0F1E1A44CA008C0BF5 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,7 +1210,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.csnu17top.myblognone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1222,7 +1226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.csnu17top.myblognone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
