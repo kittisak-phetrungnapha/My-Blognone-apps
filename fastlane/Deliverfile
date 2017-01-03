@@ -16,14 +16,16 @@ price_tier 0
 app_icon "../app_icon1024.png"
 app_rating_config_path "metadata/rating.json"
 
+skip_screenshots true
+
 app_review_information(
-  first_name: "Kittisak",
-  last_name: "Phetrungnapha",
-  phone_number: "+66 816756157",
-  email_address: "cs.sealsoul@gmail.com",
-  demo_user: "",
-  demo_password: "",
-  notes: ""
+  first_name: 'Kittisak',
+  last_name: 'Phetrungnapha',
+  phone_number: '+66 816756157',
+  email_address: 'cs.sealsoul@gmail.com',
+  demo_user: '',
+  demo_password: '',
+  notes: ''
 )
 
 automatic_release true

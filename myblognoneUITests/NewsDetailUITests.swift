@@ -64,6 +64,7 @@ class NewsDetailUITests: XCTestCase {
         shareButton.tap()
         let collectionViewsQuery = app.collectionViews
         let facebookButton = collectionViewsQuery.buttons["Facebook"]
+        waitForElementToAppear(element: facebookButton)
         XCTAssert(facebookButton.exists, "Facebook button should exist.")
         
         facebookButton.tap()
@@ -82,8 +83,6 @@ class NewsDetailUITests: XCTestCase {
         waitForElementToAppear(element: settings)
         XCTAssert(settings.exists, "Settings button should exist.")
         settings.tap()
-        
-        XCTAssertFalse(alert.exists, "Found element, so app didn't open Facebook.")
     }
     
     func testShareFacebookOnlyRealDevice() {

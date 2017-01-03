@@ -28,9 +28,17 @@ class NewsListUITests: XCTestCase {
     }
     
     func testAllElementsAreExist() {
-        XCTAssert(app.tables.element.exists)
-        XCTAssert(app.navigationBars["My Blognone"].exists)
-        XCTAssert(app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].exists)
+        let tableElements = app.tables.element
+        let myBlognoneNavBar = app.navigationBars["My Blognone"]
+        let aboutNavButton = app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")]
+        
+        waitForElementToAppear(element: tableElements)
+        waitForElementToAppear(element: myBlognoneNavBar)
+        waitForElementToAppear(element: aboutNavButton)
+        
+        XCTAssert(tableElements.exists, "Table elements should exist.")
+        XCTAssert(myBlognoneNavBar.exists, "My Blognone nav bar should exist.")
+        XCTAssert(aboutNavButton.exists, "About nav button should exist.")
         
         snapshot("01NewsListScreen")
     }
@@ -41,11 +49,11 @@ class NewsListUITests: XCTestCase {
         
         let lastCell = table.cells.element(boundBy: table.cells.count - 1)
         table.scrollDownToElement(element: lastCell)
-        XCTAssert(lastCell.visible(), "TableView should be scrolled to last cell.")
+        XCTAssert(lastCell.isHittable, "TableView should be scrolled to last cell.")
         
         let firstCell = table.cells.element(boundBy: 0)
         table.scrollUpToElement(element: firstCell)
-        XCTAssert(firstCell.visible(), "TableView should be scrolled to first cell.")
+        XCTAssert(firstCell.isHittable, "TableView should be scrolled to first cell.")
     }
     
     func testPullToRefreshTableView() {
@@ -59,24 +67,39 @@ class NewsListUITests: XCTestCase {
     }
     
     func testPushAndPopWithAboutScreen() {
-        app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].tap()
-        XCTAssert(app.navigationBars["About"].exists)
+        let aboutNavButtonItem = app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")]
+        waitForElementToAppear(element: aboutNavButtonItem)
+        XCTAssert(aboutNavButtonItem.exists, "About bav button should appear.")
         
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        XCTAssert(app.navigationBars["My Blognone"].exists)
+        aboutNavButtonItem.tap()
+        let aboutNavBar = app.navigationBars["About"]
+        waitForElementToAppear(element: aboutNavBar)
+        XCTAssert(aboutNavBar.exists, " About nav bar should appear.")
+        
+        let doneButton = aboutNavBar.buttons.element(boundBy: 0)
+        waitForElementToAppear(element: doneButton)
+        XCTAssert(doneButton.exists, "Done button should appear.")
+        
+        doneButton.tap()
+        let myBlognoneNavBar = app.navigationBars["My Blognone"]
+        waitForElementToAppear(element: myBlognoneNavBar)
+        XCTAssert(myBlognoneNavBar.exists, "My Blognone nav bar should appear.")
     }
     
     func testPushAndPopWithSFViewControllerScreen() {
         let table = app.tables.element
         waitForElementToAppear(element: table.cells.element)
+        XCTAssert(table.cells.element.exists, "Cells should appear.")
         
         table.cells.element(boundBy: 0).tap()
         let doneButtonInDetailScreen = app.buttons["Done"]
         waitForElementToAppear(element: doneButtonInDetailScreen)
-        XCTAssert(doneButtonInDetailScreen.exists, "Done button should be exist.")
+        XCTAssert(doneButtonInDetailScreen.exists, "Done button should appear.")
         
         doneButtonInDetailScreen.tap()
-        XCTAssert(app.navigationBars["My Blognone"].exists)
+        let myBlognoneNavBar = app.navigationBars["My Blognone"]
+        waitForElementToAppear(element: myBlognoneNavBar)
+        XCTAssert(myBlognoneNavBar.exists, "My Blognone nav bar should appear.")
     }
     
     func testScrollToLastRowThenSelectIt() {
@@ -85,7 +108,7 @@ class NewsListUITests: XCTestCase {
         
         let lastCell = table.cells.element(boundBy: table.cells.count - 1)
         table.scrollDownToElement(element: lastCell)
-        XCTAssert(lastCell.visible(), "TableView should be scrolled to last cell.")
+        XCTAssert(lastCell.isHittable, "TableView should be scrolled to last cell.")
         
         table.cells.element(boundBy: table.cells.count - 1).tap()
         let doneButtonInDetailScreen = app.buttons["Done"]

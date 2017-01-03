@@ -2,12 +2,9 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-   "iPhone SE",
-   "iPhone 6",
-   "iPhone 6 Plus"
-#   "iPad Pro (12.9 inch)",
-#   "iPad Pro (9.7 inch)",
-#   "Apple TV 1080p"
+   "iPhone 5s",
+   "iPhone 7",
+   "iPhone 7 Plus"
 ])
 
 languages([
@@ -24,7 +21,7 @@ clear_previous_screenshots true # remove the '#' to clear all previously generat
 
 # Choose which project/workspace to use
 # project "../myblognone.xcodeproj"
-workspace "../myblognone.xcworkspace"
+# workspace "../myblognone.xcworkspace"
 
 # Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments
 # launch_arguments(["-favColor red"])

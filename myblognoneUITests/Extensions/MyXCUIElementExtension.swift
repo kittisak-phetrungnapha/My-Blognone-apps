@@ -12,20 +12,15 @@ import XCTest
 extension XCUIElement {
 
     func scrollDownToElement(element: XCUIElement) {
-        while !element.visible() {
+        while !element.isHittable {
             swipeUp()
         }
     }
     
     func scrollUpToElement(element: XCUIElement) {
-        while !element.visible() {
+        while !element.isHittable {
             swipeDown()
         }
-    }
-
-    func visible() -> Bool {
-        guard self.exists && !self.frame.isEmpty else { return false }
-        return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
     }
 
 }

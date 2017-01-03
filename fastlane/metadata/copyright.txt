@@ -1,1 +1,1 @@
-copyright "#{Time.now.year} Kittisak Phetrungnapha"
+© 2017 Kittisak Phetrungnapha

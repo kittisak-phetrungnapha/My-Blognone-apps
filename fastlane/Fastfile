@@ -40,21 +40,31 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-    scan
-    snapshot
-    frameit
-    cert
-    sigh(force: true)
+    #scan
+    #snapshot
+    #frameit
+    #cert
+    #sigh(force: true)
 
     produce(
-      username: 'cs.sealsoul@gmail.com',
-      app_identifier: 'com.csnu17top.myblognone',
-      app_name: 'My Blognone',
-      language: 'English',
-      app_version: '1.0',
-      sku: 'myblognone',
-      team_name: 'Kittisak Phetrungnapha' # only necessary when in multiple teams
+      username: "cs.sealsoul@gmail.com",
+      app_identifier: "com.csnu17top.myblognone",
+      app_name: "My Blognone",
+      language: "English",
+      app_version: "1.0",
+      sku: "myblognone",
+      team_name: "Kittisak Phetrungnapha" # only necessary when in multiple teams
     )
+
+    #crashlytics(
+     #crashlytics_path: 'Pods/Crashlytics/iOS/Crashlytics.framework', # path to your ‘Crashlytics.framework’
+     #api_token: 'd6e9196012e146499d7c058ade2d8b0841d5d044',
+     #build_secret: '9f56651985649ed83321607a3bf28cbea5781ad06bb4a47dee57bb81bd07b2e3',
+     #ipa_path: '../CrashlyticsBetaBuilds/CP Surprise.ipa',
+     #notes: 'Latest Beta build',
+     #groups: ["CPSurprise-Testers"],
+     #notifications: true
+     #)
 
     gym
     deliver

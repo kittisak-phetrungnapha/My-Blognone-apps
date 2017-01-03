@@ -7,11 +7,13 @@
 # Remove the # in front of the line to enable the option
 
 scheme "myblognone"
-workspace "../myblognone.xcworkspace"
+# workspace "../myblognone.xcworkspace"
 
 sdk "iphoneos10.2"
 
 clean true
+
+include_bitcode true
 
 output_directory "./build"    # store the ipa in this folder
 output_name "myblognone"      # the name of the ipa file
