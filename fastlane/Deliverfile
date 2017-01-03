@@ -13,8 +13,8 @@ force true
 metadata_path "metadata"
 screenshots_path "screenshots"
 price_tier 0
-app_icon "../app_icon1024.png"
-app_rating_config_path "metadata/rating.json"
+app_icon "app_icon1024.png"
+app_rating_config_path "fastlane/metadata/rating.json"
 
 skip_screenshots true
 
