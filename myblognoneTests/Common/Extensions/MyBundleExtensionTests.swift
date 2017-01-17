@@ -21,8 +21,8 @@ class MyBundleExtensionTests: XCTestCase {
     func testGetBuildVersionNumber() {
         XCTAssertNotNil(Bundle.main.buildVersionNumber, "BuildVersionNumber should not be nil.")
         
-        let expectBuildNumber = "1"
-        XCTAssertEqual(Bundle.main.buildVersionNumber, expectBuildNumber, "BuildVersionNumber should be 1")
+        let expectBuildNumber = "2"
+        XCTAssertEqual(Bundle.main.buildVersionNumber, expectBuildNumber, "BuildVersionNumber should be 2")
     }
     
 }

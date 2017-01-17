@@ -30,7 +30,7 @@ class AboutDataManagerTests: XCTestCase {
     }
     
     func testGetBuildVersionNumber() {
-        let expect = "1"
+        let expect = "2"
         let output = dataManager.getBuildVersionNumber()
         XCTAssertEqual(output, expect, "BuildVersionNumber should be equal \(expect).")
     }
