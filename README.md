@@ -3,3 +3,6 @@ This is an unofficial Blognone iOS application that I implemented for full pract
 
 ## Slide
 https://goo.gl/o0pzsD
+
+## My personal Medium blog
+https://medium.com/@csnu17top
