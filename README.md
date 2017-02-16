@@ -6,3 +6,6 @@ https://goo.gl/o0pzsD
 
 ## My personal Medium blog
 https://medium.com/@csnu17top
+
+## App Store link
+https://itunes.apple.com/us/app/my-blognone/id1191248877?ls=1&mt=8
