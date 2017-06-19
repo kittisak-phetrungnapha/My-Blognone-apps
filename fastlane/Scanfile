@@ -10,8 +10,8 @@ scheme "myblognone"
 # workspace "../myblognone.xcworkspace"
 
 devices [
-  "iPhone 5s",
-  "iPhone 7",
+  #"iPhone 5s",
+  #”iPhone 7",
   "iPhone 7 Plus"
 ]
 
