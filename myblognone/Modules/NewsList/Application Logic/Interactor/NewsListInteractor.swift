@@ -21,8 +21,8 @@ class NewsListInteractor: NewsListInteractorInputProtocol {
     // MARK: - NewsListInteractorInputProtocol
     
     func performGetNewsFeedTask() {
-        apiDataManager?.getNewsFeed(with: { newsFeedResult in
-            self.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
+        apiDataManager?.getNewsFeed(with: { [weak self] newsFeedResult in
+            self?.presenter?.didReceiveNewsFeedResult(newsFeedResult: newsFeedResult)
         })
     }
     
