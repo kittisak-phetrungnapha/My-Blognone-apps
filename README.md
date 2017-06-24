@@ -5,7 +5,7 @@ This is an unofficial Blognone iOS application that I implemented for full pract
 https://goo.gl/o0pzsD
 
 ## My personal Medium blog
-https://medium.com/@itopstory
+https://itopstory.com
 
 ## App Store link
 https://itunes.apple.com/us/app/my-blognone/id1191248877?ls=1&mt=8
