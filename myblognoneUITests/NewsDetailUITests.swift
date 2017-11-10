@@ -19,7 +19,7 @@ class NewsDetailUITests: XCTestCase {
         app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         
         let table = app.tables.element
         waitForElementToAppear(element: table.cells.element)

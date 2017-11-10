@@ -58,11 +58,11 @@ class NewsListViewController: UIViewController {
     
     // MARK: -
     
-    func requestNewsFeedData() {
+    @objc func requestNewsFeedData() {
         presenter?.didRequestNewsFeedData()
     }
     
-    func requestOpeningAboutPage() {
+    @objc func requestOpeningAboutPage() {
         if let nav = self.navigationController {
             presenter?.requestOpeningAboutPage(fromView: nav)
         }
@@ -71,8 +71,8 @@ class NewsListViewController: UIViewController {
     fileprivate func updatedLastUpdatedTime() {
         let title = String(format: NSLocalizedString("last_update_time_text", comment: ""), Date().getStringWith(format: "MMM d, HH:mm"))
         let attributedDict = [
-            NSFontAttributeName: UIFont.fontFotLastUpdateTime(),
-            NSForegroundColorAttributeName: UIColor.white
+            NSAttributedStringKey.font: UIFont.fontFotLastUpdateTime(),
+            NSAttributedStringKey.foregroundColor: UIColor.white
         ]
         let attributedTitle = NSAttributedString(string: title, attributes: attributedDict)
         self.refreshControl.attributedTitle = attributedTitle;

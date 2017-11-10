@@ -19,7 +19,7 @@ class AboutUITests: XCTestCase {
         app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         
         app.buttons[NSLocalizedString("goToAboutNavButton", comment: "")].tap()
     }

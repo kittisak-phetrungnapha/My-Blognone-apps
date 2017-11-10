@@ -19,7 +19,7 @@ class NewsListUITests: XCTestCase {
         app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
     }
     
     override func tearDown() {

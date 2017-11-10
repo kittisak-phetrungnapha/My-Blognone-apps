@@ -17,7 +17,7 @@ extension UIColor {
     static let highLightNewsListCellBackground = refreshViewBackground
     
     static func defaultNavigationBarColor() -> UIColor {
-        return UIColor(colorLiteralRed: (247/255), green: (247/255), blue: (247/255), alpha: 1)
+        return UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
     }
     
     convenience init?(hexString: String) {
@@ -26,7 +26,7 @@ extension UIColor {
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
         
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
