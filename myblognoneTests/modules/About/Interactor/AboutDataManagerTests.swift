@@ -24,13 +24,13 @@ class AboutDataManagerTests: XCTestCase {
     }
     
     func testGetReleaseVersionNumber() {
-        let expect = "1.0"
+        let expect = "1.1"
         let output = dataManager.getReleaseVersionNumber()
         XCTAssertEqual(output, expect, "ReleaseVersionNumber should be equal \(expect).")
     }
     
     func testGetBuildVersionNumber() {
-        let expect = "2"
+        let expect = "3"
         let output = dataManager.getBuildVersionNumber()
         XCTAssertEqual(output, expect, "BuildVersionNumber should be equal \(expect).")
     }

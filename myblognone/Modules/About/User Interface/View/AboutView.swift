@@ -26,6 +26,10 @@ class AboutViewController: UITableViewController, AboutViewProtocol {
         
         title = NSLocalizedString("about_title_text", comment: "")
         
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
+        
         versionTitleLabel.font = UIFont.fontForVersionTitle()
         versionValueLabel.font = UIFont.fontForVersionValue()
         sendFeedbackTitleLabel.font = UIFont.fontForSendEmailFeedback()

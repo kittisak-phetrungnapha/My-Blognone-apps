@@ -50,6 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.font: UIFont.fontForNavigationBarTitle(),
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
+        
+        if #available(iOS 11.0, *) {
+            UINavigationBar.appearance().largeTitleTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.font: UIFont.fontForLargeNavigationBarTitle()
+            ]
+        }
     }
     
     private func setupForceUpdate() {

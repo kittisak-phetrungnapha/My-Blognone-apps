@@ -1,1 +1,1 @@
-
+Optimized to make sure that app runs smoothly on iPhone X and iOS 11.

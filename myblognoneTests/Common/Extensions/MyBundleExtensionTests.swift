@@ -14,14 +14,14 @@ class MyBundleExtensionTests: XCTestCase {
     func testGetReleaseVersionNumber() {
         XCTAssertNotNil(Bundle.main.releaseVersionNumber, "ReleaseVersionNumber should not be nil.")
         
-        let expectVersionNumber = "1.0"
+        let expectVersionNumber = "1.1"
         XCTAssertEqual(Bundle.main.releaseVersionNumber, expectVersionNumber, "ReleaseVersionNumber should be 1.0")
     }
     
     func testGetBuildVersionNumber() {
         XCTAssertNotNil(Bundle.main.buildVersionNumber, "BuildVersionNumber should not be nil.")
         
-        let expectBuildNumber = "2"
+        let expectBuildNumber = "3"
         XCTAssertEqual(Bundle.main.buildVersionNumber, expectBuildNumber, "BuildVersionNumber should be 2")
     }
     

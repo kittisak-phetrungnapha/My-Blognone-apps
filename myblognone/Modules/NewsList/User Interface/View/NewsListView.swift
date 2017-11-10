@@ -33,13 +33,18 @@ class NewsListViewController: UIViewController {
         newsTableView.isHidden = true
         
         refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = UIColor(hexString: UIColor.refreshViewBackground)
         refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(requestNewsFeedData), for: UIControlEvents.valueChanged)
         if #available(iOS 10.0, *) {
             newsTableView.refreshControl = refreshControl
         } else {
             newsTableView.addSubview(refreshControl)
+        }
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            refreshControl.backgroundColor = UIColor(hexString: UIColor.refreshViewBackground)
         }
     
         ProgressView.shared.show(in: view)
@@ -48,8 +53,8 @@ class NewsListViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let selectionIndexPath = newsTableView.indexPathForSelectedRow {
             newsTableView.deselectRow(at: selectionIndexPath, animated: true)
         }
