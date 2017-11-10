@@ -31,6 +31,10 @@ extension UIFont {
         return UIFont(name: MyFont.SFUIDisplayMedium.rawValue, size: 21) ?? defaultFont
     }
     
+    static func fontForLargeNavigationBarTitle() -> UIFont {
+        return UIFont(name: MyFont.SFUIDisplayMedium.rawValue, size: 32) ?? defaultFont
+    }
+    
     static func fontForNewsTitle() -> UIFont {
         return UIFont(name: MyFont.SFUIDisplayBold.rawValue, size: 21) ?? defaultFont
     }

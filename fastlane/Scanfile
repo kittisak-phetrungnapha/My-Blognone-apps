@@ -12,7 +12,8 @@ scheme "myblognone"
 devices [
   #"iPhone 5s",
   #”iPhone 7",
-  "iPhone 7 Plus"
+  #"iPhone 7 Plus",
+  "iPhone X"
 ]
 
 open_report true
