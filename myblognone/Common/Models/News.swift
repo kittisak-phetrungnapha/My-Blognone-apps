@@ -9,12 +9,11 @@
 import Foundation
 
 struct News {
-    
-    var title: String!
-    var link: String!
-    var detail: String!
+    let title: String
+    let link: String
+    let detail: String
     var pubDate: String!
-    var creator: String!
+    let creator: String
     
     init(title: String?, link: String?, detail: String?, pubDate: String?, creator: String?) {
         self.title = title ?? ""
@@ -26,7 +25,7 @@ struct News {
     
     func formatDataForDisplay() -> News {
         var newsOutput = self
-        newsOutput.pubDate = Date.getNewDateTimeString(inputStr: pubDate, inputFormat: "EEE, dd MMM yyyy HH:mm:ss VVVV", outputFormat: "dd MMM yyyy, HH:mm")
+        newsOutput.pubDate = Date.getNewDateTimeString(inputStr: pubDate, inputFormat: "EEE, dd MMM yyyy HH:mm:ss ZZZZ", outputFormat: "dd MMM yyyy, HH:mm")
         return newsOutput
     }
     
