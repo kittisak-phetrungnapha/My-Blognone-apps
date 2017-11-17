@@ -14,9 +14,11 @@ class MyDateExtensionTests: XCTestCase {
     func testGetStringWithValidFormat() {
         // given
         let givenString = "Dec 22, 21:25"
+        
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(secondsFromGMT: 25200)
         formatter.dateFormat = "MMM d, HH:mm"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         let givenDate = formatter.date(from: givenString)
         
         // when
@@ -29,7 +31,7 @@ class MyDateExtensionTests: XCTestCase {
     func testGetNewDateTimeStringWithValidInputs() {
         // given
         let inputString = "Thu, 22 Dec 2016 14:34:02 +0000"
-        let inputFormat = "EEE, dd MMM yyyy HH:mm:ss VVVV"
+        let inputFormat = "EEE, dd MMM yyyy HH:mm:ss ZZZZ"
         let outputFormat = "dd MMM yyyy, HH:mm"
         let expectOutput = "22 Dec 2016, 21:34" // GMT +7
         
@@ -42,7 +44,7 @@ class MyDateExtensionTests: XCTestCase {
     
     func testGetNewDateTimeStringWithInValidInputs() {
         var inputString = ""
-        var inputFormat = "EEE, dd MMM yyyy HH:mm:ss VVVV"
+        var inputFormat = "EEE, dd MMM yyyy HH:mm:ss ZZZZ"
         let outputFormat = "dd MMM yyyy, HH:mm"
         
         // when

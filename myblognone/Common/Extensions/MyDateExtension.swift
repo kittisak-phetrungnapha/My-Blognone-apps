@@ -9,11 +9,11 @@
 import Foundation
 
 extension Date {
-    
     func getStringWith(format: String) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(secondsFromGMT: 25200)
         formatter.dateFormat = format
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter.string(from: self)
     }
     
@@ -22,6 +22,8 @@ extension Date {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(secondsFromGMT: 25200)
         formatter.dateFormat = inputFormat
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
         guard let inputDate = formatter.date(from: inputStr) else {
             return nil
         }
@@ -30,5 +32,4 @@ extension Date {
         formatter.dateFormat = outputFormat
         return formatter.string(from: inputDate)
     }
-    
 }
