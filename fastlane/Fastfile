@@ -51,7 +51,7 @@ platform :ios do
       app_identifier: "com.csnu17top.myblognone",
       app_name: "My Blognone",
       language: "English",
-      app_version: "1.0",
+      app_version: "1.1",
       sku: "myblognone",
       team_name: "Kittisak Phetrungnapha" # only necessary when in multiple teams
     )

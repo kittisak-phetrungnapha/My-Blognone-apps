@@ -9,7 +9,7 @@
 scheme "myblognone"
 # workspace "../myblognone.xcworkspace"
 
-sdk "iphoneos10.2"
+sdk "iphoneos11.1"
 
 clean true
 

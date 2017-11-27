@@ -30,4 +30,4 @@ app_review_information(
 
 automatic_release true
 
-# submit_for_review: true
+# submit_for_review true
